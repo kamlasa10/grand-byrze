@@ -1,0 +1,64 @@
+.language {
+    cursor: pointer;
+    width: 70px;
+
+    &__current {
+        width: 70px;
+        height: 70px;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #fff;
+        font-size: 14px;
+        line-height: 1em;
+        font-weight: 50;
+    }
+
+    &__list {
+        position: absolute;
+        bottom: 42px;
+        transform: translateY(100%);
+        width: 70px;
+        left: 0;
+        background: #FFFFFF;
+        border-radius: 35px;
+        display: flex;
+        flex-direction: column;
+        transition: all .6s;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0 26px;
+
+        a {
+            font-size: 14px;
+            line-height: 1em;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: inherit;
+            transition: all .4s;
+            text-decoration: none;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            &:hover {
+                color: $blue;
+            }
+
+            &.active {
+                color: $blue;
+            }
+        }
+    }
+
+    &:hover {
+        .language__list {
+            max-height: 250px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.menu.js-menu 
+    .menu__header
+        .big-container
+            .menu__header-left.header__left  
+                .menu__header-title Меню
+                a(href="tel:+380969956364").header__phone 
+                    +svg('phone')
+                    | +38 (096) 995-63-64
+            .header__center.menu__header-center 
+                .header__logo.btn 
+                    +img('menu-logo.svg')
+            .menu-header__right.header__right 
+                button(type="button").popup-btn.header__popup-btn.js-popup-open Замовити дзвінок
+                button(type="button").menu-btn.js-menu-close
+                    | закрити
+                    span.btn 
+                        +svg('cross') 
+    nav.big-container.menu__container 
+        .menu__block 
+            .menu__title Про проєкт
+            ul.menu__list 
+                li.menu__item 
+                    a(href="#").menu__link Галерея
+                li.menu__item
+                    a(href="#").menu__link Панорама 180
+                li.menu__item
+                    a(href="#").menu__link Обслуговуюча компанія
+                li.menu__item
+                    a(href="#").menu__link Забудовник
+                li.menu__item
+                    a(href="#").menu__link Пост Сервіс
+                li.menu__item
+                    a(href="#").menu__link Охорона
+                li.menu__item
+                    a(href="#").menu__link Хід будівництва
+                li.menu__item
+                    a(href="#").menu__link Документи
+        .menu__block 
+            .menu__title Про Комплекс
+            ul.menu__list 
+                li.menu__item 
+                    a(href="#").menu__link Галерея
+                li.menu__item
+                    a(href="#").menu__link Локацiя
+                li.menu__item
+                    a(href="#").menu__link Iнфраструктура
+                li.menu__item
+                    a(href="#").menu__link  комплектація квартир
+        .menu__block 
+            a(href="#").menu__title.link-border-animation.menu__title-link.menu__title-link--dark Обрати квартиру
+        .menu__block 
+            a(href="#").menu__title.menu__title-link.link-border-animation Умови
+        .menu__block 
+            a(href="#").menu__title.menu__title-link.link-border-animation.menu__title-link--dark Для інвестора 
+        .menu__block 
+            a(href="#").menu__title.menu__title-link.link-border-animation.menu__title-link--dark Контакти
+    .language.menu__language 
+        span.language__current.language__text Ru 
+        .language__list 
+            a(href="#").active Ru
+            a(href="#") Uk
+            a(href="#") En
+    .menu__logo 
+        +img('developer-dark.svg')
+        
+

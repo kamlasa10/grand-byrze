@@ -1,0 +1,42 @@
+ul.breadcrumbs
+  li.breadcrumbs__item 
+    a(href="/").breadcrumbs__link Головна
+  if(breadcrumbsLink === 'gallery')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Галерея
+  if(breadcrumbsLink === 'contacts')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Контакти
+  if(breadcrumbsLink === 'documents')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Документи
+  if(breadcrumbsLink === 'news')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Новини
+  if(breadcrumbsLink === 'new')
+    li.breadcrumbs__item
+      a(href="#").breadcrumbs__link Новини
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Графік роботи відділу продажу на новорічні свята
+  if(breadcrumbsLink === 'progress')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Хід будівництва
+  if(breadcrumbsLink === 'webcam')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Веб камера
+  if(breadcrumbsLink === 'about')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Про проєкт
+  if(breadcrumbsLink === 'benefits')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Переваги
+  if(breadcrumbsLink === 'environment')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Оточення
+  if(breadcrumbsLink === 'developer')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Забудовник
+  if(breadcrumbsLink === 'infra')
+    li.breadcrumbs__item
+      span.breadcrumbs__link.current Інфраструктура
+      

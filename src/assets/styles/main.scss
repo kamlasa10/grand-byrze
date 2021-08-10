@@ -1,0 +1,31 @@
+@import './assets/vars';  // переменные
+@import './assets/smart-grid';  // mixins smartgrid.js
+// libraries
+@import './libs';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+// assets
+@import './assets/mixins';  // миксины
+@import './assets/fonts';  // шрифты
+@import './assets/base';  // общие стили
+@import './assets/animation';  // анимации
+@import './assets/class'; // main style
+@import './assets/interface'; // main style
+@import './assets/breadcrubs'; // main style
+
+@import './blocks/spinner.scss';
+@import './blocks/menu.scss';
+@import './blocks/language.scss';
+@import './pages/order-sample.scss';
+
+// sass dima
+@import './header';
+@import './footer';
+@import './404';
+@import './loader';
+@import './index';
+
+@import '../../pug/components/form/form';
+@import '../../pug/components/toster/toster';
+
+@import 'pages/home';
+

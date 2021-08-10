@@ -1,0 +1,41 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'заказать пробник краски'
+    var id_page = 'index-page'
+    var class_page = 'index-page'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/home.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .main-slider
+    .swiper-container.js-main-slider 
+      .swiper-wrapper 
+        .swiper-slide(style="background-image: url('assets/images/home-slider/1.jpg')")
+        .swiper-slide(style="background-image: url('assets/images/home-slider/2.jpg')")
+        .swiper-slide(style="background-image: url('assets/images/home-slider/3.jpg')")
+    .main-slider__content
+      .main-slider__title(data-slider="1") Житловий комплекс
+      .main-slider__title(data-slider="2") Бізнес класу
+      +img('grand-byrze-text.svg').main-slider__title.main-slider__title--img(data-slider="3")
+      .main-slider__desc Бульвар Леоніда Бирюкова, 2
+      a(href="#").main-slider__link 
+        | Дивитися відео
+        +svg('triangle')
+    .main-slider__logo 
+      +img('developer-white.svg')
+    a(href="#").main-slider__more
+      +svg('arrow-down')
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

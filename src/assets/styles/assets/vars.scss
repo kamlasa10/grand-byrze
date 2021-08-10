@@ -1,0 +1,37 @@
+$default-font: "gilroy",
+sans-serif;
+$default-font2: 'Arsenal', sans-serif;
+
+$black: #2A3341;
+$red: #E23E28;
+$yellow: #EFBC48;
+$lightRed: #DF5E5E;
+$grey: #8E837B;
+$blue: #0951BE;
+
+:root {
+  --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
+  --header-h: 120px;
+}
+
+@media screen and (max-width: 1440px){
+  :root {
+    --header-h: 90px;
+    --logo-w: 120px;
+    --sliceFigure-big: 362px;
+  }
+}
+@media screen and (max-width: 992px){
+  :root {
+    --header-h: 110px;
+    --logo-w: 90px;
+    --sliceFigure-big: 44px;
+  }
+}
+@media screen and (max-width: 576px){
+  :root {
+    --header-h: 70px;
+    --sliceFigure: 100px;
+    --sliceFigure-big: 100px;
+  }
+}
