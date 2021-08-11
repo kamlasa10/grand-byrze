@@ -33,7 +33,132 @@ block content
       +img('developer-white.svg')
     a(href="#").main-slider__more
       +svg('arrow-down')
-
+  section.intro 
+    .intro__bottom-decor 
+      +img('intro-decor.svg')
+    .intro__decor
+      +svg('logo-decor')
+    .container 
+      .intro__content 
+        .intro__left 
+          .custom-title.intro__title 
+            | Преміум
+            span життя за містом
+          a(href="#").btn-with-icon
+            span.btn
+              +svg('btn-decor')
+            span.btn-with-icon-text.link-border-animation Про комплекс
+        .intro__right  
+          .intro__desc.custom-desc Майбутнє — за передмістям, але неабияким, а таким, що гарантує легке дихання та повноцінне цікаве життя без регулярних поїздок у мегаполіс. Висока екологічність і водночас транспортна доступність Бучі робить її ідеальною локацією для переселення далі від міської метушні.
+  section.gallery 
+    .gallery__wrap
+      .gallery__item  
+        +img('home-gallery/1.jpg')
+      .gallery__item
+        +img('home-gallery/2.jpg')
+    .gallery__info
+      .gallery__info-wrap 
+        .gallery__info-title.big-title Галерея
+        .galler__info-content 
+          a(href="#").btn-with-icon
+            span.btn
+              +svg('btn-decor')
+            span.btn-with-icon-text.link-border-animation дивитися фотографії
+  section.building-info
+    .building-info__decor 
+      +img('building-info-decor.svg') 
+    .container
+      .building-info__wrap 
+        ul.building-info__list 
+          li.building-info__item 
+            .building-info-title Будинків
+            .building-info-value 5
+          li.building-info__item 
+            .building-info-title Поверхів
+            .building-info-value 16-18
+          li.building-info__item 
+            .building-info-title Квартири від, тис грн
+            .building-info-value 749
+        .building-info-tabs 
+          .building-info-title Термін здачі будинків
+          .building-info-tabs__list 
+            .building-info__tab-block 
+              button(type="button").building-info__tab.js-building-info__tab(data-choise="1") 1 буд
+            .building-info__tab-block 
+              button(type="button").building-info__tab.js-building-info__tab(data-choise="2") 2 буд
+            .building-info__tab-block 
+              button(type="button").building-info__tab.js-building-info__tab(data-choise="3") 3 буд
+            .building-info__tab-block 
+              button(type="button").building-info__tab.js-building-info__tab(data-choise="4") 4 буд
+            .building-info__tab-block 
+              button(type="button").building-info__tab.js-building-info__tab(data-choise="5") 5 буд
+          .building-info-tabs__wrap
+            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="1") iV квартал 2022
+            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="2") iV квартал 2023
+            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="3") iV квартал 2024
+            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="4") iV квартал 2025
+            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="5") iV квартал 2026
+  section.yard.sec 
+    .container 
+      .yard__content 
+        .yard__title Подвір’я
+        .yard__desc.custom-desc Не виходячи з дому, Ви можете потрапити в кінотеатр, супермаркет, фітнес-центр з двомісними басейнами та ігровий дитячий центр. Тут ваш ребень ніколи не буде сидети на планшеті.
+  section.features
+    .features__decor
+      +img('logo-with-text.svg')
+    .big-container.features__container.sec  
+      .features__content 
+        .features__left 
+          +img('home-features.jpg')
+        .features__right 
+          .features__title.custom-title 
+            | Переваги
+            span Жителів комплексу
+          .features__wrap 
+            .features__desc.custom-desc На території комплексу буде розташований ТРЦ з супермаркетом, спортклуб з 2 басейнами, дитячий центр і бутіки. У 10 метрах знаходиться ТЦ «Модуль», магазини «Нова Лінія» і «Comfy».
+            .a(href="#").btn-with-icon
+              span.btn
+                +svg('btn-decor')
+              span.btn-with-icon-text.link-border-animation Дивитися переваги
+  section.complex
+    .complex__bg  
+    .complex__content
+      .container 
+        .complex__left 
+          .complex__title.custom-title 
+            | ЖК Гранд Бурже -
+            span це вибір сотень родин
+        .complex__right
+          .complex__wrap
+            .complex__desc.custom-desc Вони прагнуть жити там, де чисте повітря, поруч — хороші навчальні заклади, достойне медичне обслуговування, безліч можливостей для відпочинку з дітьми. Дружнє комьюніті житлового комплексу — це люди, які обрали серцем місце для життя і створюють у ньому комфортне середовище.
+            .a(href="#").btn-with-icon
+              span.btn
+                +svg('btn-decor')
+              span.btn-with-icon-text.link-border-animation Дивитися переваги
+  section.infra 
+    .container
+      .infra__top 
+        .infra__title Безпрецедентна для передмістя <span>інфраструктура</span>
+        .infra__content 
+          .infra__desc.custom-desc Власний торгово-розважальний центр Avenir Plaza з кінотеатром, басейном, супермаркетом “Сільпо”, дитячою ігровою зоною, магазинами та ресторанами.
+          .infra__desc Дві школи та два садочки на відстані 5 хвилин ходи. Торгові центри й супермаркети поруч з будинком, у тому числі “Епіцентр”, АТБ і Novus. Спортивні студії, фітнес-клуби, басейни у пішій доступності. Державні та приватні медичні заклади до послуг мешканців.
+    .infra__img.sec 
+      +img('home-infra-bg.jpg')
+  section.features.location
+    .big-container.features__container.sec  
+      .features__content 
+        .features__left 
+          +img('home-location-img.jpg')
+        .features__right 
+          .features__title.custom-title 
+            | Локація
+            span проєкту
+          .features__wrap 
+            .features__desc.custom-desc На території комплексу буде розташований ТРЦ з супермаркетом, спортклуб з 2 басейнами, дитячий центр і бутіки. У 10 метрах знаходиться ТЦ «Модуль», магазини «Нова Лінія» і «Comfy».
+            .a(href="#").btn-with-icon
+              span.btn
+                +svg('btn-decor')
+              span.btn-with-icon-text.link-border-animation Дізнатися про локацію
 block footer
   include ../includes/footer.pug
 

@@ -164,5 +164,50 @@
       }
     }
     
-    const demo = new SwiperDemo();     
+    const demo = new SwiperDemo();    
+    
+    class Tabs {
+      constructor(content, tabs, activeClass, showedTabInit = 1) {
+          this.content = content
+          this.tabs = tabs
+          this.activeClass = activeClass
+          this.showedTabInit = showedTabInit
+          this.init()
+      }
+  
+      trigger(fn, idxFirstShowTab = 0) {
+          this.tabs.each((_, item) => {
+              $(item).on('click', e => {
+                  e.preventDefault()
+  
+                  this.tabs.parent().removeClass(this.activeClass)
+                  $(item).parent().addClass(this.activeClass)
+                  console.log($(item).data('choise'))
+                  this.contentShow($(item).data('choise'))
+              })
+          })
+          this.tabs.removeClass(this.activeClass)
+          this.tabs.eq(idxFirstShowTab).parent().addClass(this.activeClass)
+          this.contentShow(this.showedTabInit)
+      }
+  
+      contentShow(value) {
+          this.content.hide()
+          this.content.each((_, item) => {
+              if ($(item).data('choise-content') == value) {
+                  $(item).fadeIn(200)
+              }
+          })
+  
+          try {
+              window.locoScroll.update()
+          } catch (e) {}
+      }
+  
+      init() {
+          this.trigger()
+      }
+  }
+
+  new Tabs($('.js-building-info-tabs__content'), $('.js-building-info__tab'), 'show')
 })()
