@@ -1,3 +1,5 @@
+button(type="button").btn-top.js-btn-top
+    +svg('arrow-down')
 .menu.js-menu 
     .menu__header
         .big-container
@@ -7,7 +9,7 @@
                     +svg('phone')
                     | +38 (096) 995-63-64
             .header__center.menu__header-center 
-                .header__logo.btn 
+                a(href="/").header__logo.btn 
                     +img('menu-logo.svg')
             .menu-header__right.header__right 
                 button(type="button").popup-btn.header__popup-btn.js-popup-open Замовити дзвінок

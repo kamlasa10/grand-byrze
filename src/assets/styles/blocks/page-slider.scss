@@ -1,0 +1,67 @@
+.page-slider {
+  position: relative;
+
+  &__title {
+    max-width: 870px;
+    margin-bottom: 30px;
+    font-size: 42px;
+    line-height: 1.7em;
+    color: $black;
+  }
+
+  &__wrap {
+    position: relative;
+    margin: 0 -10px;
+  }
+
+  &__item {
+    padding: 0 10px;
+  }
+
+  .swiper-container {
+    padding-right: 50px;
+  }
+
+  &__controller {
+    pointer-events: none;
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: $black;
+    opacity: 0;
+
+    svg {
+      width: 45px;
+      height: 42.5px;
+      stroke: #fff;
+      fill: none;
+      transform: rotate(-90deg);
+      stroke-width: 1px;
+      stroke-width: 0.5px;
+      transition: all .4s;
+    }
+
+    &.back {
+      svg {
+        transform: rotate(-270deg);
+      }
+    }
+  }
+
+  img {
+    margin-bottom: 20px;
+    object-fit: cover;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.5em;
+  }
+}

@@ -1,0 +1,90 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Переваги'
+    var id_page = 'features-page'
+    var class_page = 'features-page'
+    var breadcrumbsLink = 'benefits'
+block scripts 
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/features.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Переваги
+    .features
+      .container
+        .features__top
+          +svg('big-logo-decor').features__top-icon
+          .features__top-desc Гранд Бурже — житловий комплекс бізнес-класу, який гарантує своїм мешканцям усі складові комфортного життя. Чудова локація, безкомпромісна якість і продуманість деталей — це комбо робить будинки привабливими для життя та інвестування.
+          +svg('icon-text').features__top-text
+        .features__item
+          .features__img
+            +img('features/1.jpg')
+          .features__content
+            .features__title Безпрецедентна для передмістя інфраструктура
+            .features__desc Власний торгово-розважальний центр Avenir Plaza з кінотеатром, басейном, супермаркетом “Сільпо”, дитячою ігровою зоною, магазинами та ресторанами. Дві школи та два садочки на відстані 5 хвилин ходи. Торгові центри й супермаркети поруч з будинком, у тому числі “Епіцентр”, АТБ і Novus. Спортивні студії, фітнес-клуби, басейни у пішій доступності. Державні та приватні медичні заклади до послуг мешканців.
+            .features__count
+              .features__count-wrap
+                +svg('big-logo-decor')
+                span 1/5
+        .features__item.features__item--reverse
+          .features__img
+            +img('features/2.jpg')
+          .features__content
+            .features__title Безпека — правило №1 
+            .features__desc Закритий двір з цілодобовою охороною та картковою системою доступу для мешканців. Комплексна система відеоспостереження у подвір’ї та будинках: більш ніж 100 відеокамер на території, які встановлені навіть у ліфтах.
+            .features__count
+              .features__count-wrap
+                +svg('big-logo-decor')
+                span 2/5
+        .features__item.features__item--3
+          .features__img
+            +img('features/3.jpg')
+          .features__content
+            .features__title Квартири white box
+            .features__desc Заощаджуємо час та гроші: квартири продаються з оздобленням white box — готовими до фінального ремонту. Ви купуєте житло з рівними стінами та теплою підлогою, розведеними комунікаціями, встановленими лічильниками і якісними броньованими дверима.
+            .features__count
+              .features__count-wrap
+                +svg('big-logo-decor')
+                span 3/5
+        .features__item.features__item--reverse
+          .features__img
+            +img('features/4.jpg')
+          .features__content
+            .features__title Подвір’я
+            .features__desc Не всидіти вдома, коли на подвір’ї — розмаїття можливостей для відпочинку дорослим та дітям. Сучасні дитячі майданчики, спеціалізовані майданчики для різних видів спорту та фізичної активності, озеро і фонтани. А ще ми подбали, щоб прогулянки не супроводжувалися зайвими навантаженнями — у кожному під’їзді є кімнати для велосипедів та дитячих візочків.
+            .features__count
+              .features__count-wrap
+                +svg('big-logo-decor')
+                span 4/5
+        .features__item
+          .features__img
+            +img('features/5.jpg')
+          .features__content
+            .features__title Паркінг
+            .features__desc Мешканцям немає потреби паркуватися під вікнами у сусідів або на тротуарах. У підземному паркінгу автомобіль знаходиться під охороною та відеонаглядом 24/7. Паркінг з ліфтовим доступом і зарядками для електрокарів.
+            .features__count
+              .features__count-wrap
+                +svg('big-logo-decor')
+                span 5/5
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,94 @@
+#documents-page {
+  background: linear-gradient(135.43deg, #FFFDF3 0%, #F0EEE3 99.99%);
+
+  .documents {
+    padding-bottom: 150px;
+
+    .big-container {
+      width: 100%;
+      padding-left: 200px;
+      padding-right: 200px;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #88889D;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #DFDCCE;
+
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+
+    &__date {
+      display: flex;
+
+      svg {
+        margin-right: 20px;
+        fill: none;
+        width: 14px;
+        height: 14px;
+        transform: translateY(12px);
+      }
+
+      &-title {
+        margin-bottom: 5px;
+        font-size: 36px;
+        line-height: 1em;
+        font-family: $default-font2;
+        color: $black;
+      }
+
+      &-month {
+        color: $black;
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 1em
+      }
+
+      &-year {
+        position: relative;
+        padding-top: 6px;
+        font-size: 12px;
+        line-height: 1em;
+        display: inline-flex;
+        color: $black;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          background-color: #DFDCCE;
+          width: 80%;
+          height: 1px;
+        }
+      }
+    }
+
+    &__desc {
+      max-width: 470px;
+      font-size: 18px;
+      line-height: 1.5em;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    &__pdf {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $black;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1em;
+      text-transform: uppercase;
+      font-family: $default-font2;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Локація'
+    var id_page = 'location-page'
+    var class_page = 'location-page'
+    var breadcrumbsLink = 'location'
+block scripts 
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/location.js')
+  script(defer src='./assets/scripts/page-slider.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Переваги
+    .location
+      .container
+        .location__intro
+          .location__intro-top
+            .location__intro-top-content
+              .location__title ЖК Гранд Бурже розташований у наймальовничішому передмісті Києва — у місті Буча.
+              .location__intro-top-text Відстань від Києва — 20 км або 25 хвилин на авто.  
+            +svg('big-logo-decor')
+          .location__intro-wrap
+            .location__intro-content
+              .location__intro-desc Буча поєднана зі столицею розвиненою системою громадського транспорту.
+              .location__intro-text Маршрутки відправляються від станцій метро Академмістечко, Мінська, Святошин; модернізований приміський електропоїзд курсує за маршрутом залізнична станція Святошин – Буча.
+            +img('location/1.jpg')
+      .page-slider.js-page-slider-container
+        .container
+          .page-slider__title Комплекс збудований у центрі міста, і всі ключові інфраструктурні об’єкти знаходяться поруч.
+        .page-slider__wrap
+          .container
+            .page-slider__controller.js-page-slider-controller
+              +svg('arrow-down')
+          .swiper-container.js-page-slider
+            .swiper-wrapper
+              .swiper-slide.page-slider__item
+                +img('location/slider/1.jpg')
+                .page-slider__text Школи
+              .swiper-slide.page-slider__item
+                +img('location/slider/2.jpg')
+                .page-slider__text Дитячі садочки
+              .swiper-slide.page-slider__item
+                +img('location/slider/3.jpg')
+                .page-slider__text Лікарні й аптеки
+              .swiper-slide.page-slider__item
+                +img('location/slider/4.jpg')
+                .page-slider__text Торгово-розважальні центри
+              .swiper-slide.page-slider__item
+                +img('location/slider/5.jpg')
+                .page-slider__text Супермаркети
+              .swiper-slide.page-slider__item
+                +img('location/slider/6.jpg')
+                .page-slider__text Кафе та ресторани
+              .swiper-slide.page-slider__item
+                +img('location/slider/7.jpg')
+                .page-slider__text Спортивні клуби
+      .container
+        .location__title.location__title--correct.js-calculate-offset ваша родина матиме вибір у всіх аспектах життя.
+        .location__intro-wrap.location__intro-wrap--reverse
+          .location__intro-content
+            .location__intro-desc Буча поєднана зі столицею розвиненою системою громадського транспорту.
+            .location__intro-text Маршрутки відправляються від станцій метро Академмістечко, Мінська, Святошин; модернізований приміський електропоїзд курсує за маршрутом залізнична станція Святошин – Буча.
+            a(href="#").btn-with-icon.contacts__item-link
+              span.btn
+                +svg('btn-decor')
+              span.btn-with-icon-text.link-border-animation Показати на <br> Google Maps
+          +img('location/2.jpg')
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

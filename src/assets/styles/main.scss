@@ -1,13 +1,13 @@
-@import './assets/vars';  // переменные
-@import './assets/smart-grid';  // mixins smartgrid.js
+@import './assets/vars'; // переменные
+@import './assets/smart-grid'; // mixins smartgrid.js
 // libraries
 @import './libs';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 // assets
-@import './assets/mixins';  // миксины
-@import './assets/fonts';  // шрифты
-@import './assets/base';  // общие стили
-@import './assets/animation';  // анимации
+@import './assets/mixins'; // миксины
+@import './assets/fonts'; // шрифты
+@import './assets/base'; // общие стили
+@import './assets/animation'; // анимации
 @import './assets/class'; // main style
 @import './assets/interface'; // main style
 @import './assets/breadcrubs'; // main style
@@ -17,6 +17,9 @@
 @import './blocks/language.scss';
 @import './pages/order-sample.scss';
 @import './blocks/popup.scss';
+@import './blocks/contacts.scss';
+@import './blocks/socials';
+@import './blocks/page-slider';
 
 // sass dima
 @import './header';
@@ -29,4 +32,8 @@
 @import '../../pug/components/toster/toster';
 
 @import 'pages/home';
-
+@import 'pages/gallery';
+@import 'pages/contacts';
+@import 'pages/documents';
+@import 'pages/features';
+@import 'pages/location';

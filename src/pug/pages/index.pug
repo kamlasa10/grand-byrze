@@ -2,10 +2,11 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'заказать пробник краски'
+    var title_page = 'Главная'
     var id_page = 'index-page'
     var class_page = 'index-page'
 block scripts 
+  script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/home.js')
@@ -18,17 +19,33 @@ block content
   .main-slider
     .swiper-container.js-main-slider 
       .swiper-wrapper 
-        .swiper-slide(style="background-image: url('assets/images/home-slider/1.jpg')")
-        .swiper-slide(style="background-image: url('assets/images/home-slider/2.jpg')")
-        .swiper-slide(style="background-image: url('assets/images/home-slider/3.jpg')")
-    .main-slider__content
-      .main-slider__title(data-slider="1") Житловий комплекс
-      .main-slider__title(data-slider="2") Бізнес класу
-      +img('grand-byrze-text.svg').main-slider__title.main-slider__title--img(data-slider="3")
-      .main-slider__desc Бульвар Леоніда Бирюкова, 2
-      a(href="#").main-slider__link 
-        | Дивитися відео
-        +svg('triangle')
+        .swiper-slide
+          .swiper-slide-img
+            +img('home-slider/1.jpg')
+          .main-slider__content
+            .main-slider__title(data-slider="1") Житловий комплекс
+            .main-slider__desc Бульвар Леоніда Бирюкова, 2
+            a(href="#").main-slider__link 
+              | Дивитися відео
+              +svg('triangle')
+        .swiper-slide
+          .swiper-slide-img
+            +img('home-slider/2.jpg')
+          .main-slider__content
+            .main-slider__title(data-slider="2") Бізнес класу
+            .main-slider__desc Бульвар Леоніда Бирюкова, 2
+            a(href="#").main-slider__link 
+              | Дивитися відео
+              +svg('triangle')
+        .swiper-slide
+          .swiper-slide-img
+            +img('home-slider/3.jpg')
+          .main-slider__content
+            +img('grand-byrze-text.svg').main-slider__title.main-slider__title--img(data-slider="3")
+            .main-slider__desc Бульвар Леоніда Бирюкова, 2
+            a(href="#").main-slider__link 
+              | Дивитися відео
+              +svg('triangle')
     .main-slider__logo 
       +img('developer-white.svg')
     a(href="#").main-slider__more
@@ -37,14 +54,14 @@ block content
     .intro__bottom-decor 
       +img('intro-decor.svg')
     .intro__decor
-      +svg('logo-decor')
+      +svg('big-logo-decor')
     .container 
       .intro__content 
         .intro__left 
           .custom-title.intro__title 
             | Преміум
             span життя за містом
-          a(href="#").btn-with-icon
+          a(href="#").btn-with-icon.intro__link
             span.btn
               +svg('btn-decor')
             span.btn-with-icon-text.link-border-animation Про комплекс
@@ -101,8 +118,8 @@ block content
   section.yard.sec 
     .container 
       .yard__content 
-        .yard__title Подвір’я
-        .yard__desc.custom-desc Не виходячи з дому, Ви можете потрапити в кінотеатр, супермаркет, фітнес-центр з двомісними басейнами та ігровий дитячий центр. Тут ваш ребень ніколи не буде сидети на планшеті.
+        .yard__title Не всидіти вдома, коли на подвір’ї — <span>розмаїття</span> можливостей для <span>відпочинку.</span>
+        .yard__desc.custom-desc Сучасні дитячі майданчики, спеціалізовані майданчики для різних видів спорту та фізичної активності, озеро і фонтани. А ще ми подбали, щоб прогулянки не супроводжувалися зайвими навантаженнями — у кожному під’їзді є кімнати для велосипедів та дитячих візочків.
   section.features
     .features__decor
       +img('logo-with-text.svg')
@@ -159,6 +176,74 @@ block content
               span.btn
                 +svg('btn-decor')
               span.btn-with-icon-text.link-border-animation Дізнатися про локацію
+  section.contacts.sec 
+    .container
+      .contacts__title.big-title Контакти
+      .contacts__content 
+        .contacts__left
+          .contacts__left-wrap 
+            ul.contacts__list
+              li.contacts__item 
+                .contacts__item-title Розташування:
+                a(href="#").contacts__item-block.contacts__item-block--1
+                  span.contacts__item-icon  
+                    +svg('location')
+                  span.link-border-animation м. Буча, Леоніда Бирюкова, 2
+                a(href="#").btn-with-icon.contacts__item-link
+                  span.btn
+                    +svg('btn-decor')
+                  span.btn-with-icon-text.link-border-animation Показати на <br> Google Maps
+              li.contacts__item 
+                .contacts__item-title Відділ продажів:
+                a(href="tel:+380969956364").contacts__item-block.contacts__item-block--2
+                  span.contacts__item-icon  
+                    +svg('handset-phone')
+                  span.link-border-animation +38 (096) 995-63-64
+                .contacts__item-block.contacts__item-block--3  
+                  span.contacts__item-icon
+                    +svg('clock')
+                  | Пн-Пт: 10:00-18:00 <br>
+                  | Сб-Вс: 10:00-17:00
+              li.contacts__item 
+                .contacts__item-title Соціальні мережі:
+                .socials
+                  a(href="#").contacts__item-block.socials__link.socials__link--1
+                    span.contacts__item-icon  
+                      +svg('instagram')
+                    span.link-border-animation instagram
+                  a(href="#").contacts__item-block.socials__link.socials__link--2
+                    span.contacts__item-icon  
+                      +svg('facebook')
+                    span.link-border-animation facebook
+        .contacts__right 
+          form.contacts-form
+            .contacts-form__title.contacts__item-title Розташування:
+            .popup__content-item
+              .popup__content-item-title Введіть ваше ім’я
+              .popup__content-item-block
+                  +svg('input-decor')
+                  input(type="text" data-required="true" class="popup__input" name="name" placeholder="Ім`я:")
+              .field-error-msg Це обов’язкове поле
+            .popup__content-item
+              .popup__content-item-title Введіть ваш номер телефону
+              .popup__content-item-block
+                  +svg('input-decor')
+                  input(type="tel" data-required="true" class="popup__input" name="phone" placeholder="Ім`я:")
+              .field-error-msg телефон повинен містити не менше 8 символів
+            .popup__content-item
+              .popup__content-item-title Введіть ваше повідомлення
+              .popup__content-item-block
+                  +svg('input-decor')
+                  textarea(name="message" class="popup__input popup__input--big" placeholder="Повідомлення:")
+            .popup__bottom
+              .popup__bottom-left
+                  +svg('input-decor')
+                  | обов’язкові поля для заповнення
+              .popup__bottom-right
+                button(type="submit").popup__submit.btn-with-icon 
+                  span.btn
+                    +svg('btn-decor')
+                  span.btn-with-icon-text.link-border-animation Надіслати
 block footer
   include ../includes/footer.pug
 

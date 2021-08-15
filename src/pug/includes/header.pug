@@ -1,4 +1,4 @@
-header.header 
+header(class=`header ${breadcrumbsLink ? 'page-header' : ''}`) 
     .big-container 
         .header__row 
             .header__left 
@@ -12,8 +12,11 @@ header.header
                     +svg('phone')
                     | +38 (096) 995-63-64
             .header__center 
-                .header__logo.btn 
-                    +img('logo.svg')
+                a(href="/").header__logo.btn 
+                    if breadcrumbsLink
+                        +img('menu-logo.svg')
+                    else 
+                        +img('logo.svg')
             .header__right 
                 button(type="button").popup-btn.header__popup-btn.js-popup-open(data-popup-type="callback") Замовити дзвінок
                 button(type="button").menu-btn.js-menu-open

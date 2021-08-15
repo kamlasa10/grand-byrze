@@ -1,0 +1,26 @@
+.socials {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    &--1 {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &--2 {
+      svg {
+        width: 10px;
+        height: 18px;
+      }
+    }
+  }
+}
