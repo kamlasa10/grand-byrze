@@ -1,0 +1,44 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Кредит'
+    var id_page = 'credit-page'
+    var class_page = 'credit-page'
+    var breadcrumbsLink = 'credit'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/credit.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Кредит
+    .container
+        .block-with-img 
+            .block-with-img__title Втілюйте мрію про власне житло у ЖК Гранд Бурже вже сьогодні.
+            .block-with-img__wrap 
+                +img('paymant/1.jpg')
+                .block-with-img__content 
+                    .block-with-img__text Не втрачайте нагоду інвестувати якнайвигідніше. Linevich Group пропонує гнучкі умови кредитування для фізичних та юридичних осіб. Про можливості та деталі розкажуть менеджери відділу продажів.
+                    .block-with-img__desc Телефонуйте <a href="+380442903260">+38 044 290 32 60</a> або залишайте заявку на сайті.
+                    button(type="button").btn-with-icon.js-popup-open(data-popup-type="callback") 
+                        span.btn
+                            +svg('btn-decor')
+                        span.btn-with-icon-text.link-border-animation Залишити заявку
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

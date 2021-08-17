@@ -1,0 +1,112 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Комплектація квартир'
+    var id_page = 'equipment-page'
+    var class_page = 'equipment-page'
+    var breadcrumbsLink = 'equipment'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/equipment.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Комплектація квартир
+    .equipment
+        .container
+            .equipment__item
+                .equipment__item-wrap
+                    .equipment__item-title Скільки тижнів ви готові витрачати на ремонт після придбання квартири?
+                    .equipment__item-desc Linevich Group прагне максимально скоротити час від отримання ключів до заселення, тому житло продається у комплектації white box. 
+                +img('equipment/1.jpg')
+        .section-with-scroll 
+          .container
+            .page-info 
+              .page-info__left 
+                .page-info__title Ваша квартира <br> вже має:
+                .page-info__decor 
+                  +svg('big-logo-decor')
+              .page-info__right 
+                .page-info__item 
+                  .page-info__item-left 1
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Енергомістке панорамне скління — німецькі чотирикамерні профілі KBE з двокамерними енергозберігаючими склопакетами;
+                .page-info__item 
+                  .page-info__item-left 2
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Біметалічні радіатори опалення
+                .page-info__item 
+                  .page-info__item-left 3
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Тепла підлога на кухні та в санвузлі
+                .page-info__item 
+                  .page-info__item-left 4
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Розведення під електрику, сантехніку та опалення
+                .page-info__item 
+                  .page-info__item-left 5
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Броньовані двері з шумоізоляцією
+                .page-info__item 
+                  .page-info__item-left 6
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Чистова штукатурка стін під поклейку шпалер
+                .page-info__item 
+                  .page-info__item-left 7
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Лазерна стяжка підлоги з ідеально рівною поверхнею
+                .page-info__item 
+                  .page-info__item-left 8
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Лічильники на воду, двозонний лічильник електроенергії, лічильник тепла
+                .page-info__item 
+                  .page-info__item-left 9
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Заведені кабелі домофону, інтернету та телебачення
+                .page-info__item 
+                  .page-info__item-left 10
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Внутрішні перестінки виконані з цегли, що забезпечує чудову шумоізоляцію
+                .page-info__item 
+                  .page-info__item-left 11
+                  .page-info__item-right 
+                    +svg('custom-triangle')
+                    .page-info__item-desc Відведені місця під блоки кондиціонерів — на фасаді
+        .container
+          .equipment__item.equipment__item--reverse
+            .equipment__item-wrap
+                .equipment__item-title Ми використовуємо якісні матеріали,
+                .equipment__item-desc і вам не доведеться робити капітальний ремонт або змінювати ключові елементи оздоблення довгі роки. Обирайте меблі, плитку та колір стін, а не будівельні суміші та розчини.
+                a(href="#").btn-with-icon 
+                  span.btn
+                      +svg('btn-decor')
+                  span.btn-with-icon-text.link-border-animation Комплектація квартир
+            +img('equipment/2.jpg')
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

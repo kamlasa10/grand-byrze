@@ -1,0 +1,33 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Хід будівництва'
+    var id_page = 'progress-page'
+    var class_page = 'progress-page'
+    var breadcrumbsLink = 'progress'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/developer.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Забудовник
+    
+    
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

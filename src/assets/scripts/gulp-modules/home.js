@@ -3,8 +3,6 @@
     let isFirstShowSlide = true;
     let slideChangeTl = gsap.timeline();
 
-    window.initCustomScroll()
-
     function animateChangeSlide({ slides, activeSlide, activeIndex }) {
       slideChangeTl.kill();
       slideChangeTl = gsap.timeline();

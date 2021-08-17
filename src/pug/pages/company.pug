@@ -1,0 +1,170 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Обслуговуюча компанія'
+    var id_page = 'company-page'
+    var class_page = 'company-page'
+    var breadcrumbsLink = 'company'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/company.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Обслуговуюча компанія
+    .company 
+        .container
+            .company__top
+                .company__top-desc Linevich Service – сервісна компанія, відповідальна за обслуговування території, доброустрій та житлово-комунальний сектор будинків ЖК Гранд Бурже. Наша професійна команда піклується про комфорт мешканців, забезпечуючи бездоганне функціонування всіх систем.
+                +img('company/logo.svg') 
+        .company__intro 
+            +img('company/linear.svg').company__intro-decor
+            .container 
+                .company__intro-title Принципи роботи Linevich Service —
+                .company__intro-desc якість, надійність, своєчасність та оперативність. 
+        .company__services
+            .container 
+                .company__services-title У житловому комплексі ми виконуємо:
+            .section-with-scroll
+                .company__services-item
+                    .container 
+                        .page-info 
+                            .page-info__left 
+                                .page-info__title Інженерно-технічне обслуговування об'єктів:
+                                .page-info__decor 
+                                    +svg('big-logo-decor')
+                            .page-info__right 
+                                .page-info__item 
+                                    .page-info__item-left 1
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Ліфтового господарства
+                                .page-info__item 
+                                    .page-info__item-left 2
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Систем вентиляції
+                                .page-info__item 
+                                    .page-info__item-left 3
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Димовидалення та пожежогасіння
+                                .page-info__item 
+                                    .page-info__item-left 4
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Опалення
+                                .page-info__item 
+                                    .page-info__item-left 5
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Гарячого та холодного водопостачання
+                                .page-info__item 
+                                    .page-info__item-left 6
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Електричних мереж
+                                .page-info__item 
+                                    .page-info__item-left 7
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Конструктивних елементів будівлі тощо.
+                .company__services-item
+                    .container 
+                        .page-info 
+                            .page-info__left 
+                                .page-info__title Обслуговування території:
+                                .page-info__decor 
+                                    +svg('big-logo-decor')
+                            .page-info__right 
+                                .page-info__item 
+                                    .page-info__item-left 1
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Прибираємо
+                                .page-info__item 
+                                    .page-info__item-left 2
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Озеленюємо
+                                .page-info__item 
+                                    .page-info__item-left 3
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Облаштовуємо прибудинкову територію
+                                .page-info__item 
+                                    .page-info__item-left 4
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Облаштовуємо місця загального користування
+                .company__services-item
+                    .container 
+                        .page-info 
+                            .page-info__left 
+                                .page-info__title Організація роботи диспетчерської служби та служби абонентського обслуговування:
+                            .page-info__right 
+                                .page-info__item 
+                                    .page-info__item-left 1
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Приймаємо заявки мешканців
+                                .page-info__item 
+                                    .page-info__item-left 2
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Цілодобово реагуємо на аварійні ситуації
+                                .page-info__item 
+                                    .page-info__item-left 3
+                                    .page-info__item-right 
+                                        +svg('custom-triangle')
+                                        .page-info__item-desc Надаємо довідки та консультації
+        .container
+            .company__block.company__info 
+                .company__text Організація охорони території та інфраструктури житлових комплексів.
+                .company__text Експлуатаційне обслуговування автопаркінгів.
+        .container
+            .company__contacts
+                .company__contacts-left 
+                    .company__contacts-item.company__contacts-item--bordered 
+                        .company__contacts-title Адреса офісу:
+                        .company__contacts-text м. Буча, бул. Л. Бірюкова, 2а, кор. 1
+                    .company__contacts-item 
+                        .company__contacts-title Графік роботи:
+                        .company__contacts-text 
+                            | Понеділок-середа: 10:00-17:00<br>
+                            | Четвер: 10:00-18:00<br>
+                            | П’ятниця: 10:00-17:00<br>
+                            | Кожна друга та четверта субота місяця:<br>
+                            | 10:00-14:00
+                .company__contacts-right
+                    .company__contacts-item 
+                        .company__contacts-title Контакти:
+                        .company__contacts-block 
+                            .company__contacts-text Диспетчер
+                            a(href="tel:+380509119040").company__contacts-text +38 050 911 90 40
+                            a(href="tel:+380689119040").company__contacts-text +38 068 911 90 40
+                        .company__contacts-block 
+                            .company__contacts-text Аварійна служба (цілодобово)
+                            a(href="tel:+380939119040").company__contacts-text +38 093 911 90 40
+                        button(type="button").btn-with-icon.js-popup-open(data-popup-type="callback") 
+                            span.btn
+                                +svg('btn-decor')
+                            span.btn-with-icon-text.link-border-animation Залишити заявку
+                        
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

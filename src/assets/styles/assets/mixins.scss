@@ -37,6 +37,20 @@
   }
 }
 
+@mixin page-big-text {
+	font-size: 42px;
+	line-height: 1.3em;
+	color: $black;
+	max-width: 870px;
+	text-transform: uppercase;
+}
+
+@mixin page-desc {
+	font-size: 24px;
+	line-height: 1.6em;
+	color: $black;
+}
+
 // Function for converting a px based font-size to rem.
 @function rem($size) {
 	$remSize: $size / 14px;

@@ -1,4 +1,4 @@
-header(class=`header ${breadcrumbsLink ? 'page-header' : ''}`) 
+header(class='header') 
     .big-container 
         .header__row 
             .header__left 
@@ -12,11 +12,13 @@ header(class=`header ${breadcrumbsLink ? 'page-header' : ''}`)
                     +svg('phone')
                     | +38 (096) 995-63-64
             .header__center 
-                a(href="/").header__logo.btn 
+                a(href="/").header__logo.btn.header__logo-small
+                    +img('logo.svg').move-logo
+                a(href="/").header__logo--big.btn 
                     if breadcrumbsLink
                         +img('menu-logo.svg')
                     else 
-                        +img('logo.svg')
+                        +img('menu-logo.svg')
             .header__right 
                 button(type="button").popup-btn.header__popup-btn.js-popup-open(data-popup-type="callback") Замовити дзвінок
                 button(type="button").menu-btn.js-menu-open

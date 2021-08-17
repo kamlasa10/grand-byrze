@@ -1,0 +1,143 @@
+#investor-page {
+    .block-with-img__title {
+        margin-bottom: 100px;
+    }
+
+    .block-with-img {
+        padding-bottom: 150px;
+
+        &--bg {
+            background-color: $black;
+            padding: 150px 0;
+
+            .block-with-img__text {
+                color: #ECEAE1;
+            }
+    
+            .block-with-img__desc {
+                color: #A0A6AE;
+            }
+        }
+
+        .block-with-img__content {
+            order: -1;
+        }
+    }
+
+    .block-with-img__wrap {
+        justify-content: space-between;
+        align-items: flex-start;
+        grid-template-columns: 513px 513px;
+
+        @include to(1200px) {
+            grid-template-columns: 1fr 1fr 
+        }
+    }
+
+    .block-with-img__text {
+        @include page-desc;
+    }
+
+    .block-with-img__desc {
+        font-size: 18px;
+        max-width: 313px;
+
+        @include to(1440px) {
+            font-size: 16px;
+        }
+    }
+
+    .investor {
+        &__item {
+            padding: 150px 0;
+            position: relative;
+
+            .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            &-wrap {
+                display: grid;
+                grid-template-columns: 513px 513px;
+                justify-content: space-between;
+                column-gap: 80px;
+                align-items: center;
+
+                @include to(1200px) {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            &-desc {
+                @include page-desc;
+            }
+
+            &-title {
+                @include page-big-text;
+                margin-bottom: 20px;
+                color: #ECEAE1;
+            }
+
+            &-decor {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+
+            &--with-logo {
+                background-color: $black;
+                padding: 110px 0;
+                color: #ECEAE1;
+
+                .investor__item-decor {
+                    width: auto;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                }
+
+                .investor__item-desc {
+                    color: #A0A6AE;
+                    max-width: 370px;
+                    font-size: 18px;
+
+                    @include to(1440px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            padding: 150px 0;
+
+            &-wrap {
+                margin-bottom: 100px;
+                display: grid;
+                grid-template-columns: 513px 370px;
+                column-gap: 80px;
+
+                @include to(1200px) {
+                    grid-template-columns: 1fr 0.7fr;
+                }
+            }
+
+            &-title {
+                @include page-big-text;
+                margin-bottom: 50px;
+                max-width: 100%;
+            }
+
+            &-block {
+                margin-right: 230px;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

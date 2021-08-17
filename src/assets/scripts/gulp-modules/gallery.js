@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  initCustomScroll()
-
   new Swiper('.js-gallery-slider', {
     slidesPerView: 1,
     loop: true,

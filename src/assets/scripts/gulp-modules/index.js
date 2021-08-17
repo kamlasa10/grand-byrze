@@ -53,6 +53,45 @@ function showPopupByType(type) {
 
 showPopupByType()
 
+document.addEventListener('DOMContentLoaded', () => {
+  let pageId = document.body.getAttribute('id')
+
+  switch(pageId) {
+    case 'documents-page':
+      window.initCustomScroll(false)
+      break
+    case 'paymant-page':
+      window.initCustomScroll(false)
+      break
+    case 'stitching-page':
+      window.initCustomScroll(false)
+      break
+    case 'credit-page':
+      window.initCustomScroll(false)
+      break
+    case 'company-page':
+      window.initCustomScroll(false)
+      break
+    case 'service-page':
+      window.initCustomScroll(false)
+      break
+    case 'developer-page':
+      window.initCustomScroll(false)
+      break
+    case 'gallery-page':
+      window.initCustomScroll(false)
+      break
+    case 'contacts-page':
+      window.initCustomScroll(false)
+      break
+    case 'contacts-page':
+      window.initCustomScroll(false)
+      break
+    default: 
+      window.initCustomScroll()
+  }
+})
+
 $('.js-popup-open')
   .on('click', e => {
     e.preventDefault();

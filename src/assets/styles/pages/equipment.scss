@@ -1,0 +1,38 @@
+#equipment-page {
+    .equipment {
+        @include pageOffsetTop;
+    }
+
+    .equipment__item {
+        display: grid;
+        grid-template-columns: 513px 513px;
+        column-gap: 80px;
+        justify-content: space-between;
+
+        &-title {
+            @include page-big-text;
+            margin-bottom: 20px;
+        }
+
+        &-desc {
+            max-width: 370px;
+        }
+
+        &--reverse {
+            .equipment__item-wrap {
+                order: 1;
+            }
+
+            .equipment__item-desc {
+                margin-bottom: 50px;
+                max-width: 410px;
+            }
+        }
+    }
+
+    .section-with-scroll {
+        margin-top: 150px;
+        height: 700px;
+        margin-bottom: 150px;
+    }
+}

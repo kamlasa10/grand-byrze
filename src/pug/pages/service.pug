@@ -1,0 +1,73 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Постсервіс'
+    var id_page = 'service-page'
+    var class_page = 'service-page'
+    var breadcrumbsLink = 'service'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Для інвестора
+    .service
+        .service__top
+            .service__item 
+                .container
+                    .service__title Вітаємо! Ви зробили правильний вибір — на користь ЖК Гранд Бурже. 
+                    .service__desc 
+                        .service__desc-wrap З моменту укладання угоди до отримання ключів від квартири вам допомагатимуть спеціалісти відділу сервісу. 
+
+        .service__item.service__item--modify 
+            .container
+                .service__title З якими питаннями можна до них звернутися?
+                .service__list 
+                    .service__list-item 
+                        .service__list-title Сервіс-менеджери
+                        .page-info__item 
+                            .page-info__item-right 
+                                +svg('custom-triangle')
+                                .page-info__item-desc Розкажуть про хід будівництва, проведуть перегляд і проконсультують щодо перепланування квартири.
+                    .service__list-item 
+                        .service__list-title Фінансові консультанти
+                        .page-info__item 
+                            .page-info__item-right 
+                                +svg('custom-triangle')
+                                .page-info__item-desc Допоможуть із питаннями оплати, розтермінування та кредитування.
+                    .service__list-item 
+                        .service__list-title Юристи   
+                        .page-info__item 
+                            .page-info__item-right 
+                                +svg('custom-triangle')
+                                .page-info__item-desc Ваші помічники в оформленні права власності на нерухомість.
+        .service__bottom
+            .container 
+                .service__title Комфортно жити — комфортно купувати
+                .service__bottom-wrap
+                    .service__bottom-item 
+                        .service__bottom-desc З нашою підтримкою ви не відчуєте бюрократичної тяганини та з чудовим настроєм почнете власну щасливу історію у ЖК Гранд Бурже. 
+                        .service__bottom-block
+                            .service__title Графік роботи:
+                            .service__bottom-text Понеділок-п’ятниця: 10:00-18:00 <br> Менеджер відповість на ваші питання за <br> номером <a href="tel:+380442903260">+38 044 290 32 60</a>
+                            button(type="button").btn-with-icon.js-popup-open(data-popup-type="callback") 
+                                span.btn
+                                    +svg('btn-decor')
+                                span.btn-with-icon-text.link-border-animation Залишити заявку
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

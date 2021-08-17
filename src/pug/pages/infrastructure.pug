@@ -1,0 +1,251 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Локація'
+    var id_page = 'infra-page'
+    var class_page = 'infra-page'
+    var breadcrumbsLink = 'infra'
+block scripts 
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/location.js')
+  script(defer src='./assets/scripts/page-slider.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Інфраструктура
+    .infra 
+        .container 
+            .infra__block 
+                .infra__block-content 
+                    .infra__block-title.js-calculate-offset Все необхідне — просто в будинку”. 
+                    .infra__block-desc Саме цей принцип став ключовим при розробці концепції ЖК Гранд Бурже. Перші три будинки житлового комплексу об'єднані з ТРЦ Avenir Plaza і мають переходи через спільний підземний паркінг. У кіно — в капцях, басейн — щоранку, похід за продуктами — за 10 хвилин. Це реальність для мешканців ЖК Гранд Бурже.
+                +img('infrastructure/1.jpg')
+        .page-slider.js-page-slider-container
+            .container
+                .page-slider__title У торгово-розважальному центрі знаходяться:
+            .page-slider__wrap
+                .container
+                    .page-slider__controller.js-page-slider-controller
+                        +svg('arrow-down')
+            .swiper-container.js-page-slider
+                .swiper-wrapper
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/1.jpg')
+                        .page-slider__text Супермаркет “Сільпо”
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/2.jpg')
+                        .page-slider__text Цілодобова аптека “Біла ромашка”
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/3.jpg')
+                        .page-slider__text Спортивний клуб FitnessContinent з трьома басейнами, численними фітнес-зонами, тренажерним залом, саунами та джакузі
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/4.jpg')
+                        .page-slider__text Кінотеатр FilMax на чотири стомісні зали
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/5.jpg')
+                        .page-slider__text Магазини
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/6.jpg')
+                        .page-slider__text Кафе та ресторани
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/7.jpg')
+                        .page-slider__text Відділення “Нової пошти
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/8.jpg')
+                        .page-slider__text Магазин електроніки та побутової техніки Eldorado
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/9.jpg')
+                        .page-slider__text Хімчистка
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider/10.jpg')
+                        .page-slider__text Банкомат повного циклу, розташований у захищеній зоні
+        .container 
+            .infra__info.infra__info--correct-mb 
+                .infra__info-title Продуманий до дрібниць доброустрій комплексу дозволяє проводити вільний час цікаво і різноманітно.   
+                .infra__info-item 
+                    .infra__info-item-title На подвір’ї розташовані:
+                    .infra__info-wrap
+                        .infra__info-block
+                            +img('infrastructure/2.jpg')
+                            .infra__info-desc Три зони із сучасними дитячими майданчиками
+                        .infra__info-block
+                            +img('infrastructure/3.jpg')
+                            .infra__info-desc Мініфутбольне поле
+                        .infra__info-block
+                            +img('infrastructure/4.jpg')
+                            .infra__info-desc Спортивний майданчик, обладнаний зоною воркаут
+                .infra__info-item 
+                    .infra__info-item-title Для неквапливого відпочинку:
+                    .infra__info-wrap
+                        .infra__info-block
+                            +img('infrastructure/5.jpg')
+                            .infra__info-desc Зручні лави біля декоративного озера
+                        .infra__info-block
+                            +img('infrastructure/6.jpg')
+                            .infra__info-desc Лаунж-зони
+        .page-slider.js-page-slider-container
+            .container
+                .page-slider__title На території комплексу вже працюють:
+            .page-slider__wrap
+                .container
+                    .page-slider__controller.js-page-slider-controller
+                        +svg('arrow-down')
+            .swiper-container.js-page-slider
+                .swiper-wrapper
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider2/1.jpg')
+                        .page-slider__text Медичний центр “СантаЛен”
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider2/2.jpg')
+                        .page-slider__text Стоматологія
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider2/3.jpg')
+                        .page-slider__text Дитячий садок
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider2/4.jpg')
+                        .page-slider__text Кав’ярні
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider2/5.jpg')
+                        .page-slider__text Коворкінг
+        .section-with-scroll 
+            .container
+                .infra__info-title У пішій доступності розташовані:
+                .infra__info.infra__info--single  
+                    .infra__info-item 
+                        .infra__info-wrap
+                            .infra__info-block
+                                +img('infrastructure/7.jpg')
+                                .infra__info-desc Два садочки
+                            .infra__info-block
+                                +img('infrastructure/8.jpg')
+                                .infra__info-desc Школа
+                            .infra__info-block
+                                +img('infrastructure/9.jpg')
+                                .infra__info-desc Бучанська гімназія
+                .info-block 
+                    .info-block__title Дітям не доведеться прокидатися вдосвіта і витрачати час на дорогу до навчального закладу.
+                    .info-block__content
+                        .info-block__wrap 
+                            .info-block__content-left 
+                                .info-block__content-icon 
+                                    +svg('man')
+                                .info-block__content-text Пішки
+                            .info-block__content-right
+                                +svg('custom-triangle').info-block__decor 
+                                .info-block__content-item 
+                                    .info-block__content-value 8 хв
+                                    .info-block__content-desc До приватного медичного центру
+                                .info-block__content-item 
+                                    .info-block__content-value 11 хв
+                                    .info-block__content-desc До приватного медичного центру
+                                .info-block__content-item 
+                                    .info-block__content-value 15 хв
+                                    .info-block__content-desc До приватного медичного центру
+                .info-block 
+                    .info-block__title Численні торгові об’єкти поруч забезпечують багато можливостей для шопінгу та розваг і здорову конкуренцію, яка йде на користь споживачам. 
+                    .info-block__content
+                        .info-block__wrap 
+                            .info-block__content-left 
+                                .info-block__content-icon 
+                                    +svg('man')
+                                .info__block-content-text Пішки
+                            .info-block__content-right 
+                                +svg('custom-triangle').info-block__decor
+                                .info-block__content-item 
+                                    .info-block__content-value 4 хв
+                                    .info-block__content-desc Супермаркет “Коло”
+                                .info-block__content-item 
+                                    .info-block__content-value 6 хв
+                                    .info__block-content-desc ТЦ “Епіцентр”
+                                .info-block__content-item 
+                                    .info-block__content-value 10 хв
+                                    .info-block__content-desc Супермаркет “Лоток”
+                                .info-block__content-item 
+                                    .info-block__content-value 15 хв
+                                    .info-block__content-desc “АТБ”, “ЕКО-Маркет” та Novus
+                        .info-block__wrap
+                            .info-block__content-left 
+                                .info-block__content-icon.info-block__content-icon--car 
+                                    +svg('car')
+                                .info-block__content-text на авто
+                            .info-block__content-right 
+                                +svg('custom-triangle').info-block__decor
+                                .info-block__content-item 
+                                    .info-block__content-value 6 хв
+                                    .info-block__content-desc Ринок зі свіжими продуктами
+        .container 
+            .infra__info-title Окрім спортивного клубу в ТРЦ мешканцям житлового комплексу відкриваються додаткові спокусливі можливості для спорту.
+            .infra__info.infra__info--correct
+                .infra__info-item 
+                    .infra__info-item-title У радіусі 1 км відкриті:
+                    .infra__info-wrap
+                        .infra__info-block
+                            +img('infrastructure/10.jpg')
+                            .infra__info-desc Студія йоги
+                        .infra__info-block
+                            +img('infrastructure/11.jpg')
+                            .infra__info-desc Зал з айкідо
+                        .infra__info-block
+                            +img('infrastructure/12.jpg')
+                            .infra__info-desc Фітнес-клуб
+                .infra__info-item 
+                    .infra__info-wrap
+                        .infra__info-block
+                            +img('infrastructure/13.jpg')
+                            .infra__info-desc Автомобілісти оцінять близькість сучасного детейлінг-центру. 
+                        .infra__info-block
+                            +img('infrastructure/14.jpg')
+                            .infra__info-desc Також за 2 хвилини ходи можна дістатися до найближчої зупинки громадського транспорту. 
+        .page-slider.page-slider--correct.js-page-slider-container
+            .container
+                .page-slider__title На відстані 2,5 км розташований Бучанський міський парк — 
+                .page-slider__desc ідеальне місце для прогулянок, активних розваг, ігор та пробіжок, пікніків та фотосетів. Він займає площу 52 гектари, і на території є:
+            .page-slider__wrap
+                .container
+                    .page-slider__controller.js-page-slider-controller
+                        +svg('arrow-down')
+            .swiper-container.js-page-slider
+                .swiper-wrapper
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider3/1.jpg')
+                        .page-slider__text Озера з обладнаною набережною
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider3/2.jpg')
+                        .page-slider__text Фонтани та скульптури
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider3/3.jpg')
+                        .page-slider__text Кафе
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider3/4.jpg')
+                        .page-slider__text Мотузковий парк
+                    .swiper-slide.page-slider__item
+                        +img('infrastructure/slider3/5.jpg')
+                        .page-slider__text Дитяче містечко
+        .container
+            .infra__box 
+                +img('infrastructure/15.jpg')
+                .infra__box-content 
+                    .infra__box-desc Парком прокладені велодоріжки, а велосипед або самокат для велопрогулянки можна взяти напрокат.
+                    a(href="#").btn-with-icon 
+                        span.btn
+                            +svg('btn-decor')
+                        span.btn-with-icon-text.link-border-animation Комплектація квартир
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

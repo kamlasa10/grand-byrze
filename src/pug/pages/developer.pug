@@ -1,0 +1,68 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Забудовник'
+    var id_page = 'developer-page'
+    var class_page = 'develope-page'
+    var breadcrumbsLink = 'developer'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/developer.js')
+  script(defer src='./assets/scripts/page-slider.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Забудовник
+    .developer 
+        .container.help-container.js-calculate-offset Group
+        .developer__block
+            .container
+                .developer__wrap 
+                    +img('developer-dark.svg')
+                    .developer__content 
+                        .developer__title Linevich group
+                        .developer__text Загальновизнаний лідер по частині будівництва сучасних і функціональних житлових комплексів. Квартири від забудовника в Бучі та новобудови в Ірпені відрізняються кращими умовами для життя.
+                        .developer__desc Наша мета - максимальний комфорт і задоволеність покупців. Грамотний і усвідомлений підхід до кожного етапу зведення, починаючи з вибору майданчика, закінчуючи реалізацією, дозволяє нашим клієнтам не турбуватися про правильність вибору і повністю покластися на дії досвідчених і відповідальних фахівців.
+                        Linevich Group - це гарантії і результат, унікальне розташування, ідеальні конструкції і надійність. Величезний досвід роботи компанії дозволив стати кращими на ринку. Саме тому нам довіряють своє життя і комфорт.
+        .page-slider.js-page-slider-container
+            .container
+                .page-slider__title Інші проєкти компанії
+            .page-slider__wrap
+                .container
+                    .page-slider__controller.js-page-slider-controller
+                        +svg('arrow-down')
+            .swiper-container.js-page-slider
+                .swiper-wrapper
+                    .swiper-slide.page-slider__item
+                        +img('developer/1.jpg')
+                        .page-slider__text ЖК Гранд Бурже
+                    .swiper-slide.page-slider__item
+                        +img('developer/2.jpg')
+                        .page-slider__text ЖК Версаль Парк
+                    .swiper-slide.page-slider__item
+                        +img('developer/3.jpg')
+                        .page-slider__text ЖК Соборний
+                    .swiper-slide.page-slider__item
+                        +img('developer/4.jpg')
+                        .page-slider__text ЖК Котляревський
+                    .swiper-slide.page-slider__item
+                        +img('developer/5.jpg')
+                        .page-slider__text ЖК Полтавський
+    
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

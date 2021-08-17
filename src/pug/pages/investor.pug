@@ -1,0 +1,74 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Для інвестора'
+    var id_page = 'investor-page'
+    var class_page = 'investor-page'
+    var breadcrumbsLink = 'investor'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Для інвестора
+    .investor 
+      .container
+        .block-with-img 
+          .block-with-img__title Чому ЖК Гранд Бурже — найвигідніший об’єкт для інвестицій у передмісті Києва?
+          .block-with-img__wrap 
+              +img('investor/1.jpg')
+              .block-with-img__content 
+                  .block-with-img__text Ми будуємо як для себе, добираючи найкращі матеріали та дбаючи про якісне наповнення комплексу. Це не спринт — це забіг на довгу дистанцію, і ми відчуваємо відповідальність за комфорт наших мешканців у далекому майбутньому.
+                  .block-with-img__desc Ви купуєте не пусту непривітну “коробку”, яку складно назвати житлом, а квартиру у комплектації white box, з рівнесенькими стінами та підлогою. Ви заощадите на прокладенні комунікацій, встановленні опалення, радіаторів та теплої підлоги. Надійні броньовані двері та вікна KBE ще десятки років не потребуватимуть заміни. Ваші турботи — вибір дизайну інтер’єру до душі, а не виробника цементу.
+      .block-with-img.block-with-img--bg
+        .container 
+          .block-with-img__wrap 
+            +img('investor/2.jpg')
+            .block-with-img__content 
+              .block-with-img__text Інфраструктура ЖК Гранд Бурже — це нова міська легенда Бучі. Перший в області житловий комплекс із власним ТРЦ зі супермаркетом, кінотеатром та дитячою ігровою зоною, спорткомплексом з басейном. 
+              .block-with-img__desc У пішій доступності — освітні заклади та медичні установи, торгові центри та супермаркети, спеціалізовані магазини та пункти сервісного обслуговування. На відстані 2,5 км — величезний Бучанський міський парк. Цей район ніколи не отримає статус “спального”, адже люди із задоволенням оселяються там, де вирує життя.
+      .investor__item
+        +img('investor/linear-decor.svg').investor__item-decor
+        .container
+          .investor__item-wrap  
+            +img('investor/3.jpg')
+            .investor__item-content 
+              .investor__item-desc Майбутнє — за передмістям, але неабияким, а таким, що гарантує легке дихання та повноцінне цікаве життя без регулярних поїздок у мегаполіс. Висока екологічність і водночас транспортна доступність Бучі робить її ідеальною локацією для переселення далі від міської метушні.
+      .investor__item.investor__item--with-logo
+        +svg('big-logo-decor').investor__item-decor
+        .container
+          .investor__item-wrap  
+            .investor__item-content 
+              .investor__item-title ЖК Гранд Бурже — це вибір сотень родин.
+              .investor__item-desc Вони прагнуть жити там, де чисте повітря, поруч — хороші навчальні заклади, достойне медичне обслуговування, безліч можливостей для відпочинку з дітьми. Дружнє комьюніті житлового комплексу — це люди, які обрали серцем місце для життя і створюють у ньому комфортне середовище.
+            +img('investor/4.jpg')
+      .investor__bottom
+        .container 
+          .investor__bottom-wrap 
+            .investor__bottom-left У сукупності всі ці чинники зумовлюють високу конкурентоспроможність ЖК Гранд Бурже на ринку житла. Наші квартири зростають у ціні пропорційно ходу будівництва.
+            .investor__bottom-right Відсоток окупності інвестиції досягає 27% річних, вигода вкладення може скласти до 25 000$. Ціна оренди стандартної однокімнатної квартири у житловому комплексі стартує з 8000 гривень, і теж має тенденцію до збільшення.
+          .investor__bottom-title Інвестуйте із впевненістю у майбутньому у житловий комплекс Гранд Бурже.
+          .investor__bottom-block
+            button(type="button").btn-with-icon.js-popup-open(data-popup-type="callback") 
+                span.btn
+                    +svg('btn-decor')
+                span.btn-with-icon-text.link-border-animation Залишити заявку
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

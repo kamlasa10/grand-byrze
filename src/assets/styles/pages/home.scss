@@ -2,7 +2,23 @@
   background: linear-gradient(135.43deg, #fffdf3 0%, #f0eee3 99.99%);
 
   .header {
-    background-color: rgba(#ECEAE1, 0.95);
+    .header__link {
+      color: #fff;
+    }
+
+    .menu-btn {
+      color: #fff;
+    }
+
+    &.move {
+      .header__link {
+        color: $black;
+      }
+
+      .menu-btn {
+        color: $black;
+      }
+    }
   }
 
   .main-slider {
@@ -207,7 +223,7 @@
 
     &__right {
       max-width: 423px;
-      padding-right: 100px;
+      padding-right: 93px;
     }
   }
 

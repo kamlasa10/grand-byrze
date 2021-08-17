@@ -1,0 +1,44 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Оплата'
+    var id_page = 'paymant-page'
+    var class_page = 'paymant-page'
+    var breadcrumbsLink = 'paymant'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/paymant.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Комплектація квартир
+    .container
+        .block-with-img 
+            .block-with-img__title Linevich Group пропонує різні варіанти оплати для фізичних та юридичних осіб.
+            .block-with-img__wrap 
+                +img('paymant/1.jpg')
+                .block-with-img__content 
+                    .block-with-img__text Ви можете обрати для себе гнучку схему розрахунку та придбати квартиру у ЖК Гранд Бурже якнайшвидше.
+                    .block-with-img__desc Телефонуйте для детальної консультації за номером <a href="+380442903260">+38 044 290 32 60</a>
+                    button(type="button").btn-with-icon.js-popup-open(data-popup-type="callback") 
+                        span.btn
+                            +svg('btn-decor')
+                        span.btn-with-icon-text.link-border-animation Залишити заявку
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

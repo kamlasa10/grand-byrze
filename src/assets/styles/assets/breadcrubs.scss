@@ -73,6 +73,7 @@
       line-height: 1em;
       color: #ECEAE1;
       text-decoration: none;
+      transition: all .4s;
       @include animateLink;
 
       @include to(1370px) {
@@ -89,8 +90,11 @@
         background-color: #ECEAE1;
       }
 
-      &:hover::before {
-        transform: scaleX(0)
+      &:hover {
+        &::before {
+          background-color: #E23E28;
+        }
+        color: #E23E28;
       }
     }
 

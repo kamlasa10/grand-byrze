@@ -1,0 +1,204 @@
+#infra-page {
+    .infra {
+        @include pageOffsetTop;
+
+        &__block {
+            margin-bottom: 100px;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: 513px 513px;
+            grid-column: 80px;
+
+            &-title {
+                @include page-big-text;
+                margin-bottom: 25px;
+                text-transform: uppercase;
+            }
+
+            &-desc {
+              max-width: 370px;  
+            }
+
+            img {
+                object-fit: cover;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 100px;
+            }
+        }
+
+        &__info {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 50px;
+            margin-bottom: 150px;
+
+            &--correct {
+                row-gap: 100px;
+
+                .infra__info-item:last-child {
+                    .infra__info-desc {
+                        max-width: 100%;
+                        font-size: 24px;
+                        line-height: 1.6em;
+                    }
+                }
+
+                &-mb {
+                    .infra__info-title {
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+
+            &--single {
+                row-gap: 0;
+
+                .infra__info-title {
+                    margin-bottom: 30px;
+                }
+            }
+
+            &-title {
+                @include page-big-text;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+            }
+
+            &-item {
+                &-title {
+                    margin-bottom: 20px;
+                    font-size: 24px;
+                    line-height: 1.5em;
+                }
+            }
+
+            &-wrap {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+                column-gap: 20px;
+                row-gap: 25px;
+
+                img {
+                    margin-bottom: 15px;
+                }
+            }
+
+            &-desc {
+                max-width: 85%;
+            }
+
+            img {
+                object-fit: cover;
+            }
+        }
+
+        &__box {
+            display: grid;
+            grid-template-columns: 513px 423px;
+            column-gap: 80px;
+            justify-content: space-between;
+    
+            &-desc {
+                @include page-desc;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    .page-slider {
+        margin-bottom: 150px;
+    }
+
+    .section-with-scroll {
+        position: relative;
+
+        .infra__info-title {
+            top: 0;
+            z-index: 2;
+            position: sticky;
+        }
+
+        .infra__info {
+            margin-bottom: 100px;
+        }
+    }
+
+    .info-block {
+        display: grid;
+        grid-template-columns: 370px 650px;
+        justify-content: space-between;
+        column-gap: 80px;
+
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
+
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+
+            &-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: $blue;
+                margin-bottom: 10px;
+
+                svg {
+                    width: 13px;
+                    height: 27px;
+                }
+
+                &--car svg {
+                    width: 26px;
+                    height: 18px;
+                }
+            }
+
+            &-text {
+                text-align: center;
+                font-size: 10px;
+                line-height: 1em;
+                text-transform: uppercase;
+            }
+
+            &-right {
+                position: relative;
+                padding: 30px 40px;
+                background-color: #fff;
+
+                .info-block__decor {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 30px;
+                    height: 30px;
+                    transform: translateX(-100%);
+                }
+            }
+
+            &-item {
+                display: flex;
+                align-items: center;
+            }
+
+            &-value {
+                font-size: 42px;
+                line-height: 1.3em;
+                margin-right: 57px;
+            }
+        }
+
+        &__wrap {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            column-gap: 40px;
+        }
+    }
+}
