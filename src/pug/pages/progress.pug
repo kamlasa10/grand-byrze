@@ -9,7 +9,7 @@ block variable
 block scripts 
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
-  script(defer src='./assets/scripts/developer.js')
+  script(defer src='./assets/scripts/progress.js')
 block meta
   title= 'title'
   meta(name='description', content='')
@@ -23,9 +23,109 @@ block content
       .container
         .page-top__wrap
           include ../includes/breadcrumbs.pug
-          h1.page-title Забудовник
-    
-    
+          h1.page-title Хід будівництва
+    .progress
+      .progress-slider.js-progress-slider 
+        .container
+          .progress-slider__close
+            button(type="button").js-progress-slider-close.progress-slider__close-btn 
+              span.btn 
+                +svg('cross')
+          .progress-slider__wrap 
+            button(type="button").js-progress-slider-prev.gallery__btn.gallery__btn-prev
+              +svg('slider-arrow')
+            .swiper-container.js-progress-slider
+              .swiper-wrapper 
+                .swiper-slide 
+                  +img('progress/1.jpg')
+                .swiper-slide 
+                  +img('progress/2.jpg')
+                .swiper-slide 
+                  +img('progress/3.jpg')
+                .swiper-slide 
+                  +img('progress/4.jpg')
+                .swiper-slide 
+                  +img('progress/5.jpg')
+                .swiper-slide 
+                  +img('progress/6.jpg')
+                .swiper-slide 
+                  +img('progress/7.jpg')
+                .swiper-slide 
+                  +img('progress/8.jpg')
+            button(type="button").js-progress-slider-next.gallery__btn.gallery__btn-next
+              +svg('slider-arrow')
+          .gallery__info
+            .progress-slider__month 
+              span.js-progress-slider__month Червень 
+              span.js-progress-slider__year 2021
+            <div class="swiper-pagination gallery__info-block"></div>
+      .big-container 
+        .progress__wrap
+          .div
+          .progress__filters 
+            .progress__filters-wrap 
+              .progress__filters-year 
+                .progress__filters-year-current 
+                  +svg('big-logo-decor')
+                  span.progress-filtter-year-text 2021
+                .progress__filters-year-dropdown 
+                  .progress__filters-year-item.active 2021
+                  .progress__filters-year-item 2020
+                  .progress__filters-year-item 2019
+              .progress__filters-months
+                .progress__filters-month 
+                  +svg('big-logo-decor')
+                  | Січень
+                .progress__filters-month 
+                  +svg('big-logo-decor')
+                  | Лютий
+                .progress__filters-month 
+                  +svg('big-logo-decor')
+                  | Березень
+                .progress__filters-month 
+                  +svg('big-logo-decor')
+                  | Квітень
+                .progress__filters-month 
+                  +svg('big-logo-decor')
+                  | Травень
+                .progress__filters-month.active 
+                  +svg('big-logo-decor')
+                  | Червень
+                .progress__filters-month.disabled 
+                  +svg('big-logo-decor')
+                  | Липень
+                .progress__filters-month.disabled  
+                  +svg('big-logo-decor')
+                  | Серпень
+                .progress__filters-month.disabled 
+                  +svg('big-logo-decor')
+                  | Вересень
+                .progress__filters-month.disabled 
+                  +svg('big-logo-decor')
+                  | Жовтень
+                .progress__filters-month.disabled 
+                  +svg('big-logo-decor')
+                  | Листопад
+                .progress__filters-month.disabled 
+                  +svg('big-logo-decor')
+                  | Грудень
+          .progress__gallery 
+            .progress__gallery-item.big.js-progress-item
+              +img('progress/1.jpg')
+            .progress__gallery-item.js-progress-item
+              +img('progress/2.jpg')
+            .progress__gallery-item.js-progress-item
+              +img('progress/3.jpg')
+            .progress__gallery-item.big.js-progress-item
+              +img('progress/4.jpg')
+            .progress__gallery-item.big.js-progress-item
+              +img('progress/5.jpg')
+            .progress__gallery-item.js-progress-item
+              +img('progress/6.jpg')
+            .progress__gallery-item.js-progress-item
+              +img('progress/7.jpg')
+            .progress__gallery-item.big.js-progress-item
+              +img('progress/8.jpg')
 block footer
   include ../includes/footer.pug
 

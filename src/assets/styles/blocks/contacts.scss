@@ -53,6 +53,8 @@
 
       svg {
         fill: none;
+        stroke: #2A3341;
+        transition: all .4s;
       }
 
       .link-border-animation::before {
@@ -79,7 +81,7 @@
       }
 
       &:hover {
-        .link-border-animation::before {
+        &::before {
           transform: scaleX(1);
         }
       }
@@ -94,6 +96,8 @@
       justify-content: center;
       margin-right: 20px;
       border: 1px solid rgba(3, 24, 38, 0.2);
+      background-color: transparent;
+      transition: all .4s;
     }
   }
 

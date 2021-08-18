@@ -1,0 +1,105 @@
+#panorama-page {
+    .panorama {
+        position: relative;
+        margin-top: -15%;
+        height: 100vh;
+
+        @include to(1200px) {
+            margin-top: -18%;
+        }
+
+        &__img {
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        &__wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        &__info {
+            position: absolute;
+            top: 41%;
+            left: 65%;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .gallery__btn {
+            border: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__controls {
+            width: 100%;
+            &-top {
+                position: static;
+                top: 50%;
+                left: 0;
+                right: 0;
+                transform: translateY(-50%);
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &-bottom {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 50px;
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        .gallery-controls {
+            &__increase {
+                margin-right: 20px;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    transform: rotate(-45deg);
+                }
+            }
+
+            &__decrese {
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 14px;
+                    height: 1px;
+                    background-color: #555568;
+                    transition: all .4s;
+                }
+
+                &:hover {
+                    &::before {
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

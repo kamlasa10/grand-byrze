@@ -1,0 +1,93 @@
+.progress-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 1000;
+    align-items: center;
+    background-color: rgba(#E5E5E5, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s;
+
+    &.show {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    &__close {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        &-btn {
+            border: none;
+            background-color: transparent;
+
+            svg {
+                stroke: #fff;
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+    .gallery__btn {
+        border: none;
+        min-width: 60px;
+
+        &-prev {
+            margin-right: 58px;
+        }
+
+        &-next {
+            margin-left: 58px;
+        }
+    }
+
+    .progress-slider__month {
+        margin-bottom: 10px;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        line-height: 1em;
+    }
+
+    .gallery__info {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        bottom: 30px;
+
+        @include to(1370px) {
+            position: static;
+            margin-top: 20px;
+        }
+    }
+
+    .swiper-container {
+        height: 450px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .6s;
+        }
+
+        // .swiper-slide {
+        //     &:hover {
+        //         img {
+        //             transform: scale(1.2);
+        //         }
+        //     }
+        // }
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+
+    }
+}

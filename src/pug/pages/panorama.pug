@@ -1,0 +1,51 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Панорама 180'
+    var id_page = 'panorama-page'
+    var class_page = 'panorama-page'
+    var breadcrumbsLink = 'panorama'
+block scripts 
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/panorama.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Панорама 180
+    .panorama 
+        .panorama__img 
+            +img('panorama/1.jpg')
+        .panorama__wrap
+            .container
+                .panorama__info 
+                    button(type="button").btn 
+                        +svg('swipe')
+                .panorama__controls 
+                    .panorama__controls-top 
+                        button(type="button").gallery__btn.gallery__btn-prev
+                            +svg('slider-arrow')
+                        button(type="button").gallery__btn.gallery__btn-next
+                            +svg('slider-arrow')
+                .panorama__controls-bottom 
+                    button(type="button").gallery__btn.gallery-controls__increase
+                        +svg('cross')
+                    button(type="button").gallery__btn.gallery-controls__decrese
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

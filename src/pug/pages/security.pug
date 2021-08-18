@@ -1,0 +1,150 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Охорона'
+    var id_page = 'security-page'
+    var class_page = 'security-page'
+    var breadcrumbsLink = 'security'
+block scripts 
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/security.js')
+block meta
+  title= 'title'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block content
+  .wrapper
+    .page-top
+      .page-top__decor
+        +svg('big-round')
+      .container
+        .page-top__wrap
+          include ../includes/breadcrumbs.pug
+          h1.page-title Охорона
+    .security 
+        .security__block 
+            .container
+                .security__top 
+                    +img('security-logo.svg')
+                    .security__top-content 
+                        .security__top-desc.security__desc У ЖК Гранд Бурже ми робимо все, аби гарантувати спокій і впевненість дорослим та безпечне дитинство дітлахам. Наші комплексні заходи безпеки дозволяють попередити та швидко усунути будь-які позаштатні ситуації.
+        .security__block.security__info 
+            .container 
+                .security__title Територія житлового комплексу закрита для сторонніх
+                .security__info-wrap
+                    .security__desc Для мешканців діє картковий доступ: зайти можуть лише резиденти ЖК або запрошені гості. 
+        .section-with-scroll 
+            .security__item
+                .container
+                    .security__title Система цілодобового відеоспостереження охоплює всю територію
+                    .page-info 
+                        .page-info__left 
+                            .page-info__title Встановлено близько 100 камер:
+                        .page-info__right 
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc У кожному ліфті
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc У під'їздах
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Біля входів у секції
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc На дитячих майданчиках
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc По периметру комплексу
+            .security__item 
+                .container
+                    .security__title За безпеку у ЖК Гранд Бурже відповідає охоронна компанія “БЕСТ-охорона”.
+                    .page-info 
+                        .page-info__left 
+                            .page-info__title Фахівці компанії контролюють:
+                        .page-info__right 
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Пропускну систему
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Доступ транспорту на територію
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Виконують патрулювання
+                            .page-info__item 
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Проводять відеоспостереження
+                            .security__desc Кожен резидент комплексу може замовити додаткові послуги з охорони квартири за допомогою провідної системи Ajax.
+            .security__item 
+                .container
+                    .security__title Охоронна компанія “БЕСТ-охорона” пропонує особливі умови для власників квартир ЖК “Гранд Бурже”:
+                    .page-info 
+                        .page-info__left 
+                        .page-info__right 
+                            .page-info__item 
+                                .page-info__item-left 
+                                    +svg('big-logo-decor')
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc При підключенні квартири до пульта охорони — три місяці безкоштовно з подальшою мінімальною абонплатою
+                            .page-info__item 
+                                .page-info__item-left 
+                                    +svg('big-logo-decor')
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Роботи з монтажу охоронної сигналізації — за одну гривню
+                            .page-info__item 
+                                .page-info__item-left 
+                                    +svg('big-logo-decor')
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Безоплатне обслуговування системи та підтримка програмного забезпечення
+            .security__item 
+                .container
+                    .security__title Переваги такої охорони незаперечні:
+                    .page-info 
+                        .page-info__left 
+                        .page-info__right 
+                            .page-info__item 
+                                .page-info__item-left 
+                                    +svg('big-logo-decor')
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc Вашу квартиру цілодобово охороняє та сама компанія, що і житловий комплекс
+                            .page-info__item 
+                                .page-info__item-left 
+                                    +svg('big-logo-decor')
+                                .page-info__item-right 
+                                    +svg('custom-triangle')
+                                    .page-info__item-desc При спрацюванні сигналізації екіпаж реагує блискавично, і група швидкого реагування чітко та злагоджено співпрацює з працівниками охорони комплексу
+                            .security__desc.security__desc--correct На пульти централізованого спостереження можливе підключення систем охоронної та пожежної сигналізації різних виробників. Використовується обладнання із захистом каналів передачі даних, а спроби блокування мережі зв'язку призводять до формування сигналу “Тривога” на пульті.
+        .security__bottom
+            .container 
+                .security__bottom-wrap.security__info-wrap
+                    .security__desc.security__bottom-desc Пультова охорона захищає від крадіжки майна, нападів, пожежі, затоплення та просочування газу. Ми подбаємо про вашу безпеку!
+                .security__title Ми подбаємо про вашу безпеку!
+                .security__bottom-wrap.security__info-wrap
+                    .security__bottom-block 
+                        a(href="#").btn-with-icon
+                            span.btn
+                                +svg('btn-decor')
+                            span.btn-with-icon-text.link-border-animation Обрати квартиру
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
