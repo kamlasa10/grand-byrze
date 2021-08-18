@@ -57,38 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let pageId = document.body.getAttribute('id')
 
   switch(pageId) {
-    case 'documents-page':
+    case 'index-page':
+      window.initCustomScroll(true)
+      break
+    case 'features-page':
       window.initCustomScroll(false)
       break
-    case 'paymant-page':
+    case 'location-page':
       window.initCustomScroll(false)
       break
-    case 'stitching-page':
+    case 'investor-page':
       window.initCustomScroll(false)
       break
-    case 'credit-page':
+    default:
       window.initCustomScroll(false)
-      break
-    case 'company-page':
-      window.initCustomScroll(false)
-      break
-    case 'service-page':
-      window.initCustomScroll(false)
-      break
-    case 'developer-page':
-      window.initCustomScroll(false)
-      break
-    case 'gallery-page':
-      window.initCustomScroll(false)
-      break
-    case 'contacts-page':
-      window.initCustomScroll(false)
-      break
-    case 'contacts-page':
-      window.initCustomScroll(false)
-      break
-    default: 
-      window.initCustomScroll()
   }
 })
 
