@@ -459,16 +459,16 @@
   }
 }
 
-.section-with-scroll {
-  margin-bottom: 100px;
-  height: calc(100vh - 100px);
-  overflow: hidden;
-  overflow-y: scroll;
+// .section-with-scroll {
+//   margin-bottom: 100px;
+//   height: calc(100vh - 100px);
+//   overflow: hidden;
+//   overflow-y: scroll;
 
-  &::-webkit-scrollbar {
-    width: 0px;
-  }
-}
+//   &::-webkit-scrollbar {
+//     width: 0px;
+//   }
+// }
 
 .block-with-img {
   @include pageOffsetTop;
