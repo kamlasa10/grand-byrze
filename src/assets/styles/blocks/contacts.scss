@@ -31,7 +31,8 @@
   }
 
   &__list {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     row-gap: 50px;
   }
 
@@ -81,8 +82,23 @@
       }
 
       &:hover {
-        &::before {
-          transform: scaleX(1);
+        .link-border-animation {
+          &::before {
+            transform: scaleX(1);
+          }
+        }
+      }
+
+      &--link {
+        &:hover {
+          .contacts__item-icon {
+            background-color: $blue;
+            border-color: transparent;
+
+            svg {
+              stroke: #fff;
+            }
+          }
         }
       }
     }
