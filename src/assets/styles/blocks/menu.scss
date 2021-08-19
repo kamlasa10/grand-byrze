@@ -10,6 +10,8 @@
     opacity: 0;
     pointer-events: none;
     transition: all .7s;
+    display: flex;
+    flex-direction: column;
 
     &.show {
         opacity: 1;
@@ -20,6 +22,15 @@
         position: relative;
         padding-left: 50px;
         padding-right: 50px;
+    }
+
+    &__wrap {
+        margin-top: auto;
+        height: calc(100vh - 275px);
+
+        @include to(1440px) {
+            height: calc(100vh - 215px);
+        }
     }
 
     &__header {
@@ -38,12 +49,16 @@
         
 
         &-title {
-            font-size: 48px;
+            font-size: 52px;
             line-height: 1em;
             font-family: $default-font2;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin-right: 50px;
+
+            @include to(1440px) {
+                font-size: 48px;
+            }
         }
 
         .header__popup-btn {
@@ -54,12 +69,20 @@
             top: -30px;
 
             .header__logo {
-                width: 120px;
-                height: 120px;
+                width: 180px;
+                height: 180px;
 
                 img {
-                    width: 59px;
-                    height: 87px;
+                    height: 130px;
+
+                    @include to(1440px) {
+                        height: 87px;
+                    }
+                }
+
+                @include to(1440px) {
+                    width: 120px;
+                    height: 120px;
                 }
             }
         }
@@ -67,8 +90,13 @@
         .menu-btn {
             svg {
                 stroke: #fff;
-                width: 15px;
-                height: 15px;
+                width: 18px;
+                height: 18px;
+
+                @include to(1440px) {
+                    width: 15px;
+                    height: 15px;
+                }
             }
         }
     }
@@ -78,8 +106,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding-bottom: 55px;
+        height: 100%;
+        padding-bottom: 50px;
+
+        @media (min-width: 2000px) {
+            padding-top: 0;
+            padding-bottom: 0;
+            justify-content: center;
+        }
 
         &::-webkit-scrollbar-track {
             background: transparent;
@@ -107,13 +141,17 @@
 
     &__title {
         margin-bottom: 30px;
-        font-size: 36px;
+        font-size: 48px;
         line-height: 1em;
         font-family: $default-font2;
         color: #646C79;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         text-decoration: none;
+
+        @include to(1440px) {
+            font-size: 36px;
+        }
 
         &-link {
             margin-bottom: 0;
@@ -128,18 +166,26 @@
         display: flex;
 
         .menu__item:not(:last-child) {
-            margin-right: 32px;
+            margin-right: 50px;
+
+            @include to(1440px) {
+                margin-right: 32px;
+            }
         }
     }
 
     &__link {
         position: relative;
-        font-size: 12px;
+        font-size: 18px;
         line-height: 1em;
         letter-spacing: 0.02em;
         color: inherit;
         text-decoration: none;
         text-transform: uppercase;
+
+        @include to(1440px) {
+            font-size: 12px;
+        }
 
         &::before {
             content: "";
@@ -177,16 +223,5 @@
     }
 
     &__container {
-        height: calc(100% - 200px);
-        margin-top: 200px;
-
-        @include to(1440px) {
-            height: calc(100% - 165px);
-        }
-
-        @include to(1370px) {
-            margin-top: 200px;
-            height: calc(100% - 200px)
-        }
     }
 }

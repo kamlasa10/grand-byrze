@@ -1,8 +1,5 @@
 .contacts {
-  display: flex;
-  align-items: center;
   background-color: #fff;
-  padding: 150px 0;
 
   .container {
     width: 100%;
@@ -10,6 +7,10 @@
 
   &__title {
     margin-bottom: 20px;
+
+    @media (min-width: 1500px) {
+      font-size: 74px;
+    }
   }
 
   &__content {
@@ -33,24 +34,37 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 50px;
+    row-gap: 60px;
+
+    @include to(1440px) {
+      row-gap: 50px;
+    }
   }
 
   &__item {
     &-title {
-      margin-bottom: 10px;
-      font-size: 24px;
+      margin-bottom: 20px;
+      font-size: 26px;
       line-height: 1em;
       font-family: $default-font2;
       color: #8e837b;
+
+      @include to(1440px) {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
     }
 
     &-block {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       text-decoration: none;
       color: $black;
+
+      @include to(1440px) {
+        margin-bottom: 10px;
+      }
 
       svg {
         fill: none;

@@ -40,9 +40,18 @@
 
   &__wrap {
     display: grid;
-    grid-template-columns: 1fr 370px 200px;
-    column-gap: 95px;
+    grid-template-columns: 1fr 515px 200px;
+    column-gap: 186px;
     align-items: flex-start;
+
+    @include to(1650px) {
+      column-gap: 103px;
+    }
+
+    @include to(1440px) {
+      grid-template-columns: 1fr 370px 200px;
+      column-gap: 95px;
+    }
 
     @include to(1250px) {
       column-gap: 55px;
@@ -57,8 +66,6 @@
   &__item {
     &-title {
       margin-bottom: 15px;
-      font-size: 24px;
-      line-height: 1em;
       font-family: $default-font2;
       color: #8e837b;
     }
@@ -76,11 +83,17 @@
 
   &__left {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    column-gap: 102px;
-    row-gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 260px;
+    row-gap: 60px;
 
-    @include to(1250px) {
+    @include to(1650px) {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      column-gap: 102px;
+      row-gap: 40px;
+    }
+
+    @include to(1300px) {
       column-gap: 50px;
     }
   }
@@ -88,15 +101,22 @@
   &__center {
     position: relative;
     overflow: hidden;
-    padding: 40px 50px;
+    padding: 60px;
+    padding-bottom: 100px;
     box-shadow: 0px 50px 100px rgba(226, 62, 40, 0.1);
 
+    @include to(1440px) {
+      padding: 40px 50px;
+    }
+
     &-title {
-      margin-bottom: 20px;
-      font-size: 24px;
-      line-height: 1.2em;
+      margin-bottom: 35px;
       color: $black;
       font-family: $default-font2;
+
+      @include to(1440px) {
+        margin-bottom: 20px;
+      }
     }
 
     .footer-form {
@@ -107,9 +127,14 @@
         transform: translateX(50%);
 
         svg {
-          width: 169px;
-          height: 201px;
+          width: 290px;
+          height: 251px;
           fill: rgba(142, 131, 123, 0.2);
+
+          @include to(1440px) {
+            width: 169px;
+            height: 201px;
+          }
         }
       }
     }

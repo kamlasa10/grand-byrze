@@ -1,0 +1,51 @@
+.video {
+    background-color: rgba(#E5E5E5, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+
+    &.show {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    iframe {
+        width: 90vw;
+        height: 80vh;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 25px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+
+        &__close {
+            margin-left: auto;
+        }
+
+        svg {
+            stroke: #fff;
+            width: 18px;
+            height: 18px;
+
+            @include to(1440px) {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}

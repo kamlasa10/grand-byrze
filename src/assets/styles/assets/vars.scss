@@ -11,12 +11,14 @@ $blue: #0951BE;
 
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
-  --header-h: 130px;
+  --header-h: 180px;
   --page-header-h: 140px;
+  --padding-page: 180px;
 }
 
 @media screen and (max-width: 1440px){
   :root {
+    --padding-page: 150px;
     --header-h: 110px;
     --logo-w: 120px;
     --sliceFigure-big: 362px;

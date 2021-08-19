@@ -82,6 +82,7 @@
   }
 
 @mixin btnWithText {
+	font-family: $default-font;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -91,12 +92,16 @@
 	background-color: #fff;
 	font-weight: 500;
 	font-size: 14px;
-	width: 220px;
+	width: 264px;
 	line-height: 1em;
 	min-height: 50px;
 	text-decoration: none;
 	color: inherit;
 	transition: all .4s;
+
+	@include to(1440px) {
+		width: 220px;
+	}
 
 	&:hover {
 		color: $blue;

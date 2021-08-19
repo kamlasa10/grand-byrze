@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       speed: 700,
       autoHeight: true,
       slidesPerView: 3.3,
+      freeMode: true,
       adaptiveHeight: true,
       allowTouchMove: false,
       breakpoints: {
@@ -39,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const maxOffsetTop = $(container).find('.swiper-slide img')[0].getBoundingClientRect().height
       let directionName = ''
   
-      $(wrapper).css({cursor: 'none'})
       customCursor.css({opacity: 1, display: 'flex'})
   
       if(e.originalEvent.clientX > prevCoord) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       document.onmousemove = function(e) {
-        customCursor.css({transform: `translate(${e.clientX - 50}px, ${e.layerY}px)`})
+        customCursor.css({transform: `translate(${e.clientX - 50}px, ${e.layerY - 25}px)`})
   
         if(prevCoord < e.clientX) {
           if(isFirstForGallery) {

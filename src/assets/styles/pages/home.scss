@@ -38,27 +38,40 @@
     }
 
     &__title {
-      font-size: 72px;
+      font-size: 96px;
+      letter-spacing: 0.15em;
       line-height: 1em;
       font-family: $default-font2;
       text-transform: uppercase;
 
+      @include to(1440px) {
+        font-size: 72px;
+      }
+
       &--img {
         margin-bottom: 15px;
-        width: 382px;
+        width: 554px;
+
+        @include to(1440px) {
+          width: 382px;
+        }
       }
     }
 
     &__desc {
       font-family: $default-font2;
       margin-bottom: 40px;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1em;
       text-transform: uppercase;
+
+      @include to(1440px) {
+        font-size: 18px;
+      }
     }
 
     &__link {
-      font-size: 12px;
+      font-size: 14px;
       line-height: 1em;
       font-weight: 500;
       text-transform: uppercase;
@@ -66,6 +79,10 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
+
+      @include to(1440px) {
+        font-size: 12px;
+      }
 
       &::before {
         background: #eceae1;
@@ -90,11 +107,12 @@
       position: absolute;
       bottom: 56px;
       left: 72px;
-      width: 110px;
+      width: 140px;
       z-index: 10;
 
-      @include to(1370px) {
+      @include to(1440px) {
         left: 50px;
+        width: 110px;
       }
     }
 
@@ -105,21 +123,31 @@
       bottom: 50px;
       left: 50%;
       transform: translateX(-50%);
-      width: 42px;
-      height: 42px;
+      width: 50px;
+      height: 50px;
       background-color: $black;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all .4s;
 
+      @include to(1440px) {
+        width: 42px;
+        height: 42px;
+      }
+
       svg {
         fill: none;
         stroke: #fff;
-        width: 14px;
-        height: 14px;
+        width: 20px;
+        height: 20px;
         animation: arrowDown 1.2s infinite linear;
         transition: all .4s;
+
+        @include to(1440px) {
+          width: 14px;
+          height: 14px;
+        }
       }
 
       &:hover {
@@ -180,8 +208,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 45vw;
-      height: 56vh;
+      width: 350px;
+      height: 415px;
+
+      @include to(1440px) {
+        width: 45vw;
+        height: 56vh;
+      }
 
       svg {
         width: 100%;
@@ -218,22 +251,35 @@
     }
 
     &__title {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+
+      @include to(1440px) {
+        margin-bottom: 40px;
+      }
     }
 
     &__right {
-      max-width: 423px;
-      padding-right: 93px;
+      max-width: 481px;
+      margin-right: 130px;
+
+      @include to(1440px) {
+        margin-right: 0;
+        max-width: 423px;
+        padding-right: 93px;
+      }
     }
   }
 
   .gallery {
+    position: relative;
+
     &__wrap {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      height: 600px;
+      height: 645px;
+      column-gap: 4px;
 
-      @include to(1370px) {
+      @include to(1400px) {
         height: 500px;
       }
 
@@ -258,13 +304,17 @@
     }
 
     &__info {
-      width: 65vw;
-      transform: translateY(-50%);
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      left: 0;
+      width: 70vw;
+      transform: translateY(50%);
       display: flex;
       justify-content: center;
       margin: 0 auto;
 
-      @include to(1370px) {
+      @include to(1440px) {
         width: 68vw;
       }
 
@@ -272,9 +322,18 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 70px;
+        justify-content: space-between;
+        padding: 70px 150px;
         background-color: #fff;
+
+        @media (min-width: 2000px) {
+          padding: 70px 15vw;
+          justify-content: space-between;
+        }
+
+        @include to(1650px) {
+          padding: 70px 100px;
+        }
 
         @include to(1250px) {
           padding: 50px;
@@ -295,11 +354,10 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding-bottom: 300px;
+    min-height: 100vh;
 
     @include to(1250px) {
       margin-top: -50px;
-      padding-bottom: 250px;
     }
 
     &__decor {
@@ -326,18 +384,53 @@
     }
 
     &__item {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-right: 82px;
+      margin-right: 82px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        right: 0;
+        top: 9px;
+        bottom: 9px;
+        background-color: #DFDCCE;
+      }
 
       &:not(:last-child) {
-        border-right: 1px solid #dfdcce;
-        padding-right: 72px;
-        margin-right: 72px;
+        @include to(1650px) {
+          padding-right: 72px;
+          margin-right: 72px;
+        }
 
         @include to(1250px) {
           padding-right: 40px;
           margin-right: 40px;
+        }
+      }
+
+      
+      @include to(1650px) {
+        &::before {
+          top: 7px;
+          bottom: 7px;
+        }
+
+        &:last-child {
+          padding-right: 0;
+          margin-right: 0;
+
+          &::before {
+            display: none;
+          }
         }
       }
     }
@@ -347,6 +440,7 @@
       font-size: 20px;
       line-height: 1.2em;
       text-transform: uppercase;
+      text-align: center;
       font-family: $default-font2;
     }
 
@@ -361,7 +455,11 @@
     }
 
     &-tabs {
-      min-width: 334px;
+      min-width: 477px;
+
+      @include to(1600px) {
+        min-width: 334px;
+      }
 
       &__list {
         display: grid;
@@ -389,8 +487,8 @@
     &__tab {
       border: none;
       background-color: $black;
-      padding: 10px;
-      font-size: 9px;
+      padding: 14px 10px;
+      font-size: 12px;
       line-height: 1em;
       font-weight: 700;
       text-transform: uppercase;
@@ -400,8 +498,17 @@
       cursor: pointer;
       transition: all 0.4s;
 
+      @include to(1440px) {
+        padding: 10px;
+        font-size: 9px;
+      }
+
       &-block {
-        padding-bottom: 5px;
+        padding-bottom: 10px;
+
+        @include to(1440px) {
+          padding-bottom: 5px;
+        }
 
         &.show {
           background-color: #fff;
@@ -447,23 +554,33 @@
     }
 
     &__title {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       font-family: $default-font2;
-      font-size: 64px;
+      font-size: 66px;
       line-height: 0.9em;
       color: #eceae1;
       text-transform: uppercase;
-      max-width: 600px;
+      max-width: 670px;
+
+      @include to(1440px) {
+        max-width: 600px;
+        font-size: 64px;
+        margin-bottom: 50px;
+      }
 
       span {
+        display: inline-block;
+      }
+
+      &-mark {
+        margin-left: 0;
         -webkit-text-stroke: 1px #efbc48;
         color: transparent;
-        display: block;
       }
     }
 
     &__desc {
-      max-width: 423px;
+      max-width: 410px;
       margin-left: 90px;
     }
   }
@@ -471,9 +588,9 @@
   .features {
     position: relative;
 
-    // @include to(1440px) {
-    //     padding-top: 130px;
-    // }
+    @include to(1440px) {
+      padding: 0;
+    }
 
     @include to(1100px) {
       .features__content {
@@ -487,27 +604,54 @@
     }
 
     &__decor {
-      transform: translateY(-50%);
-      width: 150px;
-      height: 150px;
+      position: absolute;
+      top: 0;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      width: 200px;
+      height: 200px;
       background-color: #fff;
       border-radius: 50%;
       padding: 5px;
       margin: 0 auto;
+
+      @include to(1440px) {
+        width: 150px;
+        height: 150px;
+      }
     }
 
     &__container {
-      display: flex;
-      align-items: center;
+      padding-left: 159px;
+      padding-right: 235px;
+
+      @include to(1440px) {
+        align-items: flex-start;
+        min-height: auto;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
     }
 
     &__content {
       display: grid;
-      grid-template-columns: 3fr 1fr;
+      grid-template-columns: 623px 667px;
+      width: 100%;
+      justify-content: space-between;
       column-gap: 80px;
       align-items: center;
-      min-height: calc(100vh - 150px);
-      padding-right: 60px;
+
+      @include to(1440px) {
+        min-height: auto;
+        align-items: flex-start;
+        padding-right: 0;
+      }
+
+      @include to(1200px) {
+        min-height: auto;
+        align-items: flex-start;
+        grid-template-columns: 0.9fr 1fr;
+      }
 
       @include to(1150px) {
         column-gap: 50px;
@@ -518,19 +662,6 @@
       img {
         object-fit: cover;
         max-height: 750px;
-
-        @include to(1440px) {
-          height: 83vh;
-        }
-
-        @include to(1150px) {
-          height: 73vh;
-          max-height: 650px;
-        }
-
-        @include to(1025px) {
-          height: 67vh;
-        }
       }
     }
 
@@ -539,12 +670,20 @@
     }
 
     &__wrap {
-      width: 330px;
+      width: 481px;
       margin-left: 90px;
+
+      @include to(1440px) {
+        max-width: 330px;
+      }
     }
 
     &__desc {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+
+      @include to(1440px) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -563,8 +702,16 @@
 
     &__content {
       position: relative;
-      padding-top: 150px;
-      padding-bottom: 90px;
+      padding-top: 180px;
+      padding-bottom: 220px;
+
+      @include to(1750px) {
+        padding-top: 150px;
+      }
+
+      @include to(1440px) {
+        padding-bottom: 90px;
+      }
 
       @include to(1150px) {
         padding-top: 100px;
@@ -592,6 +739,10 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
+        @include to(1750px) {
+          justify-content: center;
+        }
+
         @include to(1150px) {
           justify-content: center;
         }
@@ -599,7 +750,11 @@
     }
 
     &__left {
-      max-width: 600px;
+      max-width: 800px;
+
+      @include to(1440px) {
+        max-width: 600px;
+      }
 
       @include to(1150px) {
         margin-bottom: 30px;
@@ -607,7 +762,16 @@
     }
 
     &__right {
-      max-width: 423px;
+      max-width: 612px;
+
+      @include to(1750px) {
+        margin-top: 35px;
+      }
+
+      @include to(1440px) {
+        margin-top: 0;
+        max-width: 423px;
+      }
 
       @include to(1150px) {
         max-width: 600px;
@@ -616,7 +780,11 @@
     }
 
     &__desc {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+
+      @include to(1440px) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -625,11 +793,16 @@
 
     &__top {
       color: #eceae1;
-      padding-top: 150px;
-      padding-bottom: 30px;
+      padding-top: 170px;
+      padding-bottom: 57px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+
+      @include to(1440px) {
+        padding-top: 150px;
+        padding-bottom: 30px;
+      }
 
       @include to(1050px) {
         padding-top: 100px;
@@ -650,14 +823,20 @@
       font-family: $default-font2;
       font-size: 64px;
       line-height: 0.9em;
-      max-width: 500px;
+      max-width: 670px;
+      color: #ECEAE1;
       text-transform: uppercase;
+
+      @include to(1440px) {
+        max-width: 630px;
+      }
 
       @include to(1050px) {
         margin-bottom: 30px;
       }
 
-      span {
+      .infra__title-mark {
+        margin-left: 0;
         color: transparent;
         font-style: italic;
         -webkit-text-stroke: 1px #efbc48;
@@ -665,7 +844,11 @@
     }
 
     &__content {
-      max-width: 423px;
+      max-width: 612px;
+
+      @include to(1440px) {
+        max-width: 423px;
+      }
 
       @include to(1050px) {
         max-width: 500px;
@@ -673,8 +856,7 @@
     }
 
     &__desc {
-      font-size: 14px;
-      line-height: 1.4em;
+      line-height: 1.6em;
 
       &:not(:last-child) {
         margin-bottom: 20px;
@@ -700,7 +882,12 @@
 
   .location {
     .features__content {
-      padding-right: 130px;
+      padding-right: 0;
+      column-gap: 236px;
+
+      @include to(1440px) {
+        column-gap: 80px;
+      }
 
       @include to(1250px) {
         padding-right: 50px;

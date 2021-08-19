@@ -1,5 +1,11 @@
 button(type="button").btn-top.js-btn-top
     +svg('arrow-down')
+.video.js-video
+    .video__wrap
+        .video__block
+            button(type="button").btn.js-video-close.video__close
+                +svg('cross')
+        <iframe class="js-video-container" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 .menu.js-menu 
     .menu__header
         .big-container
@@ -17,45 +23,46 @@ button(type="button").btn-top.js-btn-top
                     | закрити
                     span.btn 
                         +svg('cross') 
-    nav.big-container.menu__container 
-        .menu__block 
-            .menu__title Про проєкт
-            ul.menu__list 
-                li.menu__item 
-                    a(href="#").menu__link Галерея
-                li.menu__item
-                    a(href="#").menu__link Панорама 180
-                li.menu__item
-                    a(href="#").menu__link Обслуговуюча компанія
-                li.menu__item
-                    a(href="#").menu__link Забудовник
-                li.menu__item
-                    a(href="#").menu__link Пост Сервіс
-                li.menu__item
-                    a(href="#").menu__link Охорона
-                li.menu__item
-                    a(href="#").menu__link Хід будівництва
-                li.menu__item
-                    a(href="#").menu__link Документи
-        .menu__block 
-            .menu__title Про Комплекс
-            ul.menu__list 
-                li.menu__item 
-                    a(href="#").menu__link Галерея
-                li.menu__item
-                    a(href="#").menu__link Локацiя
-                li.menu__item
-                    a(href="#").menu__link Iнфраструктура
-                li.menu__item
-                    a(href="#").menu__link  комплектація квартир
-        .menu__block 
-            a(href="#").menu__title.link-border-animation.menu__title-link.menu__title-link--dark Обрати квартиру
-        .menu__block 
-            a(href="#").menu__title.menu__title-link.link-border-animation Умови
-        .menu__block 
-            a(href="#").menu__title.menu__title-link.link-border-animation.menu__title-link--dark Для інвестора 
-        .menu__block 
-            a(href="#").menu__title.menu__title-link.link-border-animation.menu__title-link--dark Контакти
+    .menu__wrap
+        nav.big-container.menu__container 
+            .menu__block 
+                .menu__title Про проєкт
+                ul.menu__list 
+                    li.menu__item 
+                        a(href="#").menu__link Галерея
+                    li.menu__item
+                        a(href="#").menu__link Панорама 180
+                    li.menu__item
+                        a(href="#").menu__link Обслуговуюча компанія
+                    li.menu__item
+                        a(href="#").menu__link Забудовник
+                    li.menu__item
+                        a(href="#").menu__link Пост Сервіс
+                    li.menu__item
+                        a(href="#").menu__link Охорона
+                    li.menu__item
+                        a(href="#").menu__link Хід будівництва
+                    li.menu__item
+                        a(href="#").menu__link Документи
+            .menu__block 
+                .menu__title Про Комплекс
+                ul.menu__list 
+                    li.menu__item 
+                        a(href="#").menu__link Галерея
+                    li.menu__item
+                        a(href="#").menu__link Локацiя
+                    li.menu__item
+                        a(href="#").menu__link Iнфраструктура
+                    li.menu__item
+                        a(href="#").menu__link  комплектація квартир
+            .menu__block 
+                a(href="#").menu__title.link-border-animation.menu__title-link.menu__title-link--dark Обрати квартиру
+            .menu__block 
+                a(href="#").menu__title.menu__title-link.link-border-animation Умови
+            .menu__block 
+                a(href="#").menu__title.menu__title-link.link-border-animation.menu__title-link--dark Для інвестора 
+            .menu__block 
+                a(href="#").menu__title.menu__title-link.link-border-animation.menu__title-link--dark Контакти
     .language.menu__language 
         span.language__current.language__text Ru 
         .language__list 

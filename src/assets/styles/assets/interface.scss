@@ -215,8 +215,13 @@
   background-color: $red;
   border-radius: 50%;
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+
+  @include to(1440px) {
+    width: 60px;
+    height: 60px;
+  }
 
   &:hover {
     background-color: $blue;
@@ -231,12 +236,16 @@
 
 .popup-btn {
   @include btnWithText;
-  font-size: 12px;
   text-transform: uppercase;
+
+  @include to(1440px) {
+    font-size: 12px;
+  }
 }
 
 .menu-btn {
-  font-size: 12px;
+  font-family: $default-font;
+  font-size: 14px;
   line-height: 1em;
   color: $black;
   font-weight: 500;
@@ -245,12 +254,21 @@
   border: none;
   cursor: pointer;
 
+  @include to(1440px) {
+    font-size: 12px;
+  }
+
   span {
     margin-left: 20px;
 
     svg {
-      width: 14px;
-      height: 12px;
+      width: 17px;
+      height: 14px;
+
+      @include to(1440px) {
+        width: 14px;
+        height: 12px;
+      }
     }
   }
 
@@ -308,10 +326,14 @@
 .big-title,
 .custom-title {
   text-transform: uppercase;
-  font-size: 72px;
+  font-size: 96px;
   line-height: 0.9em;
   color: $black;
   font-family: $default-font2;
+
+  @include to(1440px) {
+    font-size: 72px;
+  }
 }
 
 .field-error-msg {
@@ -326,7 +348,7 @@
 .btn-with-icon {
   display: inline-flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1em;
   font-family: $default-font2;
   text-transform: uppercase;
@@ -334,6 +356,10 @@
   border: none;
   background-color: transparent;
   text-decoration: none;
+
+  @include to(1440px) {
+    font-size: 18px;
+  }
 
   .btn {
     margin-right: 20px;
@@ -376,11 +402,16 @@
   &::before {
     content: '';
     display: inline-flex;
-    width: 45px;
-    height: 6px;
+    width: 56px;
+    height: 8px;
     margin-right: 25px;
     border: 1px solid $red;
     transform: rotate(-15deg) translateY(-5px);
+
+    @include to(1440px) {
+      width: 45px;
+      height: 6px;
+    }
   }
 }
 
@@ -425,7 +456,7 @@
 
 .btn-top {
   position: fixed;
-  bottom: 50px;
+  bottom: 80px;
   right: 50px;
   width: 42px;
   height: 42px;
@@ -503,5 +534,47 @@
         opacity: 0.8;
       }
     }
+  }
+}
+
+.overlay-block {
+  top: 0;
+  position: sticky;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  &__bg {
+    background: linear-gradient(144deg, #FFFDF3 0%, #F0EEE3 99.99%);
+    height: 100%;
+  }
+}
+
+.large-container-desk {
+  @media (min-width: 1500px) {
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 290px !important;
+  }
+}
+
+.page-text {
+  font-size: 26px;
+  line-height: 1em;
+  color: $black;
+
+  @include to(1440px) {
+    font-size: 24px;
+  }
+}
+
+.center-sec {
+  padding: var(--padding-page) 0;
+
+  @media(min-width: 2000px) {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
   }
 }
