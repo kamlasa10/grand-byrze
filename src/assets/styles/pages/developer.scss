@@ -16,11 +16,16 @@
         }
 
         &__wrap {
-            padding-bottom: 100px;
-            margin-left: 90px;
+            padding-bottom: var(--scroll-features-offset);
             display: grid;
-            grid-template-columns: 183px 593px;
-            column-gap: 80px;
+            grid-template-columns: 279px 635px;
+            column-gap: 126px;
+
+            @include to(1440px) {
+              margin-left: 90px;
+              grid-template-columns: 183px 593px;
+              column-gap: 80px;
+            }
         }
 
         &__content {
@@ -38,11 +43,15 @@
         }
 
         &__desc {
-            max-width: 370px;
+            max-width: 530px;
+
+            @include to(1440px) {
+              max-width: 370px;
+            }
         }
     }
 
     .page-slider {
-        padding-top: 100px;
+        padding-top: var(--scroll-features-offset);
     }
 }

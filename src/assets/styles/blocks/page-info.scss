@@ -1,8 +1,13 @@
 .page-info {
     display: grid;
-    grid-template-columns: 370px 640px;
+    grid-template-columns: 536px 1fr;
     justify-content: space-between;
-    column-gap: 80px;
+    column-gap: 90px;
+
+    @include to(1440px) {
+      grid-template-columns: 370px 640px;
+      column-gap: 80px;
+    }
 
     &__left {
         top: 0;
@@ -16,8 +21,13 @@
         position: sticky;
         bottom: 40px;
         margin-bottom: 90px;
-        width: 198px;
-        height: 235px;
+        width: 220px;
+        height: 260px;
+
+        @include to(1440px) {
+          width: 198px;
+          height: 235px;
+        }
 
         svg {
             width: 100%;
@@ -34,22 +44,32 @@
 
     &__right {
         display: grid;
-        row-gap: 30px;
+        row-gap: 40px;
+
+        @include to(1440px) {
+          row-gap: 30px;
+        }
     }
 
     &__item {
         display: flex;
 
         &-left {
-            margin-right: 40px;
+            margin-right: 60px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 60px;
-            height: 60px;
+            min-width: 70px;
+            height: 70px;
             border-radius: 50%;
             background-color: $blue;
             color: #fff;
+
+            @include to(1440px) {
+              margin-right: 40px;
+              min-width: 60px;
+              height: 60px;
+            }
         }
 
         &-right {
@@ -63,13 +83,14 @@
                 top: 0;
                 left: 0;
                 transform: translateX(-100%);
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
+
+                @include to(1440px) {
+                  width: 30px;
+                  height: 30px;
+                }
             }
-        }
-        
-        &-desc {
-            max-width: 433px;
         }
     }
 }

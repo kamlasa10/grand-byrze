@@ -36,26 +36,38 @@
 
       &-title {
         margin-bottom: 5px;
-        font-size: 36px;
+        font-size: 38px;
         line-height: 1em;
         font-family: $default-font2;
         color: $black;
+
+        @include to(1440px) {
+          font-size: 36px;
+        }
       }
 
       &-month {
         color: $black;
         margin-bottom: 18px;
-        font-size: 14px;
-        line-height: 1em
+        font-size: 16px;
+        line-height: 1em;
+
+        @include to(1440px) {
+          font-size: 14px;
+        }
       }
 
       &-year {
         position: relative;
         padding-top: 6px;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1em;
         display: inline-flex;
         color: $black;
+
+        @include to(1440px) {
+          font-size: 12px;
+        }
 
         &::before {
           content: "";
@@ -69,11 +81,18 @@
     }
 
     &__desc {
-      max-width: 470px;
-      font-size: 18px;
+      margin-left: 100px;
+      margin-right: 100px;
       line-height: 1.5em;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+
+      @include to(1440px) {
+        font-size: 18px;
+        max-width: 470px;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
     &__pdf {

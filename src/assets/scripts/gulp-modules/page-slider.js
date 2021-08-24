@@ -18,10 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         1300: {
           slidesPerView: 3.3
+        },
+        1450: {
+          slidesPerView: 3.6
         }
       }
     })
-  
+
     function stopMoveInCursor(e) {
       e.stopPropagation()
       $(wrapper).css({cursor: 'default'})
@@ -29,19 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
       document.onmousemove = null
       document.onClick = null
     }
-  
+
     let prevCoord = document.documentElement.clientWidth / 1.8
     let currentCordX
     let isFirstForGallery = true
-  
+
     function startMoveInCursor(e) {
       const customCursor = $(wrapper).find('.js-page-slider-controller')
       console.log(customCursor)
       const maxOffsetTop = $(container).find('.swiper-slide img')[0].getBoundingClientRect().height
       let directionName = ''
-  
+
       customCursor.css({opacity: 1, display: 'flex'})
-  
+
       if(e.originalEvent.clientX > prevCoord) {
         directionName = 'right'
         customCursor.removeClass('back')
@@ -49,10 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
         directionName = 'left'
         customCursor.addClass('back')
       }
-  
+
       document.onmousemove = function(e) {
         customCursor.css({transform: `translate(${e.clientX - 50}px, ${e.layerY - 25}px)`})
-  
+
         if(prevCoord < e.clientX) {
           if(isFirstForGallery) {
             customCursor.removeClass('back')
@@ -68,10 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
         }
-  
+
         currentCordX = e.clientX
       }
-  
+
       document.onclick = function() {
         if(directionName === 'right') {
           slider.slideNext()
@@ -80,15 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     }
-  
+
     $(container).on('mouseenter', startMoveInCursor)
     $(container).on('mouseleave', stopMoveInCursor)
-  
+
     $(window).on('resize', () => {
       const offsetLeft =  title[0].getBoundingClientRect().left
       $(container).css('padding-left', `${offsetLeft}px`)
       $(container).css('padding-right', `${offsetLeft}px`)
-  
+
       slider.update()
     }).resize()
   })

@@ -6,7 +6,8 @@ block variable
     var id_page = 'developer-page'
     var class_page = 'develope-page'
     var breadcrumbsLink = 'developer'
-block scripts 
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/developer.js')
@@ -28,7 +29,7 @@ block content
     .developer 
         .container.help-container.js-calculate-offset Group
         .developer__block
-            .container
+            .container.large-container-desk
                 .developer__wrap 
                     +img('developer-dark.svg')
                     .developer__content 

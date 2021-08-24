@@ -6,7 +6,8 @@ block variable
     var id_page = 'progress-page'
     var class_page = 'progress-page'
     var breadcrumbsLink = 'progress'
-block scripts 
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/progress.js')
@@ -61,7 +62,6 @@ block content
             <div class="swiper-pagination gallery__info-block"></div>
       .big-container 
         .progress__wrap
-          .div
           .progress__filters 
             .progress__filters-wrap 
               .progress__filters-year 

@@ -5,17 +5,45 @@
 
     .equipment__item {
         display: grid;
-        grid-template-columns: 513px 513px;
-        column-gap: 80px;
-        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 116px;
+        justify-content: flex-start;
+
+        &--reverse {
+          .equipment__item-title {
+            max-width: 612px;
+          }
+        }
+
+        img {
+          max-height: 862px;
+          object-fit: cover;
+        }
+
+        @include to(1440px) {
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-between;
+          column-gap: 80px;
+        }
 
         &-title {
             @include page-big-text;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+
+            @include to(1440px) {
+              margin-bottom: 20px;
+            }
         }
 
         &-desc {
+            font-size: 26px;
+            max-width: 536px;
+
+          @include to(1440px) {
+            font-size: 18px;
             max-width: 370px;
+          }
         }
 
         &--reverse {
@@ -24,15 +52,24 @@
             }
 
             .equipment__item-desc {
-                margin-bottom: 50px;
-                max-width: 410px;
+                margin-bottom: 60px;
+
+                @include to(1440px) {
+                  max-width: 410px;
+                  margin-bottom: 50px;
+                }
             }
         }
     }
 
     .section-with-scroll {
-        margin-top: 150px;
-        height: 700px;
-        margin-bottom: 150px;
+        margin-top: var(--scroll-features-offset);
+        height: auto;
+        margin-bottom: var(--scroll-features-offset);
+
+        @include to(1440px) {
+          margin-top: 150px;
+          margin-bottom: 150px;
+        }
     }
 }

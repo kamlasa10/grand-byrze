@@ -35,7 +35,11 @@
 
       &-desc {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+
+        @include to(1440px) {
+          margin-bottom: 30px;
+        }
       }
 
       &-text {
@@ -51,25 +55,41 @@
 
     &__item {
       display: grid;
-      grid-template-columns: 560px 612px;
-      column-gap: 80px;
-      justify-content: space-between;
-      padding-right: 130px;
+      grid-template-columns: 560px 530px;
+      column-gap: 300px;
+      justify-content: flex-start;
+
+      @include to(1650px) {
+        column-gap: 100px;
+        justify-content: space-between;
+      }
 
       @include to(1440px) {
         grid-template-columns: 513px 423px;
         padding-right: 0;
+        column-gap: 80px;
+        justify-content: space-between;
         margin-bottom: 100px;
       }
 
       &:not(:last-child) {
-        margin-bottom: 150px;
+        margin-bottom: var(--scroll-features-offset);
       }
 
       &--reverse {
-        grid-template-columns: 420px 560px;
-        column-gap: 80px;
-        justify-content: space-between;
+        grid-template-columns: 630px 560px;
+        column-gap: 300px;
+        justify-content: flex-start;
+
+        .features__content {
+          max-width: 420px;
+        }
+
+        @include to(1650px) {
+          grid-template-columns: 1fr 560px;
+          column-gap: 100px;
+          justify-content: space-between;
+        }
 
         @include to(1440px) {
           grid-template-columns: 370px 513px;

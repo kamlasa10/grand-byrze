@@ -6,7 +6,8 @@ block variable
     var id_page = 'paymant-page'
     var class_page = 'paymant-page'
     var breadcrumbsLink = 'paymant'
-block scripts 
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/paymant.js')
@@ -24,7 +25,7 @@ block content
         .page-top__wrap
           include ../includes/breadcrumbs.pug
           h1.page-title Комплектація квартир
-    .container
+    .container.paymant
         .block-with-img 
             .block-with-img__title Linevich Group пропонує різні варіанти оплати для фізичних та юридичних осіб.
             .block-with-img__wrap 

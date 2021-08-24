@@ -10,10 +10,15 @@
   &__title {
     text-transform: uppercase;
     max-width: 870px;
-    margin-bottom: 30px;
-    font-size: 42px;
+    margin-bottom: 40px;
+    font-size: 44px;
     line-height: 1.2em;
     color: $black;
+
+    @include to(1440px) {
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
   }
 
   &__desc {
@@ -76,7 +81,11 @@
   }
 
   &__text {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5em;
+
+    @include to(1440px) {
+      font-size: 18px;
+    }
   }
 }

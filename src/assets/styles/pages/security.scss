@@ -1,7 +1,9 @@
 #security-page {
     .security {
+        @include pageOffsetTop;
+
         &__block {
-            padding: 100px 0;
+            padding: var(--scroll-features-offset) 0;
             border-bottom: 1px solid #ECEAE1;
 
             &:first-child {
@@ -11,30 +13,68 @@
 
         &__top {
             display: grid;
-            grid-template-columns: 160px 593px;
-            column-gap: 210px;
+            align-items: center;
+            grid-template-columns: 178px 1fr;
+            column-gap: 228px;
+
+            @include to(1650px) {
+              column-gap: 150px;
+            }
+
+            @include to(1440px) {
+              grid-template-columns: 160px 593px;
+              column-gap: 210px;
+            }
+
+            .security__desc {
+              max-width: none;
+            }
         }
 
         &__desc {
             @include page-desc;
-            max-width: 593px;
+            max-width: 635px;
+
+            @include to(1440px) {
+              max-width: 593px;
+            }
 
             &--correct {
-                margin-left: 100px;
+                margin-left: 128px;
+
+                @include to(1440px) {
+                  margin-left: 100px;
+                }
             }
         }
 
         &__title {
             @include page-big-text;
-            margin-bottom: 50px;
-            max-width: 100%;
+            margin-bottom: 60px;
+            max-width: 1106px;
+
+            @include to(1440px) {
+              max-width: 100%;
+              margin-bottom: 50px;
+            }
         }
 
         &__info {
             &-wrap {
                 display: flex;
-                justify-content: flex-end;
-                padding-right: 140px;
+                justify-content: flex-start;
+
+                @include to(1440px) {
+                  max-width: none;
+                }
+            }
+
+            &-desc {
+              max-width: 635px !important;
+
+              @include to(1440px) {
+                max-width: 593px;
+              }
             }
         }
 
@@ -53,12 +93,31 @@
         }
 
         &__bottom {
+            padding-top: var(--scroll-features-offset);
+
             &-block {
-                width: 593px;
+                width: 635px;
+
+                @include to(1440px) {
+                  width: 593px;
+                }
             }
 
             &-desc {
-                margin-bottom: 40px;
+                margin-bottom: 60px;
+                margin-left: 100px;
+
+                @include to(1440px) {
+                  margin-bottom: 40px;
+                }
+            }
+
+            &-wrap {
+              max-width: 1250px;
+
+              @include to(1440px) {
+                max-width: none;
+              }
             }
         }
 
@@ -69,15 +128,23 @@
         }
 
         .page-info {
-            grid-template-columns: 260px 1fr;
-            column-gap: 110px;
-            
+            grid-template-columns: 400px 1fr;
+            column-gap: 100px;
+
+            @include to(1440px) {
+              grid-template-columns: 260px 1fr;
+              column-gap: 110px;
+            }
         }
 
         .page-info__title {
             @include page-desc;
-            max-width: 260px;
+            max-width: none;
             text-transform: none;
+
+            @include to(1440px) {
+              max-width: 260px;
+            }
         }
 
         .page-info {

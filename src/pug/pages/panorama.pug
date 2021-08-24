@@ -6,7 +6,8 @@ block variable
     var id_page = 'panorama-page'
     var class_page = 'panorama-page'
     var breadcrumbsLink = 'panorama'
-block scripts 
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/panorama.js')

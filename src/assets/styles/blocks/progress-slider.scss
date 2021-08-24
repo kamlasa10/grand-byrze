@@ -12,6 +12,15 @@
     pointer-events: none;
     transition: all .5s;
 
+  @include to(1200px) {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .container {
+      width: 100%;
+    }
+  }
+
     &.show {
         opacity: 1;
         pointer-events: initial;
@@ -28,30 +37,51 @@
 
             svg {
                 stroke: #fff;
+                width: 18px;
+                height: 18px;
+
+              @include to(1440px) {
                 width: 15px;
                 height: 15px;
+              }
             }
         }
     }
 
     .gallery__btn {
         border: none;
+        min-width: 70px;
+
+      @include to(1440px) {
         min-width: 60px;
+      }
 
         &-prev {
             margin-right: 58px;
+
+          @include to(1200px) {
+            margin-right: 20px;
+          }
         }
 
         &-next {
             margin-left: 58px;
+
+          @include to(1200px) {
+            margin-left: 20px;
+          }
         }
     }
 
     .progress-slider__month {
         margin-bottom: 10px;
-        font-size: 14px;
+        font-size: 16px;
         letter-spacing: 0.05em;
         line-height: 1em;
+
+        @include to(1440px) {
+          font-size: 14px;
+        }
     }
 
     .gallery__info {
@@ -67,9 +97,11 @@
     }
 
     .swiper-container {
-        height: 450px;
+        height: 642px;
 
-        
+        @include to(1440px) {
+          height: 450px;
+        }
 
         img {
             width: 100%;
@@ -90,6 +122,5 @@
     &__wrap {
         display: flex;
         align-items: center;
-
     }
 }

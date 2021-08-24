@@ -27,7 +27,7 @@ block content
           h1.page-title Охорона
     .security 
         .security__block 
-            .container
+            .container.large-container-desk
                 .security__top 
                     +img('security-logo.svg')
                     .security__top-content 
@@ -35,8 +35,11 @@ block content
         .security__block.security__info 
             .container 
                 .security__title Територія житлового комплексу закрита для сторонніх
-                .security__info-wrap
-                    .security__desc Для мешканців діє картковий доступ: зайти можуть лише резиденти ЖК або запрошені гості. 
+            .container.large-container-desk
+              .security__info-wrap
+                  .security__top
+                    div
+                    .security__desc.security__info-desc Для мешканців діє картковий доступ: зайти можуть лише резиденти ЖК або запрошені гості.
         .section-with-scroll 
             .overlay-block
                 .overlay-block__bg
@@ -137,7 +140,10 @@ block content
         .security__bottom
             .container 
                 .security__bottom-wrap.security__info-wrap
-                    .security__desc.security__bottom-desc Пультова охорона захищає від крадіжки майна, нападів, пожежі, затоплення та просочування газу. Ми подбаємо про вашу безпеку!
+                    .page-info
+                      .page-info__left
+                        div
+                      .security__desc.security__bottom-desc Пультова охорона захищає від крадіжки майна, нападів, пожежі, затоплення та просочування газу. Ми подбаємо про вашу безпеку!
                 .security__title Ми подбаємо про вашу безпеку!
                 .security__bottom-wrap.security__info-wrap
                     .security__bottom-block 

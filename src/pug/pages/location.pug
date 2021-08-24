@@ -38,7 +38,8 @@ block content
             .location__intro-content
               .location__intro-desc Буча поєднана зі столицею розвиненою системою громадського транспорту.
               .location__intro-text Маршрутки відправляються від станцій метро Академмістечко, Мінська, Святошин. Модернізований приміський електропоїзд курсує за маршрутом залізнична станція Святошин – Буча.
-            +img('location/1.jpg')
+            .location__intro-block
+              +img('location/1.jpg')
       .page-slider.js-page-slider-container
         .container
           .page-slider__title Комплекс збудований у центрі міста, і всі ключові інфраструктурні об’єкти знаходяться поруч.
@@ -73,14 +74,13 @@ block content
         .location__title.location__title--correct.js-calculate-offset ваша родина матиме вибір у всіх аспектах життя.
         .location__intro-wrap.location__intro-wrap--reverse
           .location__intro-content
-            .location__intro-desc Буча поєднана зі столицею розвиненою системою громадського транспорту.
-            .location__intro-text Маршрутки відправляються від станцій метро Академмістечко, Мінська, Святошин; модернізований приміський електропоїзд курсує за маршрутом залізнична станція Святошин – Буча.
+            .location__intro-desc На відстані 2,5 км від комплексу знаходиться природна окраса Бучі — Бучанський міський парк, який дарує безліч можливостей для дозвілля.
+            .location__intro-text На його території розташовані озера з набережною для прогулянок, фонтани, оригінальні скульптури, кафе, велодоріжки, мотузковий парк, дитяче містечко і мінізоопарк.
             a(href="#").btn-with-icon.contacts__item-link
               span.btn
                 +svg('btn-decor')
-              span.btn-with-icon-text.link-border-animation Показати на <br> Google Maps
+              span.btn-with-icon-text.link-border-animation Інфраструктура
           +img('location/2.jpg')
-
 
 block footer
   include ../includes/footer.pug

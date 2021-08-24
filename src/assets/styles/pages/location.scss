@@ -1,6 +1,10 @@
 #location-page {
   .page-slider {
-    margin-bottom: 47px;
+    margin-bottom: 57px;
+
+    @include to(1440px) {
+      margin-bottom: 47px;
+    }
   }
 
   .location {
@@ -10,17 +14,26 @@
       &-top {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 100px;
+        margin-bottom: var(--scroll-features-offset);
 
         &-content {
-          margin-right: 38px;
-          max-width: 870px;
+          margin-right: 130px;
+
+          @include to(1440px) {
+            max-width: 870px;
+            margin-right: 38px;
+          }
         }
 
         svg {
           fill: #ECEAE1;
-          height: 235px;
-          min-width: 200px;
+          height: 186px;
+          min-width: 170px;
+
+          @include to(1440px) {
+            height: 235px;
+            min-width: 200px;
+          }
         }
 
         &-text {
@@ -31,38 +44,67 @@
 
       &-wrap {
         justify-content: space-between;
+        align-items: center;
         display: grid;
-        grid-template-columns: 370px 513px;
-        margin-bottom: 80px;
+        column-gap: 80px;
+        grid-template-columns: 536px 743px;
+        margin-bottom: var(--scroll-features-offset);
+
+        @include to(1440px) {
+          grid-template-columns: 370px 513px;
+        }
 
         &--reverse {
           margin-bottom: 0;
-          grid-template-columns: 553px 423px;
+          grid-template-columns: 801px 536px;
+
+          @include to(1440px) {
+            grid-template-columns: 553px 423px;
+          }
 
           img {
             order: -1;
           }
+
+          .location__intro-text {
+            max-width: 350px;
+          }
+        }
+
+        img {
+          max-height: 862px;
+          object-fit: cover;
         }
       }
 
       &-desc {
         margin-bottom: 20px;
-        font-size: 24px;
-        line-height: 1.7em
+        @include page-desc;
       }
 
       &-text {
         margin-bottom: 52px;
-        width: 280px;
+        width: auto;
+
+        @include to(1440px) {
+          width: 280px;
+        }
       }
     }
 
     &__title {
-      max-width: 870px;
       margin-bottom: 20px;
       text-transform: uppercase;
-      font-size: 42px;
+      font-size: 44px;
       line-height: 1.4em;
+
+      @include to(1440px) {
+        max-width: 870px;
+      }
+
+      &--correct {
+        margin-bottom: var(--scroll-features-offset);
+      }
     }
   }
 }

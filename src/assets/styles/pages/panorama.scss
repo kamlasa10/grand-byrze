@@ -4,8 +4,16 @@
         margin-top: -15%;
         height: 100vh;
 
+        @include to(1370px) {
+          margin-top: -17%;
+        }
+
+        @media (min-width: 2000px) {
+          margin-top: -19%;
+        }
+
         @include to(1200px) {
-            margin-top: -18%;
+            margin-top: -20%;
         }
 
         &__img {
@@ -34,10 +42,26 @@
             position: absolute;
             top: 41%;
             left: 65%;
+            z-index: 5;
+
+            .btn {
+              width: 80px;
+              height: 80px;
+
+              @include to(1440px) {
+                width: 70px;
+                height: 70px;
+              }
+            }
 
             svg {
                 width: 30px;
                 height: 30px;
+
+                @include to(1440px) {
+                  width: 27px;
+                  height: 27px;
+                }
             }
         }
 
@@ -78,9 +102,14 @@
                 margin-right: 20px;
 
                 svg {
-                    width: 16px;
-                    height: 16px;
+                    width: 13px;
+                    height: 13px;
                     transform: rotate(-45deg);
+
+                    @include to(1440px) {
+                      width: 16px;
+                      height: 16px;
+                    }
                 }
             }
 
@@ -88,10 +117,14 @@
                 &::before {
                     content: "";
                     display: block;
-                    width: 14px;
+                    width: 16px;
                     height: 1px;
                     background-color: #555568;
                     transition: all .4s;
+
+                    @include to(1440px) {
+                      width: 14px;
+                    }
                 }
 
                 &:hover {

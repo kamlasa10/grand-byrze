@@ -14,6 +14,8 @@ $blue: #0951BE;
   --header-h: 180px;
   --page-header-h: 140px;
   --padding-page: 180px;
+  --scroll-features-offset: 120px;
+  --max-img-height: 862px;
 }
 
 @media screen and (max-width: 1440px){
@@ -22,6 +24,7 @@ $blue: #0951BE;
     --header-h: 110px;
     --logo-w: 120px;
     --sliceFigure-big: 362px;
+    --scroll-features-offset: 100px;
   }
 }
 @media screen and (max-width: 992px){

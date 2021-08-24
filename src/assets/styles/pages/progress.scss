@@ -1,12 +1,24 @@
 #progress-page {
-    .progress {
+
+  .gallery__info {
+    position: static;
+    margin-top: 30px;
+  }
+
+  .progress {
         @include pageOffsetTop;
 
         &__wrap {
             position: relative;
             display: grid;
-            grid-template-columns: 180px 1fr;
-            column-gap: 100px;
+            align-items: flex-start;
+            grid-template-columns: 230px 1fr;
+            column-gap: 110px;
+
+            @include to(1440px) {
+              grid-template-columns: 180px 1fr;
+              column-gap: 100px;
+            }
 
             @include to(1100px) {
                 column-gap: 50px;
@@ -14,14 +26,17 @@
         }
 
         .progress__filters {
-            position: absolute;
-            top: 0;
+            position: sticky;
+            top: 170px;
             left: 0;
-            z-index: 1000;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 1em;
             letter-spacing: 0.05em;
             z-index: 2;
+
+          @include to(1440px) {
+            font-size: 14px;
+          }
 
             &-wrap {
                 display: flex;
@@ -31,7 +46,7 @@
             &-year {
                 cursor: pointer;
                 position: relative;
-                margin-right: 25px;
+                margin-right: 45px;
 
                 &-current {
                     display: flex;
@@ -140,9 +155,13 @@
                 width: 30%;
                 margin-bottom: 20px;
                 margin-right: 20px;
-                height: 280px;
+                height: 426px;
                 cursor: pointer;
                 overflow: hidden;
+
+              @include to(1440px) {
+                height: 280px;
+              }
 
                 &:nth-child(2n) {
                     margin-right: 0;

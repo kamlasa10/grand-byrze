@@ -3,14 +3,19 @@
         @include pageOffsetTop;
 
         &__top {
-            padding-bottom: 100px;
+            padding-bottom: var(--scroll-features-offset);
             border-bottom: 1px solid #ECEAE1;
         }
 
         &__title {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             @include page-big-text;
-            max-width: 100%;
+            max-width: 960px;
+
+            @include to(1440px) {
+              max-width: none;
+              margin-bottom: 40px;
+            }
         }
 
         &__desc {
@@ -18,15 +23,26 @@
             flex-direction: column;
             align-items: flex-end;
             margin-right: 143px;
+            max-width: 1171px;
+
+            @include to(1440px) {
+              max-width: none;
+            }
 
             &-wrap {
-                max-width: 593px;
+                max-width: 635px;
+                font-size: 26px;
+
+                @include to(1440px) {
+                  max-width: 593px;
+                  font-size: 18px;
+                }
             }
         }
 
         &__item {
             &--modify {
-                padding: 100px 0;
+                padding: var(--scroll-features-offset) 0;
                 border-bottom: 1px solid #ECEAE1;
 
                 .service__title {
@@ -39,8 +55,13 @@
             &-item  {
                 display: grid;
                 justify-content: space-between;
-                grid-template-columns: minmax(auto, 300px) 1fr;
-                column-gap: 74px;
+                grid-template-columns: minmax(auto, 420px) 1fr;
+                column-gap: 115px;
+
+                @include to(1440px) {
+                  grid-template-columns: minmax(auto, 300px) 1fr;
+                  column-gap: 74px;
+                }
 
                 &:not(:last-child) {
                     margin-bottom: 30px;
@@ -57,7 +78,7 @@
         }
 
         &__bottom {
-            padding-top: 100px;
+            padding-top: var(--scroll-features-offset);
 
             & > .service__title {
                 margin-bottom: 20px;
@@ -67,15 +88,24 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
-                margin-right: 143px;
+                max-width: 1170px;
+
+                @include to(1440px) {
+                  margin-right: 143px;
+                  max-width: none;
+                }
             }
 
             &-desc {
                 @include page-desc;
-                max-width: 593px;
+                max-width: 635px;
                 padding-bottom: 50px;
                 margin-bottom: 50px;
                 border-bottom: 1px solid #ECEAE1;
+
+                @include to(1440px) {
+                  max-width: 593px;
+                }
             }
 
             &-block {
@@ -85,7 +115,11 @@
             }
 
             &-item {
-                max-width: 594px;
+                max-width: 635px;
+
+                @include to(1440px) {
+                  max-width: 594px;
+                }
             }
 
             &-text {

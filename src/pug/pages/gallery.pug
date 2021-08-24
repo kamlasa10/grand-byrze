@@ -6,7 +6,8 @@ block variable
     var id_page = 'gallery-page'
     var class_page = 'gallery-page'
     var breadcrumbsLink = 'gallery'
-block scripts 
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/gallery.js')
@@ -35,12 +36,14 @@ block content
             +img('gallery/3.jpg')
         .gallery__info
           <div class="swiper-pagination gallery__info-block"></div>
-        <div class="swiper-button-prev gallery__btn gallery__btn-prev">
-          +svg('slider-arrow')
-        </div>
-        <div class="swiper-button-next gallery__btn gallery__btn-next">
-          +svg('slider-arrow')
-        </div>
+      .gallery__controls
+        .container
+          <div class="swiper-button-prev gallery__btn gallery__btn-prev">
+            +svg('slider-arrow')
+          </div>
+          <div class="swiper-button-next gallery__btn gallery__btn-next">
+            +svg('slider-arrow')
+          </div>
 
 block footer
   include ../includes/footer.pug
