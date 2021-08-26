@@ -9,6 +9,11 @@
     background-color: transparent;
     padding-top: 30px;
     padding-bottom: 30px;
+
+    @include to(850px) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
     
     .header__logo--big {
         width: 180px;
@@ -23,11 +28,20 @@
             height: 120px;
         }
 
+        @include to(850px) {
+            width: 100px;
+            height: 100px;
+        }
+
         img {
            height: 130px;
 
             @include to(1440px) {
                 height: 87px;
+            }
+
+            @include to(850px) {
+                height: 72px;
             }
         }
     }
@@ -38,6 +52,15 @@
         left: 50%;
         transform: translate(-50%, -50%) scale(0);
         transition: all 0.6s;
+
+        @include to(850px) {
+            width: 60px;
+            height: 60px;
+
+            img {
+                height: 38px;
+            }
+        }
     }
 
     &.move {
@@ -102,8 +125,20 @@
             font-size: 12px;
         }
 
+        @include to(1100px) {
+            margin-right: 20px;
+
+            &-text {
+                display: none;
+            }
+        }
+
         span {
             margin-right: 20px;
+
+            @include to(1100px) {
+                margin-right: 0;
+            }
 
             svg {
                 width: 24px;
@@ -112,6 +147,11 @@
                 @include to(1440px) {
                     width: 20px;
                     height: 20px;
+                }
+
+                @include to(770px) {
+                    width: 17px;
+                    height: 17px;
                 }
             }
         }
@@ -133,6 +173,10 @@
             margin-right: 15px; 
             stroke: $black;
             transition: all .4s;
+
+            @include to(815px) {
+                display: none;
+            }
         }
 
         &:hover {
@@ -150,6 +194,10 @@
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
+
+        @include to(770px) {
+            transform: translateX(-50%);
+        }
     }
 
     &__logo {
@@ -173,5 +221,9 @@
 
     .header__popup-btn {
         margin-right: 50px;
+
+        @include to(1100px) {
+            margin-right: 20px;
+        }
     }
 }

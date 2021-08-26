@@ -196,7 +196,7 @@
     padding-right: 60px;
   }
 
-  @include to(770px) {
+  @include to(992px) {
     padding: 0 30px !important;
   }
 
@@ -223,6 +223,11 @@
     height: 60px;
   }
 
+  @include to(770px) {
+    width: 50px;
+    height: 50px;
+  }
+
   &:hover {
     background-color: $blue;
   }
@@ -241,6 +246,10 @@
   @include to(1440px) {
     font-size: 12px;
   }
+
+  @include to(850px) {
+    font-size: 10px;
+  }
 }
 
 .menu-btn {
@@ -253,13 +262,24 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  padding: 0;
 
   @include to(1440px) {
     font-size: 12px;
   }
 
+  @include to(1100px) {
+    &__text {
+      display: none;
+    }
+  }
+
   span {
     margin-left: 20px;
+
+    @include to(1100px) {
+      margin-left: 0;
+    }
 
     svg {
       width: 17px;
@@ -268,6 +288,11 @@
       @include to(1440px) {
         width: 14px;
         height: 12px;
+      }
+
+      @include to(770px) {
+        width: 12px;
+        height: 11px;
       }
     }
   }
@@ -334,6 +359,14 @@
   @include to(1440px) {
     font-size: 72px;
   }
+
+  @include to(992px) {
+    font-size: 60px;
+  }
+
+  @include to(770px) {
+    font-size: 52px;
+  }
 }
 
 .field-error-msg {
@@ -361,6 +394,14 @@
     font-size: 18px;
   }
 
+  @include to(850px) {
+    font-size: 17px;
+  }
+
+  @include to(770px) {
+    font-size: 16px;
+  }
+
   .btn {
     margin-right: 30px;
     width: 100px;
@@ -371,9 +412,19 @@
       margin-right: 20px;
     }
 
+    @include to(850px) {
+      width: 75px;
+      height: 75px;
+    }
+
     svg {
       width: 31px;
       height: 34px;
+
+      @include to(850px) {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 
@@ -399,6 +450,14 @@
   span {
     display: block;
     margin-left: 90px;
+
+    @include to(992px) {
+      margin-left: 50px;
+    }
+
+    @include to(770px) {
+      margin-left: 34px;
+    }
   }
 }
 
@@ -462,8 +521,8 @@
   position: fixed;
   bottom: 80px;
   right: 50px;
-  width: 42px;
-  height: 42px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -474,14 +533,34 @@
   z-index: 100;
   transition: all .4s;
 
+  @include to(1440px) {
+    width: 42px;
+    height: 42px;
+  }
+
+  @include to(770px) {
+    width: 50px;
+    height: 50px;
+  }
+
   svg {
     transform: rotate(180deg);
     fill: none;
     stroke: #2A3341;
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     animation: goTop 1.2s infinite linear;
     transition: all .4s;
+
+    @include to(1440px) {
+      width: 14px;
+      height: 14px;
+    }
+
+    @include to(770px) {
+      width: 17px;
+      height: 17px;
+    }
   }
 
   &:hover {

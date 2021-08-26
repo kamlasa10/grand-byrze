@@ -7,8 +7,10 @@ block variable
     var class_page = 'investor-page'
     var breadcrumbsLink = 'investor'
 block scripts 
+  script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/investor.js')
 block meta
   title= 'title'
   meta(name='description', content='')
@@ -25,20 +27,20 @@ block content
           h1.page-title Для інвестора
     .investor 
       .container
-        .block-with-img 
+        .block-with-img.investor__top 
           .block-with-img__title Чому ЖК Гранд Бурже — найвигідніший об’єкт для інвестицій у передмісті Києва?
           .block-with-img__wrap 
               +img('investor/1.jpg')
               .block-with-img__content 
                   .block-with-img__text Ми будуємо як для себе, добираючи найкращі матеріали та дбаючи про якісне наповнення комплексу. Це не спринт — це забіг на довгу дистанцію, і ми відчуваємо відповідальність за комфорт наших мешканців у далекому майбутньому.
                   .block-with-img__desc Ви купуєте не пусту непривітну “коробку”, яку складно назвати житлом, а квартиру у комплектації white box, з рівнесенькими стінами та підлогою. Ви заощадите на прокладенні комунікацій, встановленні опалення, радіаторів та теплої підлоги. Надійні броньовані двері та вікна KBE ще десятки років не потребуватимуть заміни. Ваші турботи — вибір дизайну інтер’єру до душі, а не виробника цементу.
-      .block-with-img.block-with-img--bg
+      .block-with-img.block-with-img--bg.block-with-img--reverse
         .container 
           .block-with-img__wrap 
-            +img('investor/2.jpg')
             .block-with-img__content 
               .block-with-img__text Інфраструктура ЖК Гранд Бурже — це нова міська легенда Бучі. Перший в області житловий комплекс із власним ТРЦ зі супермаркетом, кінотеатром та дитячою ігровою зоною, спорткомплексом з басейном. 
               .block-with-img__desc У пішій доступності — освітні заклади та медичні установи, торгові центри та супермаркети, спеціалізовані магазини та пункти сервісного обслуговування. На відстані 2,5 км — величезний Бучанський міський парк. Цей район ніколи не отримає статус “спального”, адже люди із задоволенням оселяються там, де вирує життя.
+            +img('investor/2.jpg')
       .investor__item
         +img('investor/linear-decor.svg').investor__item-decor
         .container
@@ -64,7 +66,7 @@ block content
             button(type="button").btn-with-icon.js-popup-open(data-popup-type="callback") 
                 span.btn
                     +svg('btn-decor')
-                span.btn-with-icon-text.link-border-animation Залишити заявку
+                span.btn-with-icon-text.link-border-animation Передзвоніть мені
 
 
 block footer

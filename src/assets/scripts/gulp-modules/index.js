@@ -265,3 +265,15 @@ function sendAjaxForm(url, selectorForm) {
     },
   });
 }
+
+$(window).on('resize', () => {
+  if($(window).width() <= 1100) {
+    $('.js-footer__item').each((_, item) => {
+      document.querySelector('.footer__item-tablet').append(item)
+    })
+  } else {
+    $('.js-footer__item').each((_, item) => {
+      document.querySelector('.footer__left').append(item)
+    })
+  }
+}).resize()

@@ -27,13 +27,27 @@ $blue: #0951BE;
     --scroll-features-offset: 100px;
   }
 }
+
 @media screen and (max-width: 992px){
   :root {
+    --padding-page: 130px;
     --header-h: 110px;
     --logo-w: 90px;
     --sliceFigure-big: 44px;
   }
 }
+
+@media screen and (max-width: 850px) {
+  :root {
+    --padding-page: 150px;
+    --header-h: 100px;
+    --logo-w: 120px;
+    --sliceFigure-big: 362px;
+    --scroll-features-offset: 100px;
+    --padding-page: 100px;
+  }
+}
+
 @media screen and (max-width: 576px){
   :root {
     --header-h: 70px;

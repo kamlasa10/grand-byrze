@@ -3,11 +3,16 @@
         @include pageOffsetTop;
 
         &__block {
-            margin-bottom: 100px;
+            margin-bottom: var(--scroll-features-offset);
             display: grid;
             justify-content: space-between;
-            grid-template-columns: 513px 513px;
-            grid-column: 80px;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 116px;
+
+            @include to(1440px) {
+                column-gap: 80px;
+            }
 
             &-title {
                 @include page-big-text;
@@ -16,23 +21,38 @@
             }
 
             &-desc {
-              max-width: 370px;  
+              max-width: 420px;  
+
+              @include to(1440px) {
+                  max-width: 370px;
+              }
             }
 
             img {
                 object-fit: cover;
+                max-height: var(--max-img-height);
             }
 
             &:not(:last-child) {
                 margin-bottom: 100px;
+            }
+
+            &-content {
+                @media (min-width: 1500px) {
+                    max-width: 536px;
+                }
             }
         }
 
         &__info {
             display: grid;
             grid-template-columns: 1fr;
-            row-gap: 50px;
+            row-gap: 45px;
             margin-bottom: 150px;
+
+            @include to(1440px) {
+                row-gap: 40px;
+            }
 
             &--correct {
                 row-gap: 100px;
@@ -47,7 +67,7 @@
 
                 &-mb {
                     .infra__info-title {
-                        margin-bottom: 50px;
+                        margin-bottom: 0;
                     }
                 }
             }
@@ -64,13 +84,20 @@
                 @include page-big-text;
                 margin-bottom: 30px;
                 text-transform: uppercase;
+
+                @media(min-width: 1500px) {
+                    max-width: 935px;
+                }
             }
 
             &-item {
                 &-title {
-                    margin-bottom: 20px;
-                    font-size: 24px;
-                    line-height: 1.5em;
+                    margin-bottom: 30px;
+                    @include page-desc;
+
+                    @include to(1440px) {
+                        margin-bottom: 20px;
+                    }
                 }
             }
 
@@ -81,7 +108,11 @@
                 row-gap: 25px;
 
                 img {
-                    margin-bottom: 15px;
+                    margin-bottom: 30px;
+
+                    @include to(1440px) {
+                        margin-bottom: 15px;
+                    }
                 }
             }
 
@@ -96,23 +127,47 @@
 
         &__box {
             display: grid;
-            grid-template-columns: 513px 423px;
-            column-gap: 80px;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 116px;
+            align-items: center;
             justify-content: space-between;
+
+            @include to(1440px) {
+                grid-template-columns: 513px 423px;
+                column-gap: 80px;
+            }
     
             &-desc {
                 @include page-desc;
                 margin-bottom: 50px;
+            }
+
+            &-content {
+                max-width: 423px;
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                margin-right: 113px;
+
+                @include to(1440px) {
+                    margin-right: 0;
+                    margin-left: none;
+                }
             }
         }
     }
 
     .page-slider {
         margin-bottom: 150px;
+
+        @include to(1440px) {
+            margin-bottom: 120px;
+        }
     }
 
     .section-with-scroll {
         position: relative;
+        margin-bottom: var(--scroll-features-offset);
 
         .infra__info-title {
             top: 0;

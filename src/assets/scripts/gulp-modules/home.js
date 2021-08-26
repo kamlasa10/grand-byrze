@@ -2,67 +2,90 @@
   document.addEventListener('DOMContentLoaded', () => {
     let isFirstShowSlide = true;
     let slideChangeTl = gsap.timeline();
+    let prevActiveSlide = null
 
     function animateChangeSlide({ slides, activeSlide, activeIndex }) {
       slideChangeTl.kill();
       slideChangeTl = gsap.timeline();
-      const containerText = activeSlide.querySelector('.main-slider__content');
-      const title = activeSlide.querySelector('.main-slider__title');
+      const containerText = activeSlide.querySelector('.js-slider-desc');
+      const currentTitle = document.querySelector(`[data-slide-title='${activeSlide.dataset.swiperSlideIndex}']`)
+      const prevSlideTitle = document.querySelector(`[data-slide-title='${prevActiveSlide.dataset.swiperSlideIndex}']`)
+      const sliderTitles = document.querySelectorAll('[data-slide-title]')
+      const withTranslateTitle = +prevActiveSlide.dataset.swiperSlideIndex % 2 !== 0 
+
+      console.log(withTranslateTitle)
+
+      sliderTitles.forEach(title => {
+        if(title !== prevSlideTitle) {
+          gsap.set(title, {opacity: 0, x: 0})
+        }
+
+        if(withTranslateTitle && title !== prevSlideTitle) {
+          gsap.set(title, {
+            opacity:0,
+            x: '-30px'
+          })
+        }
+      })
 
       slides.forEach(slide => {
         gsap.set(slide.querySelector('.swiper-slide-img'), {
           clipPath: 'circle(80% at 50% 50%)',
         });
 
-        gsap.to(slide.querySelector('.main-slider__content'), {
-          opacity: 0,
-        });
-
-        gsap.set(slide.querySelector('.main-slider__title'), {
-          opacity: 0,
-          x: -40,
-        });
+        gsap.set(slide.querySelector('.js-slider-desc'), {opacity: 0, y: 40})
       });
 
       slideChangeTl
         .fromTo(
           activeSlide.querySelector('.swiper-slide-img'),
           {
-            yPercent: -60,
+            yPercent: -35,
+            scale: 0.5
           },
           {
             yPercent: 0,
-            duration: 0.8,
+            scale: 1,
+            duration: 0.7,
           },
         )
         .fromTo(
           activeSlide.querySelector('.swiper-slide-img'),
           {
-            clipPath: 'circle(30% at 50% 50%)',
+            clipPath: 'circle(55% at 50% 5%)',
           },
           {
-            clipPath: 'circle(80% at 50% 50%)',
-            duration: 1,
+            clipPath: 'circle(80% at 50% 70%)',
+            duration: 0.9,
           },
           0.4,
         )
-        .to(
-          containerText,
-          {
-            opacity: 1,
-            duration: 0.6,
-          },
-          0.3,
-        )
-        .to(
-          title,
-          {
-            x: 0,
-            opacity: 1,
-            duration: 0.8,
-          },
-          0.6,
-        );
+        .to(prevSlideTitle, {
+          opacity: 0,
+          x: withTranslateTitle ? '30px' : 0,
+          duration: 0.8
+        }, 0.2)
+        .to(currentTitle, {
+          opacity: 1,
+          x: 0,
+          duration: 0.8
+        }, withTranslateTitle ? 0.1 : 0.5)
+        .to(containerText, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8
+        }, 0)
+        // .to(
+        //   title,
+        //   {
+        //     x: 0,
+        //     opacity: 1,
+        //     duration: 0.8,
+        //   },
+        //   0.6,
+        // );
+
+        prevActiveSlide = activeSlide
     }
 
     const swiper = new Swiper('.js-main-slider', {
@@ -86,6 +109,8 @@
         },
       },
     });
+
+    prevActiveSlide = document.querySelector('.js-main-slider .swiper-slide-active')
 
     class Tabs {
       constructor(content, tabs, activeClass, showedTabInit = 1) {

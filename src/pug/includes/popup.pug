@@ -1,5 +1,11 @@
 button(type="button").btn-top.js-btn-top
     +svg('arrow-down')
+//- .preloader 
+//-     .preloader__wave 
+//-     .preloader__content 
+//-         .preloader__percent <span class="js-preloader-percent"></span>%
+//-         .header__logo--big.btn
+//-             +img('menu-logo.svg')
 .video.js-video
     .video__wrap
         .video__block
@@ -20,7 +26,7 @@ button(type="button").btn-top.js-btn-top
             .menu-header__right.header__right 
                 button(type="button").popup-btn.header__popup-btn.js-popup-open Замовити дзвінок
                 button(type="button").menu-btn.js-menu-close
-                    | закрити
+                    span.menu-btn__text закрити
                     span.btn 
                         +svg('cross') 
     .menu__wrap
@@ -58,7 +64,14 @@ button(type="button").btn-top.js-btn-top
             .menu__block 
                 a(href="#").menu__title.link-border-animation.menu__title-link.menu__title-link--dark Обрати квартиру
             .menu__block 
-                a(href="#").menu__title.menu__title-link.link-border-animation Умови
+                .menu__title Умови
+                ul.menu__list 
+                    li.menu__item 
+                        a(href="#").menu__link Оплата
+                    li.menu__item 
+                        a(href="#").menu__link Розстрочка
+                    li.menu__item 
+                        a(href="#").menu__link  Кредит
             .menu__block 
                 a(href="#").menu__title.menu__title-link.link-border-animation.menu__title-link--dark Для інвестора 
             .menu__block 

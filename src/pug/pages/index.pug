@@ -17,35 +17,28 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block content
   .main-slider
+    .main-slider__wrap 
+      .main-slider__animate-title.main-slider__title(data-slide-title="0") Житловий комплекс
+      .main-slider__animate-title.main-slider__title(data-slide-title="1") Бізнес класу
+      .main-slider__animate-title.main-slider__title(data-slide-title="2") 
+        +img('grand-byrze-text.svg')
+      .main-slider__content
+        .js-slider-desc
+          .main-slider__desc Бульвар Леоніда Бирюкова, 2
+          a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video 
+            | Дивитися відео
+            +svg('triangle')
     .swiper-container.js-main-slider 
       .swiper-wrapper 
         .swiper-slide
           .swiper-slide-img
             +img('home-slider/1.jpg')
-          .main-slider__content
-            .main-slider__title(data-slider="1") Житловий комплекс
-            .main-slider__desc Бульвар Леоніда Бирюкова, 2
-            a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video 
-              | Дивитися відео
-              +svg('triangle')
         .swiper-slide
           .swiper-slide-img
             +img('home-slider/2.jpg')
-          .main-slider__content
-            .main-slider__title(data-slider="2") Бізнес класу
-            .main-slider__desc Бульвар Леоніда Бирюкова, 2
-            a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video
-              | Дивитися відео
-              +svg('triangle')
         .swiper-slide
           .swiper-slide-img
             +img('home-slider/3.jpg')
-          .main-slider__content
-            +img('grand-byrze-text.svg').main-slider__title.main-slider__title--img(data-slider="3")
-            .main-slider__desc Бульвар Леоніда Бирюкова, 2
-            a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video 
-              | Дивитися відео
-              +svg('triangle')
     .main-slider__logo 
       +img('developer-white.svg')
     a(href="#intro").main-slider__more.js-anchor-link
@@ -61,12 +54,16 @@ block content
           .custom-title.intro__title 
             | Преміум
             span життя за містом
-          a(href="#").btn-with-icon.intro__link
+          a(href="#").btn-with-icon.intro__link.intro__link--desk
             span.btn
               +svg('btn-decor')
             span.btn-with-icon-text.link-border-animation Про комплекс
         .intro__right  
           .intro__desc.custom-desc Майбутнє — за передмістям, але неабияким, а таким, що гарантує легке дихання та повноцінне цікаве життя без регулярних поїздок у мегаполіс. Висока екологічність і водночас транспортна доступність Бучі робить її ідеальною локацією для переселення далі від міської метушні.
+          a(href="#").btn-with-icon.intro__link.intro__link--tablet
+            span.btn
+              +svg('btn-decor')
+            span.btn-with-icon-text.link-border-animation Про комплекс
   section.gallery 
     .gallery__wrap
       .gallery__item  
@@ -98,23 +95,24 @@ block content
             .building-info-value 749
         .building-info-tabs 
           .building-info-title Термін здачі будинків
-          .building-info-tabs__list 
-            .building-info__tab-block 
-              button(type="button").building-info__tab.js-building-info__tab(data-choise="1") 1 буд
-            .building-info__tab-block 
-              button(type="button").building-info__tab.js-building-info__tab(data-choise="2") 2 буд
-            .building-info__tab-block 
-              button(type="button").building-info__tab.js-building-info__tab(data-choise="3") 3 буд
-            .building-info__tab-block 
-              button(type="button").building-info__tab.js-building-info__tab(data-choise="4") 4 буд
-            .building-info__tab-block 
-              button(type="button").building-info__tab.js-building-info__tab(data-choise="5") 5 буд
-          .building-info-tabs__wrap
-            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="1") iV квартал 2022
-            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="2") iV квартал 2023
-            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="3") iV квартал 2024
-            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="4") iV квартал 2025
-            .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="5") iV квартал 2026
+          .building-info-tabs__block
+            .building-info-tabs__list 
+              .building-info__tab-block 
+                button(type="button").building-info__tab.js-building-info__tab(data-choise="1") 1 буд
+              .building-info__tab-block 
+                button(type="button").building-info__tab.js-building-info__tab(data-choise="2") 2 буд
+              .building-info__tab-block 
+                button(type="button").building-info__tab.js-building-info__tab(data-choise="3") 3 буд
+              .building-info__tab-block 
+                button(type="button").building-info__tab.js-building-info__tab(data-choise="4") 4 буд
+              .building-info__tab-block 
+                button(type="button").building-info__tab.js-building-info__tab(data-choise="5") 5 буд
+            .building-info-tabs__wrap
+              .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="1") iV квартал 2022
+              .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="2") iV квартал 2023
+              .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="3") iV квартал 2024
+              .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="4") iV квартал 2025
+              .building-info-tabs__content.js-building-info-tabs__content(data-choise-content="5") iV квартал 2026
   section.yard.sec 
     .container 
       .yard__content 
@@ -145,13 +143,17 @@ block content
           .complex__title.custom-title 
             | ЖК Гранд Бурже -
             span це вибір сотень родин
+          a(href="#").btn-with-icon.complex__link.complex__link--tablet
+            span.btn
+              +svg('btn-decor')
+            span.btn-with-icon-text.link-border-animation Обрати квартиру
         .complex__right
           .complex__wrap
             .complex__desc.custom-desc Вони прагнуть жити там, де чисте повітря, поруч — хороші навчальні заклади, достойне медичне обслуговування, безліч можливостей для відпочинку з дітьми. Дружнє комьюніті житлового комплексу — це люди, які обрали серцем місце для життя і створюють у ньому комфортне середовище.
-            a(href="#").btn-with-icon
+            a(href="#").btn-with-icon.complex__link.complex__link--desk
               span.btn
                 +svg('btn-decor')
-              span.btn-with-icon-text.link-border-animation Дивитися переваги
+              span.btn-with-icon-text.link-border-animation Обрати квартиру
   section.infra 
     .container
       .infra__top 
@@ -184,11 +186,12 @@ block content
           .contacts__left-wrap 
             ul.contacts__list
               li.contacts__item 
-                .contacts__item-title Розташування:
-                a(href="#").contacts__item-block.contacts__item-block--1
-                  span.contacts__item-icon  
-                    +svg('location')
-                  span.link-border-animation м. Буча, Леоніда Бирюкова, 2
+                .contacts__item-wrap
+                  .contacts__item-title Розташування:
+                  a(href="#").contacts__item-block.contacts__item-block--1
+                    span.contacts__item-icon  
+                      +svg('location')
+                    span.link-border-animation м. Буча, Леоніда Бирюкова, 2
                 a(href="#").btn-with-icon.contacts__item-link
                   span.btn
                     +svg('btn-decor')

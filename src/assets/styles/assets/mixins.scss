@@ -115,6 +115,11 @@
 		width: 220px;
 	}
 
+	@include to(850px) {
+		width: 200px;
+		font-size: 12px;
+	}
+
 	&:hover {
 		color: $blue;
 	}

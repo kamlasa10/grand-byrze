@@ -23,8 +23,7 @@
 
   &__desc {
     max-width: 593px;
-    font-size: 24px;
-    line-height: 1.6em;
+    @include page-desc;
     margin-bottom: 50px;
   }
 
