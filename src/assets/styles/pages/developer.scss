@@ -26,6 +26,15 @@
               grid-template-columns: 183px 593px;
               column-gap: 80px;
             }
+
+            @include to(1000px) {
+                margin-left: 0;
+            }
+
+            @include to(850px) {
+                column-gap: 90px;
+                grid-template-columns: 160px 1fr;
+            }
         }
 
         &__content {

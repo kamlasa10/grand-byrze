@@ -21,6 +21,11 @@
         margin-bottom: 70px;
       }
 
+      @include to(850px) {
+        width: 525px;
+        margin-bottom: 50px;
+      }
+
       &-icon {
         margin: 0 auto;
         margin-bottom: 20px;
@@ -69,11 +74,32 @@
         padding-right: 0;
         column-gap: 80px;
         justify-content: space-between;
-        margin-bottom: 100px;
+        
+        &:not(:last-child) {
+          margin-bottom: 100px;
+        }
+      }
+
+      @include to(1100px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include to(950px) {
+        column-gap: 46px;
       }
 
       &:not(:last-child) {
         margin-bottom: var(--scroll-features-offset);
+
+        @include to(850px) {
+          margin-bottom: 50px;
+        }
+      }
+
+      .features__content {
+        @include to(850px) {
+          padding-right: 34px;
+        }
       }
 
       &--reverse {
@@ -83,6 +109,10 @@
 
         .features__content {
           max-width: 420px;
+
+          @include to(850px) {
+            padding-right: 0;
+          }
         }
 
         @include to(1650px) {
@@ -95,6 +125,10 @@
           grid-template-columns: 370px 513px;
         }
 
+        @include to(1100px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
         .features__img {
           order: 1;
         }
@@ -103,6 +137,10 @@
       &--3 {
         .features__title {
           max-width: 600px;
+
+          @include to(850px) {
+            max-width: 250px;
+          }
         }
       }
 
@@ -111,6 +149,12 @@
 
         &--reverse {
           column-gap: 113px;
+        }
+      }
+
+      @include to(950px) {
+        &--reverse {
+          column-gap: 45px;
         }
       }
     }
@@ -128,6 +172,16 @@
         font-size: 42px;
         line-height: 1.6em;
       }
+
+      @include to(950px) {
+        font-size: 32px;
+        line-height: 1.4em;
+      }
+
+      @include to(850px) {
+        font-size: 26px;
+        max-width: 240px;
+      }
     }
 
     &__content {
@@ -137,11 +191,24 @@
 
     &__desc {
       margin-bottom: 50px;
+
+      @include to(950px) {
+        margin-bottom: 0;
+
+        &--mb {
+          margin-bottom: 30px;
+        }
+      }
     }
 
     &__img {
       img {
         object-fit: cover;
+
+        @include to(950px) {
+          min-height: 414px;
+          height: 100%;
+        }
       }
     }
 
@@ -157,6 +224,10 @@
       @include to(1370px) {
         width: 144px;
         height: 144px;
+      }
+
+      @include to(950px) {
+        display: none;
       }
 
       &-wrap {

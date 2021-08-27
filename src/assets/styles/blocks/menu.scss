@@ -55,7 +55,11 @@
         left: 0;
         top: 0;
         right: 0;
-        padding-top: 65px;
+        padding-top: 95px;
+
+        @include to(1440px) {
+            padding-top: 65px;
+        }
 
         @include to(830px) {
             padding-top: 52px;
@@ -90,7 +94,11 @@
         }
 
         &-center {
-            top: -30px;
+            top: -55px;
+
+            @include to(1440px) {
+                top: -30px;
+            }
 
             @include to(830px) {
                 top: -32px;

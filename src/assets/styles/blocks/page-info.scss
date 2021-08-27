@@ -78,6 +78,10 @@
             padding: 30px 60px;
             width: 100%;
 
+            @include to(850px) {
+              padding: 20px 30px;
+            }
+
             svg {
                 position: absolute;
                 top: 0;

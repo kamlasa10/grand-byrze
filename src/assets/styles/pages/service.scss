@@ -16,6 +16,10 @@
               max-width: none;
               margin-bottom: 40px;
             }
+
+            @include to(850px) {
+                margin-bottom: 30px;
+            }
         }
 
         &__desc {
@@ -29,6 +33,10 @@
               max-width: none;
             }
 
+            @include to(850px) {
+                margin-right: 85px;
+            }
+
             &-wrap {
                 max-width: 635px;
                 font-size: 26px;
@@ -36,6 +44,10 @@
                 @include to(1440px) {
                   max-width: 593px;
                   font-size: 18px;
+                }
+
+                @include to(850px) {
+                    max-width: 370px;
                 }
             }
         }
@@ -47,6 +59,10 @@
 
                 .service__title {
                     max-width: 736px;
+
+                    @include to(770px) {
+                        max-width: 430px;
+                    }
                 }
             }
         }
@@ -63,13 +79,30 @@
                   column-gap: 74px;
                 }
 
+                @include to(900px) {
+                    column-gap: 80px;
+                    grid-template-columns: 200px 1fr;
+                }
+
                 &:not(:last-child) {
                     margin-bottom: 30px;
+
+                    @include to(850px) {
+                        margin-bottom: 20px;
+                    }
                 }
             }
 
             &-title {
                 @include page-desc;
+
+                @include to(900px) {
+                    font-size: 20px;
+                }
+
+                @include to(850px) {
+                    font-size: 18px;
+                }
             }
 
             .page-info__item-desc {
@@ -94,6 +127,10 @@
                   margin-right: 143px;
                   max-width: none;
                 }
+
+                @include to(900px) {
+                    margin-right: 85px;
+                }
             }
 
             &-desc {
@@ -105,6 +142,11 @@
 
                 @include to(1440px) {
                   max-width: 593px;
+                }
+
+                @include to(850px) {
+                    padding-bottom: 35px;
+                    margin-bottom: 35px;
                 }
             }
 
@@ -120,11 +162,19 @@
                 @include to(1440px) {
                   max-width: 594px;
                 }
+
+                @include to(850px) {
+                    max-width: 370px;
+                }
             }
 
             &-text {
                 width: 370px;
                 margin-bottom: 50px;
+
+                @include to(850px) {
+                    margin-bottom: 30px;
+                }
             }
 
             a {

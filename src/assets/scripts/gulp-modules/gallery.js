@@ -25,4 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     }
   })
+
+  const slides = $('.js-gallery-slider .swiper-slide')
+  const gallery = $('.gallery')
+
+  $(window).on('resize', () => {
+    if($(window).width() <= 1025) {
+      const avaliablesHeight = document.documentElement.clientHeight - $('.page-top').outerHeight() + (gallery.width() / 100) * 7
+      slides.height(avaliablesHeight + 'px')
+    }
+  }).resize()
 })

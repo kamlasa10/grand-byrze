@@ -16,6 +16,10 @@
             margin-top: -20%;
         }
 
+        @include to(1025px) {
+            margin-top: -13%;
+        }
+
         &__img {
             height: 100%;
 
@@ -44,6 +48,10 @@
             left: 65%;
             z-index: 5;
 
+            @include to(770px) {
+                top: 34%;
+            }
+
             .btn {
               width: 80px;
               height: 80px;
@@ -51,6 +59,11 @@
               @include to(1440px) {
                 width: 70px;
                 height: 70px;
+              }
+
+              @include to(770px) {
+                  width: 50px;
+                  height: 50px;
               }
             }
 
@@ -61,6 +74,11 @@
                 @include to(1440px) {
                   width: 27px;
                   height: 27px;
+                }
+
+                @include to(770px) {
+                    width: 24px;
+                    height: 24px;
                 }
             }
         }
@@ -94,6 +112,10 @@
                 bottom: 50px;
                 width: 100%;
                 left: 0;
+
+                @include to(770px) {
+                    bottom: 30px;
+                }
             }
         }
 
@@ -110,6 +132,11 @@
                       width: 16px;
                       height: 16px;
                     }
+
+                    @include to(770px) {
+                        width: 10px;
+                        height: 10px;
+                    }
                 }
             }
 
@@ -124,6 +151,10 @@
 
                     @include to(1440px) {
                       width: 14px;
+                    }
+
+                    @include to(770px) {
+                        width: 11.5px;
                     }
                 }
 

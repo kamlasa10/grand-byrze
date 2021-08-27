@@ -12,14 +12,30 @@
     pointer-events: none;
     transition: all .5s;
 
-  @include to(1200px) {
-    padding-left: 15px;
-    padding-right: 15px;
+    @include to(1025px) {
+      align-items: flex-start;
 
-    .container {
-      width: 100%;
+      .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
     }
-  }
+
+    @include to(1200px) {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .container {
+        width: 100%;
+      }
+    }
+    
+    @include to(1025px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     &.show {
         opacity: 1;
@@ -30,6 +46,10 @@
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+
+        @include to(1025px) {
+          margin-top: 50px;
+        }
 
         &-btn {
             border: none;
@@ -44,6 +64,11 @@
                 width: 15px;
                 height: 15px;
               }
+
+              @include to(850px) {
+                width: 13px;
+                height: 13px;
+              }
             }
         }
     }
@@ -55,12 +80,22 @@
       @include to(1440px) {
         min-width: 60px;
       }
+      
+
+      @include to(1025px) {
+        min-width: 50px;
+        height: 50px;
+      }
 
         &-prev {
-            margin-right: 58px;
+          margin-right: 58px;
 
           @include to(1200px) {
             margin-right: 20px;
+          }
+
+          @include to(1025px) {
+            margin-right: 38px;
           }
         }
 
@@ -69,6 +104,10 @@
 
           @include to(1200px) {
             margin-left: 20px;
+          }
+
+          @include to(1025px) {
+            margin-left: 38px;
           }
         }
     }
@@ -101,6 +140,14 @@
 
         @include to(1440px) {
           height: 450px;
+        }
+
+        @include to(1025px) {
+          height: 350px;
+        }
+
+        @include to(850px) {
+          height: 300px;
         }
 
         img {

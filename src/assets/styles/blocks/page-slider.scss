@@ -19,6 +19,10 @@
       font-size: 42px;
       margin-bottom: 30px;
     }
+
+    @include to(850px) {
+      font-size: 26px;
+    }
   }
 
   &__desc {
@@ -41,6 +45,10 @@
     padding-right: 50px;
   }
 
+  .swiper-wrapper {
+    margin: 0 -10px;
+  }
+
   &__controller {
     pointer-events: none;
     z-index: 50;
@@ -55,6 +63,10 @@
     border-radius: 50%;
     background-color: $black;
     opacity: 0;
+
+    @include to(1025px) {
+      display: none !important;
+    }
 
     svg {
       width: 45px;
@@ -85,6 +97,10 @@
 
     @include to(1440px) {
       font-size: 18px;
+    }
+
+    @include to(770px) {
+      font-size: 16px;
     }
   }
 }

@@ -224,6 +224,10 @@
     border: none;
     background-color: transparent;
 
+    @include to(770px) {
+      font-size: 16px;
+    }
+
     .btn {
       margin-right: 20px;
       width: 100px;

@@ -2,12 +2,17 @@
   background: linear-gradient(135.43deg, #FFFDF3 0%, #F0EEE3 99.99%);
 
   .documents {
-    padding-bottom: 150px;
+    @include pageOffsetTop;
 
     .big-container {
       width: 100%;
       padding-left: 200px;
       padding-right: 200px;
+
+      @include to(1025px) {
+        padding-left: 100px;
+        padding-right: 100px;
+      }
     }
 
     &__item {
@@ -20,6 +25,15 @@
 
       &:not(:last-child) {
         margin-bottom: 50px;
+      }
+
+      @include to(850px) {
+        padding-bottom: 30px;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
       }
     }
 
@@ -92,6 +106,15 @@
         max-width: 470px;
         margin-left: 0;
         margin-right: 0;
+      }
+
+      @include to(1025px) {
+        max-width: 510px;
+        text-align: center;
+      }
+
+      @include to(850px) {
+        font-size: 16px;
       }
     }
 

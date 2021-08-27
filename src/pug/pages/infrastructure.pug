@@ -12,6 +12,7 @@ block scripts
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/location.js')
   script(defer src='./assets/scripts/page-slider.js')
+  script(defer src='./assets/scripts/infrastructure.js')
 block meta
   title= 'title'
   meta(name='description', content='')
@@ -28,7 +29,7 @@ block content
           h1.page-title Інфраструктура
     .infra 
         .container 
-            .infra__block 
+            .infra__block.infra__block-top
                 .infra__block-content 
                     .infra__block-title.js-calculate-offset Все необхідне — просто в будинку”.  
                     .infra__block-desc Саме цей принцип став ключовим при розробці концепції ЖК Гранд Бурже. Перші три будинки житлового комплексу об'єднані з ТРЦ Avenir Plaza і мають переходи через спільний підземний паркінг. У кіно — в капцях, басейн — щоранку, похід за продуктами — за 10 хвилин. Це реальність для мешканців ЖК Гранд Бурже.
@@ -77,16 +78,17 @@ block content
                 .infra__info-title Продуманий до дрібниць доброустрій комплексу дозволяє проводити вільний час цікаво і різноманітно.   
                 .infra__info-item 
                     .infra__info-item-title На подвір’ї розташовані:
-                    .infra__info-wrap
-                        .infra__info-block
-                            +img('infrastructure/2.jpg')
-                            .infra__info-desc Три зони із сучасними дитячими майданчиками
-                        .infra__info-block
-                            +img('infrastructure/3.jpg')
-                            .infra__info-desc Мініфутбольне поле
-                        .infra__info-block
-                            +img('infrastructure/4.jpg')
-                            .infra__info-desc Спортивний майданчик, обладнаний зоною воркаут
+                    .infra__info-wrap.js-tablet-slider.swiper-container
+                        .swiper-wrapper
+                            .infra__info-block.swiper-slide
+                                +img('infrastructure/2.jpg')
+                                .infra__info-desc Три зони із сучасними дитячими майданчиками
+                            .infra__info-block.swiper-slide
+                                +img('infrastructure/3.jpg')
+                                .infra__info-desc Мініфутбольне поле
+                            .infra__info-block.swiper-slide
+                                +img('infrastructure/4.jpg')
+                                .infra__info-desc Спортивний майданчик, обладнаний зоною воркаут
                 .infra__info-item 
                     .infra__info-item-title Для неквапливого відпочинку:
                     .infra__info-wrap
@@ -124,15 +126,15 @@ block content
             .container
                 .infra__info-title У пішій доступності розташовані:
                 .infra__info.infra__info--single  
-                    .infra__info-item 
-                        .infra__info-wrap
-                            .infra__info-block
+                    .infra__info-item.swiper-container.js-tablet-slider
+                        .infra__info-wrap.swiper-wrapper
+                            .infra__info-block.swiper-slide
                                 +img('infrastructure/7.jpg')
                                 .infra__info-desc Два садочки
-                            .infra__info-block
+                            .infra__info-block.swiper-slide
                                 +img('infrastructure/8.jpg')
                                 .infra__info-desc Школа
-                            .infra__info-block
+                            .infra__info-block.swiper-slide
                                 +img('infrastructure/9.jpg')
                                 .infra__info-desc Бучанська гімназія
                 .info-block 
@@ -191,7 +193,7 @@ block content
             .infra__info.infra__info--correct
                 .infra__info-item 
                     .infra__info-item-title У радіусі 1 км відкриті:
-                    .infra__info-wrap
+                    .infra__info-wrap.js-tablet-slider
                         .infra__info-block
                             +img('infrastructure/10.jpg')
                             .infra__info-desc Студія йоги

@@ -263,6 +263,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  color: #fff;
 
   @include to(1440px) {
     font-size: 12px;
@@ -298,7 +299,7 @@
   }
 
   &:hover {
-    span {
+    .btn {
       background-color: $blue;
     }
   }
@@ -493,6 +494,18 @@
   @include to(1440px) {
     font-size: 64px;
   }
+
+  @include to(1025px) {
+    font-size: 45px;
+  }
+
+  @include to(850px) {
+    font-size: 30px;
+  }
+
+  @include to(770px) {
+    font-size: 24px;
+  }
 }
 
 @keyframes goTop {
@@ -539,6 +552,7 @@
   }
 
   @include to(770px) {
+    bottom: 30px;
     width: 50px;
     height: 50px;
   }

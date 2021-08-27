@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sliderContainer.each(function(_, wrapper) {
     const container = $(wrapper).find('.js-page-slider')[0]
+    let slider = null
 
-    const slider = new Swiper(container, {
+    const sliderConfig = {
       speed: 700,
       autoHeight: true,
       slidesPerView: 3.3,
@@ -13,8 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
       adaptiveHeight: true,
       allowTouchMove: false,
       breakpoints: {
+        650: {
+          slidesPerView: 2.2
+        },
+        850: {
+          slidesPerView: 2.5
+        },
         1025: {
-          slidesPerView: 2.8
+          slidesPerView: 2.8,
+          allowTouchMove: false
         },
         1300: {
           slidesPerView: 3.3
@@ -23,7 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
           slidesPerView: 3.6
         }
       }
-    })
+    }
+
+    if($(window).width() >= 1025) {
+      slider = new Swiper(container, sliderConfig)
+    } else {
+      sliderConfig.allowTouchMove = true
+      slider = new Swiper(container,sliderConfig)
+    }
 
     function stopMoveInCursor(e) {
       e.stopPropagation()
@@ -33,13 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.onClick = null
     }
 
-    let prevCoord = document.documentElement.clientWidth / 1.8
+    let prevCoord = document.documentElement.clientWidth / 1.7
     let currentCordX
     let isFirstForGallery = true
 
     function startMoveInCursor(e) {
       const customCursor = $(wrapper).find('.js-page-slider-controller')
-      console.log(customCursor)
       const maxOffsetTop = $(container).find('.swiper-slide img')[0].getBoundingClientRect().height
       let directionName = ''
 
