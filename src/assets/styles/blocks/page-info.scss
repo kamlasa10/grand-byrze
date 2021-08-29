@@ -1,100 +1,115 @@
 .page-info {
-    display: grid;
-    grid-template-columns: 536px 1fr;
+  display: grid;
+  grid-template-columns: 536px 1fr;
+  justify-content: space-between;
+  column-gap: 90px;
+
+  @include to(1440px) {
+    grid-template-columns: 370px 1fr;
+    column-gap: 80px;
+  }
+
+  @include to(1025px) {
+    grid-template-columns: 250px 1fr;
+    column-gap: 30px;
+  }
+  &__left {
+    top: 0;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    column-gap: 90px;
+  }
+
+  &__decor {
+    position: sticky;
+    bottom: 40px;
+    margin-bottom: 90px;
+    width: 220px;
+    height: 260px;
 
     @include to(1440px) {
-      grid-template-columns: 370px 640px;
-      column-gap: 80px;
+      width: 198px;
+      height: 235px;
     }
 
-    &__left {
+    @include to(850px) {
+      width: 84px;
+      height: 100px;
+      margin-bottom: 0;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: #eceae1;
+    }
+  }
+
+  &__title {
+    position: sticky;
+    top: 0;
+    @include page-big-text;
+  }
+
+  &__right {
+    display: grid;
+    row-gap: 40px;
+
+    @include to(1440px) {
+      row-gap: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    &-left {
+      margin-right: 60px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: $blue;
+      color: #fff;
+
+      @include to(1440px) {
+        margin-right: 40px;
+        min-width: 60px;
+        height: 60px;
+      }
+
+      @include to(850px) {
+        height: 50px;
+        min-width: 50px;
+      }
+    }
+
+    &-right {
+      position: relative;
+      background-color: #fff;
+      padding: 30px 60px;
+      width: 100%;
+
+      @include to(850px) {
+        padding: 20px 30px;
+      }
+
+      svg {
+        position: absolute;
         top: 0;
-        position: sticky;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    &__decor {
-        position: sticky;
-        bottom: 40px;
-        margin-bottom: 90px;
-        width: 220px;
-        height: 260px;
+        left: 0;
+        transform: translateX(-100%);
+        width: 40px;
+        height: 40px;
 
         @include to(1440px) {
-          width: 198px;
-          height: 235px;
+          width: 30px;
+          height: 30px;
         }
-
-        svg {
-            width: 100%;
-            height: 100%;
-            fill: #ECEAE1;
-        }
+      }
     }
-
-    &__title {
-        position: sticky;
-        top: 0;
-        @include page-big-text
-    }
-
-    &__right {
-        display: grid;
-        row-gap: 40px;
-
-        @include to(1440px) {
-          row-gap: 30px;
-        }
-    }
-
-    &__item {
-        display: flex;
-
-        &-left {
-            margin-right: 60px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background-color: $blue;
-            color: #fff;
-
-            @include to(1440px) {
-              margin-right: 40px;
-              min-width: 60px;
-              height: 60px;
-            }
-        }
-
-        &-right {
-            position: relative;
-            background-color: #fff;
-            padding: 30px 60px;
-            width: 100%;
-
-            @include to(850px) {
-              padding: 20px 30px;
-            }
-
-            svg {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: translateX(-100%);
-                width: 40px;
-                height: 40px;
-
-                @include to(1440px) {
-                  width: 30px;
-                  height: 30px;
-                }
-            }
-        }
-    }
+  }
 }

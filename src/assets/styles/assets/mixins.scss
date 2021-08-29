@@ -1,31 +1,30 @@
 @mixin font-face($font-family, $url, $weight: normal, $style: normal, $asset-pipeline: false) {
-	@font-face {
-		font-family: '#{$font-family}';
-		font-weight: #{$weight};
-		font-style: '#{$style}';
-		font-display: swap;
+  @font-face {
+    font-family: '#{$font-family}';
+    font-weight: #{$weight};
+    font-style: '#{$style}';
+    font-display: swap;
 
-		src: url('#{$url}.eot');
-		src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
-		url('#{$url}.woff') format('woff'),
-		url('#{$url}.ttf') format('truetype');
-	}
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot?#iefix') format('embedded-opentype'), url('#{$url}.woff') format('woff'),
+      url('#{$url}.ttf') format('truetype');
+  }
 }
 
 @mixin pageOffsetTop {
-	padding-bottom: 200px;
+  padding-bottom: 200px;
 
   @include to(1440px) {
     padding-bottom: 150px;
   }
 
   @include to(850px) {
-	  padding-bottom: 100px;
+    padding-bottom: 100px;
   }
 }
 
 @mixin animateLink {
-	position: relative;
+  position: relative;
 
   &::before {
     content: '';
@@ -45,139 +44,141 @@
 }
 
 @mixin page-big-text {
-	font-size: 44px;
-	line-height: 1.3em;
-	color: $black;
-	max-width: 870px;
-	text-transform: uppercase;
+  font-size: 44px;
+  line-height: 1.3em;
+  color: $black;
+  max-width: 870px;
+  text-transform: uppercase;
 
   @include to(1440px) {
     font-size: 42px;
   }
 
+  @include to(1025px) {
+    font-size: 32px;
+  }
+
   @include to(850px) {
-	font-size: 26px;
+    font-size: 26px;
   }
 }
 
 @mixin page-desc {
-	font-size: 26px;
-	line-height: 1.6em;
-	color: $black;
+  font-size: 26px;
+  line-height: 1.6em;
+  color: $black;
 
   @include to(1440px) {
     font-size: 24px;
   }
 
   @include to(850px) {
-	font-size: 18px;
+    font-size: 18px;
   }
 }
 
 // Function for converting a px based font-size to rem.
 @function rem($size) {
-	$remSize: $size / 14px;
-	@return #{$remSize}rem;
+  $remSize: $size / 14px;
+  @return #{$remSize}rem;
 }
 
 @mixin optional-at-root($sel) {
-	@at-root #{if(not &, $sel, selector-append(&, $sel))} {
-	  @content;
-	}
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
   }
+}
 
 @mixin placeholder {
-	@include optional-at-root('::-webkit-input-placeholder') {
-	  @content;
-	}
-  
-	@include optional-at-root(':-moz-placeholder') {
-	  @content;
-	}
-  
-	@include optional-at-root('::-moz-placeholder') {
-	  @content;
-	}
-  
-	@include optional-at-root(':-ms-input-placeholder') {
-	  @content;
-	}
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
   }
 
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
 @mixin btnWithText {
-	font-family: $default-font;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 13px 10px;
-	border-radius: 25px;
-	border: 1px solid #ECEAE1;
-	background-color: #fff;
-	font-weight: 500;
-	font-size: 14px;
-	width: 264px;
-	line-height: 1em;
-	min-height: 50px;
-	text-decoration: none;
-	color: inherit;
-	transition: all .4s;
+  font-family: $default-font;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 10px;
+  border-radius: 25px;
+  border: 1px solid #eceae1;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  width: 264px;
+  line-height: 1em;
+  min-height: 50px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s;
 
-	@include to(1440px) {
-		width: 220px;
-	}
+  @include to(1440px) {
+    width: 220px;
+  }
 
-	@include to(850px) {
-		width: 200px;
-		font-size: 12px;
-	}
+  @include to(850px) {
+    width: 200px;
+    font-size: 12px;
+  }
 
-	&:hover {
-		color: $blue;
-	}
+  &:hover {
+    color: $blue;
+  }
 }
 
 @mixin toh($max_height) {
-	@media screen and (max-height: $max_height) {
-		@content;
-	}
+  @media screen and (max-height: $max_height) {
+    @content;
+  }
 }
 
 @mixin placeholder {
-	::-webkit-input-placeholder {@content}
-	:-moz-placeholder           {@content}
-	::-moz-placeholder          {@content}
-	:-ms-input-placeholder      {@content}  
+  ::-webkit-input-placeholder {
+    @content;
   }
-
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
 
 @function max($numbers...) {
-
-	@return m#{a}x(#{$numbers})
+  @return m#{a}x(#{$numbers});
 }
-
-;
 
 @function min($numbers...) {
-
-	@return m#{i}n(#{$numbers})
+  @return m#{i}n(#{$numbers});
 }
-
-;
-
 
 $full-width: 1200;
 $work-width: 80;
 $screen-height: 720;
 
 @function vmax($pixels, $context: $full-width) {
-	@return #{($pixels/$context)* 100}vmax
+  @return #{($pixels/$context) * 100}vmax;
 }
-;
-
 @function vw($pixels, $context: $full-width) {
-	@return  #{($pixels/$context)* 100}vw
+  @return #{($pixels/$context) * 100}vw;
 }
 
 @function lh($lh, $fz) {
-	@return #{($lh/$fz)}em
+  @return #{($lh/$fz)}em;
 }

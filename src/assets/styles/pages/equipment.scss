@@ -1,75 +1,97 @@
 #equipment-page {
-    .equipment {
-        @include pageOffsetTop;
+  .equipment {
+    @include pageOffsetTop;
+  }
+
+  .equipment__item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 116px;
+    justify-content: flex-start;
+
+    &--reverse {
+      .equipment__item-title {
+        max-width: 612px;
+      }
     }
 
-    .equipment__item {
-        display: grid;
-        align-items: center;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 116px;
-        justify-content: flex-start;
+    img {
+      max-height: var(--max-img-height);
+      object-fit: cover;
 
-        &--reverse {
-          .equipment__item-title {
-            max-width: 612px;
-          }
-        }
+      @include to(850px) {
+        height: var(--max-img-height);
+      }
+    }
 
-        img {
-          max-height: 862px;
-          object-fit: cover;
-        }
+    @include to(1440px) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      column-gap: 80px;
+    }
+
+    @include to(850px) {
+      column-gap: 46px;
+    }
+
+    &-title {
+      @include page-big-text;
+      margin-bottom: 30px;
+
+      @include to(1440px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-desc {
+      font-size: 26px;
+      max-width: 536px;
+
+      @include to(1440px) {
+        font-size: 18px;
+        max-width: 370px;
+      }
+
+      @include to(850px) {
+        max-width: 280px;
+      }
+    }
+
+    &--reverse {
+      .equipment__item-wrap {
+        order: 1;
+      }
+
+      .equipment__item-desc {
+        margin-bottom: 60px;
 
         @include to(1440px) {
-          grid-template-columns: repeat(2, 1fr);
-          justify-content: space-between;
-          column-gap: 80px;
+          max-width: 410px;
+          margin-bottom: 50px;
         }
 
-        &-title {
-            @include page-big-text;
-            margin-bottom: 30px;
-
-            @include to(1440px) {
-              margin-bottom: 20px;
-            }
+        @include to(850px) {
+          max-width: 280px;
+          margin-bottom: 40px;
         }
+      }
+    }
+  }
 
-        &-desc {
-            font-size: 26px;
-            max-width: 536px;
+  .section-with-scroll {
+    margin-top: var(--scroll-features-offset);
+    height: auto;
+    margin-bottom: var(--scroll-features-offset);
 
-          @include to(1440px) {
-            font-size: 18px;
-            max-width: 370px;
-          }
-        }
-
-        &--reverse {
-            .equipment__item-wrap {
-                order: 1;
-            }
-
-            .equipment__item-desc {
-                margin-bottom: 60px;
-
-                @include to(1440px) {
-                  max-width: 410px;
-                  margin-bottom: 50px;
-                }
-            }
-        }
+    @include to(1440px) {
+      margin-top: 150px;
+      margin-bottom: 150px;
     }
 
-    .section-with-scroll {
-        margin-top: var(--scroll-features-offset);
-        height: auto;
-        margin-bottom: var(--scroll-features-offset);
-
-        @include to(1440px) {
-          margin-top: 150px;
-          margin-bottom: 150px;
-        }
+    @include to(850px) {
+      margin-top: 100px;
+      margin-bottom: 100px;
     }
+  }
 }
