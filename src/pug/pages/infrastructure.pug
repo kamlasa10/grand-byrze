@@ -73,7 +73,7 @@ block content
                     .swiper-slide.page-slider__item
                         +img('infrastructure/slider/10.jpg')
                         .page-slider__text Банкомат повного циклу, розташований у захищеній зоні
-        .container 
+        .container.tablet-container 
             .infra__info.infra__info--correct-mb 
                 .infra__info-title Продуманий до дрібниць доброустрій комплексу дозволяє проводити вільний час цікаво і різноманітно.   
                 .infra__info-item 
@@ -91,7 +91,7 @@ block content
                                 .infra__info-desc Спортивний майданчик, обладнаний зоною воркаут
                 .infra__info-item 
                     .infra__info-item-title Для неквапливого відпочинку:
-                    .infra__info-wrap
+                    .infra__info-wrap.infra__info-wrap-tablet
                         .infra__info-block
                             +img('infrastructure/5.jpg')
                             .infra__info-desc Зручні лави біля декоративного озера
@@ -123,7 +123,7 @@ block content
                         +img('infrastructure/slider2/5.jpg')
                         .page-slider__text Коворкінг
         .section-with-scroll.scroll-block 
-            .container
+            .container.tablet-container
                 .infra__info-title У пішій доступності розташовані:
                 .infra__info.infra__info--single  
                     .infra__info-item.swiper-container.js-tablet-slider
@@ -152,10 +152,10 @@ block content
                                     .info-block__content-desc До приватного медичного центру
                                 .info-block__content-item 
                                     .info-block__content-value 11 хв
-                                    .info-block__content-desc До приватного медичного центру
+                                    .info-block__content-desc До Бучанської дитячої поліклініки
                                 .info-block__content-item 
                                     .info-block__content-value 15 хв
-                                    .info-block__content-desc До приватного медичного центру
+                                    .info-block__content-desc До Ірпінської центральної міської лікарні
                 .info-block 
                     .info-block__title Численні торгові об’єкти поруч забезпечують багато можливостей для шопінгу та розваг і здорову конкуренцію, яка йде на користь споживачам. 
                     .info-block__content
@@ -188,23 +188,24 @@ block content
                                 .info-block__content-item 
                                     .info-block__content-value 6 хв
                                     .info-block__content-desc Ринок зі свіжими продуктами
-        .container 
+        .container.tablet-container 
             .infra__info-title Окрім спортивного клубу в ТРЦ мешканцям житлового комплексу відкриваються додаткові спокусливі можливості для спорту.
             .infra__info.infra__info--correct
                 .infra__info-item 
                     .infra__info-item-title У радіусі 1 км відкриті:
-                    .infra__info-wrap.js-tablet-slider
-                        .infra__info-block
-                            +img('infrastructure/10.jpg')
-                            .infra__info-desc Студія йоги
-                        .infra__info-block
-                            +img('infrastructure/11.jpg')
-                            .infra__info-desc Зал з айкідо
-                        .infra__info-block
-                            +img('infrastructure/12.jpg')
-                            .infra__info-desc Фітнес-клуб
+                    .infra__info-wrap.js-tablet-slider.swiper-container 
+                        .swiper-wrapper
+                            .infra__info-block.swiper-slide
+                                +img('infrastructure/10.jpg')
+                                .infra__info-desc Студія йоги
+                            .infra__info-block.swiper-slide
+                                +img('infrastructure/11.jpg')
+                                .infra__info-desc Зал з айкідо
+                            .infra__info-block.swiper-slide
+                                +img('infrastructure/12.jpg')
+                                .infra__info-desc Фітнес-клуб
                 .infra__info-item 
-                    .infra__info-wrap
+                    .infra__info-wrap.infra__info-wrap-tablet
                         .infra__info-block
                             +img('infrastructure/13.jpg')
                             .infra__info-desc Автомобілісти оцінять близькість сучасного детейлінг-центру. 
