@@ -28,12 +28,15 @@
 
     @include to(992px) {
       grid-template-columns: 1fr;
-      row-gap: 88px;
     }
   }
 
   &__left {
     padding-top: 50px;
+
+    @include to(992px) {
+      margin-bottom: 88px;
+    }
 
     &-wrap {
       max-width: 350px;
@@ -47,10 +50,15 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 60px;
+
+    .contacts__item:not(:last-child) {
+      margin-bottom: 60px;
+    }
 
     @include to(1440px) {
-      row-gap: 50px;
+      .contacts__item:not(:last-child) {
+        margin-bottom: 50px;
+      }
     }
 
     @include to(992px) {

@@ -28,6 +28,10 @@
     &.show {
         opacity: 1;
         pointer-events: initial;
+
+        .menu-btn {
+            color: $black;
+        }
     }
     
     .big-container {
@@ -177,22 +181,51 @@
         @include to(1370px) {
             justify-content: flex-start;
         }
+
+        @include to(850px) {
+            padding-bottom: 30px !important;
+        }
     }
 
     &__block {
         display: flex;
         flex-direction: column;
         align-items: center;
+        min-height: fit-content;
 
         @include to(992px) {
             width: 80%;
         }
 
         &:not(:last-child) {
-            margin-bottom: 65px;
+            margin-bottom: 80px;
+
+            @include to(1440px) {
+                margin-bottom: 65px;
+
+                .menu__block--correct {
+                    margin-bottom: 45px;
+                }
+            }
 
             @include to(850px) {
                 margin-bottom: 70px;
+
+                .menu__block--correct {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+        &.menu__block--correct {
+            margin-bottom: 60px;
+
+            @include to(1440px) {
+                margin-bottom: 45px;
+            }
+
+            @include to(850px) {
+                margin-bottom: 40px;
             }
         }
     }
@@ -230,30 +263,40 @@
 
         @include to(992px) {
             justify-content: center;
-            row-gap: 20px;
         }
 
         .menu__item:not(:last-child) {
             margin-right: 50px;
+            margin-bottom: 20px;
 
             @include to(1440px) {
                 margin-right: 32px;
+            }
+
+            @include to(850px) {
+                margin-bottom: 30px;
+            }
+        }
+
+        .menu__item {
+            font-size: 18px;
+            line-height: 1em;
+            letter-spacing: 0.02em;
+
+            @include to(1440px) {
+                font-size: 12px;
             }
         }
     }
 
     &__link {
+        font-size: inherit;
+        line-height: inherit;
         position: relative;
-        font-size: 18px;
-        line-height: 1em;
         letter-spacing: 0.02em;
         color: inherit;
         text-decoration: none;
         text-transform: uppercase;
-
-        @include to(1440px) {
-            font-size: 12px;
-        }
 
         &::before {
             content: "";

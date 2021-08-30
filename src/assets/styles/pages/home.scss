@@ -1301,6 +1301,7 @@
     .features__content {
       padding-right: 0;
       column-gap: 236px;
+      align-items: center;
 
       @include to(1440px) {
         column-gap: 80px;

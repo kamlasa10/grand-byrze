@@ -41,12 +41,12 @@ block content
                     div
                     .security__desc.security__info-desc Для мешканців діє картковий доступ: зайти можуть лише резиденти ЖК або запрошені гості.
         .section-with-scroll 
-            .overlay-block
-                .overlay-block__bg
             .security__item
                 .container
                     .security__title Система цілодобового відеоспостереження охоплює всю територію
                     .page-info 
+                        .overlay-block
+                            .overlay-block__bg
                         .page-info__left 
                             .page-info__title Встановлено близько 100 камер:
                         .page-info__right 
@@ -94,7 +94,7 @@ block content
                                     +svg('custom-triangle')
                                     .page-info__item-desc Проводять відеоспостереження
                             .security__desc Кожен резидент комплексу може замовити додаткові послуги з охорони квартири за допомогою провідної системи Ajax.
-            .security__item 
+            .security__item.security__item--correct 
                 .container
                     .security__title Охоронна компанія “БЕСТ-охорона” пропонує особливі умови для власників квартир ЖК “Гранд Бурже”:
                     .page-info 
@@ -118,7 +118,7 @@ block content
                                 .page-info__item-right 
                                     +svg('custom-triangle')
                                     .page-info__item-desc Безоплатне обслуговування системи та підтримка програмного забезпечення
-            .security__item 
+            .security__item.security__item--correct 
                 .container
                     .security__title Переваги такої охорони незаперечні:
                     .page-info 
@@ -145,7 +145,7 @@ block content
                         div
                       .security__desc.security__bottom-desc Пультова охорона захищає від крадіжки майна, нападів, пожежі, затоплення та просочування газу. Ми подбаємо про вашу безпеку!
                 .security__title Ми подбаємо про вашу безпеку!
-                .security__bottom-wrap.security__info-wrap
+                .security__bottom-wrap.security__info-wrap.security__info-wrap--correct
                     .security__bottom-block 
                         a(href="#").btn-with-icon
                             span.btn

@@ -223,8 +223,12 @@
     color: $black;
     border: none;
     background-color: transparent;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;                                               
+    writing-mode: inherit;                                                              
 
-    @include to(770px) {
+    @include to(770px) {                                                        
       font-size: 16px;
     }
 

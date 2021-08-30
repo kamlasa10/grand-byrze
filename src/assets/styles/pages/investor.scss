@@ -1,14 +1,26 @@
 #investor-page {
     .block-with-img__title {
         margin-bottom: 100px;
+
+        @include to(850px) {
+            margin-bottom: 70px;
+        }
     }
 
     .block-with-img {
         padding-bottom: 150px;
 
+        @include to(850px) {
+            padding-bottom: 100px;
+        }
+
         &--bg {
             background-color: $black;
             padding: 150px 0;
+
+            @include to(850px) {
+                padding: 100px 0;
+            }
 
             .block-with-img__text {
                 color: #ECEAE1;
@@ -41,6 +53,14 @@
         @include to(1200px) {
             grid-template-columns: 1fr 1fr 
         }
+
+        @include to(1025px) {
+            align-items: flex-start;
+        }
+
+        @include to(850px) {
+            column-gap: 46px;
+        }
     }
 
     .block-with-img__text {
@@ -55,6 +75,11 @@
             font-size: 16px;
             max-width: 313px;
         }
+
+        @include to(850px) {
+            max-width: 250px;
+            font-size: 14px;
+        }
     }
 
     .investor {
@@ -64,6 +89,10 @@
 
             @include to(1440px) {
                 padding: 150px 0;
+            }
+
+            @include to(850px) {
+                padding: 100px 0;
             }
 
             .container {
@@ -94,6 +123,11 @@
 
                 @include to(1200px) {
                     grid-template-columns: 1fr 1fr;
+                }
+
+                @include to(850px) {
+                    column-gap: 46px;
+                    align-items: flex-start
                 }
             }
 
@@ -131,6 +165,11 @@
                     left: 50%;
                     bottom: 0;
                     transform: translateX(-50%);
+
+                    @include to(850px) {
+                        height: calc(100% - 92px);
+                        top: 46px;
+                    }
                 }
 
                 .investor__item-desc {
@@ -140,6 +179,11 @@
 
                     @include to(1440px) {
                         font-size: 16px;
+                    }
+
+                    @include to(850px) {
+                        font-size: 14px;
+                        max-width: 250px;
                     }
                 }
             }
@@ -156,6 +200,10 @@
                         max-width: 536px;
                     }
                 }
+
+                @include to(850px) {
+                    padding: 80px 0;
+                }
             }
         }
 
@@ -165,6 +213,10 @@
             @media(min-width: 1500px) {
                 padding-top: 120px;
                 @include pageOffsetTop;
+            }
+
+            @include to(850px) {
+                padding: 100px 0;
             }
 
             &-wrap {
@@ -180,6 +232,11 @@
 
                 @include to(1200px) {
                     grid-template-columns: 1fr 0.7fr;
+                }
+
+                @include to(850px) {
+                    column-gap: 46px;
+                    grid-template-columns: repeat(2, 1fr);
                 }
             }
 
@@ -198,6 +255,10 @@
                 @media(min-width: 1500px) {
                     max-width: 1470px;
                 }
+
+                @include to(850px) {
+                    margin-bottom: 40px;
+                }
             }
 
             &-block {
@@ -208,6 +269,14 @@
                 @media(min-width: 1500px) {
                     max-width: 73%;
                     margin-right: 0;
+                }
+
+                @include to(1025px) {
+                    margin-right: 140px;
+                }
+
+                @include to(850px) {
+                    margin-right: 110px;
                 }
             }
         }

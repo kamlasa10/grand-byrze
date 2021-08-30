@@ -53,8 +53,10 @@
           activeSlide.querySelector('.swiper-slide-img'),
           {
             clipPath: 'circle(55% at 50% 5%)',
+            '-webkit-clip-path': 'circle(55% at 50% 5%)'
           },
           {
+            '-webkit-clip-path': 'circle(80% at 50% 70%)',
             clipPath: 'circle(80% at 50% 70%)',
             duration: 0.9,
           },

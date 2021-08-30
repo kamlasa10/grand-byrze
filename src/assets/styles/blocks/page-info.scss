@@ -3,6 +3,9 @@
     grid-template-columns: 536px 1fr;
     justify-content: space-between;
     column-gap: 90px;
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
 
     @include to(1440px) {
       grid-template-columns: 370px 640px;
@@ -11,6 +14,7 @@
 
     &__left {
         top: 0;
+        z-index: 5;
         position: sticky;
         display: flex;
         flex-direction: column;
@@ -29,6 +33,11 @@
           height: 235px;
         }
 
+        @include to(850px) {
+          width: 84px;
+          height: 100px;
+        }
+
         svg {
             width: 100%;
             height: 100%;
@@ -45,6 +54,7 @@
     &__right {
         display: grid;
         row-gap: 40px;
+        z-index: 2;
 
         @include to(1440px) {
           row-gap: 30px;

@@ -408,6 +408,7 @@
     width: 100px;
     height: 100px;
     box-shadow: 0px 20px 30px rgba(226, 62, 40, 0.2);
+    position: relative;
 
     @include to(1440px) {
       margin-right: 20px;
@@ -609,6 +610,10 @@
     @include to(1440px) {
       margin-bottom: 50px;
     }
+
+    @include to(850px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__wrap {
@@ -626,10 +631,37 @@
         object-fit: cover;
       }
     }
+
+    @include to(1025px) {
+      grid-template-columns: 1fr 1fr;
+      
+      img {
+        object-fit: cover;
+        max-height: var(--max-img-height);
+      }
+    }
+
+    @include to(850px) {
+      column-gap: 46px;
+
+      img {
+        height: var(--max-img-height);
+      }
+    }
+  }
+
+  &__content {
+    @include to(850px) {
+      max-width: 297px;
+    }
   }
 
   &__text {
     margin-bottom: 30px;
+
+    @include to(850px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__desc {
@@ -640,6 +672,11 @@
     @include to(1440px) {
       margin-bottom: 30px;
       max-width: 315px;
+    }
+
+    @include to(850px) {
+      max-width: 235px;
+      margin-bottom: 20px;
     }
 
     a {
@@ -654,18 +691,20 @@
   }
 }
 
-//.overlay-block {
-//  top: 0;
-//  position: sticky;
-//  width: 100%;
-//  height: 100vh;
-//  overflow: hidden;
-//
-//  &__bg {
-//    background: linear-gradient(144deg, #FFFDF3 0%, #F0EEE3 99.99%);
-//    height: 100%;
-//  }
-//}
+.overlay-block {
+ top: 0;
+ position: absolute;
+ transform: translateY(-100%);
+ width: 100%;
+ height: 100vh;
+ overflow: hidden;
+ z-index: 3;
+
+ &__bg {
+   background: linear-gradient(144deg, #FFFDF3 0%, #F0EEE3 99.99%);
+   height: 100%;
+ }
+}
 
 .large-container-desk {
   @media (min-width: 1500px) {
@@ -705,5 +744,13 @@
 
   .block-with-img__wrap {
     justify-content: space-between;
+  }
+}
+
+#credit-page {
+  @include to(850px) {
+    .block-with-img__desc {
+      max-width: 272px;
+    }
   }
 }

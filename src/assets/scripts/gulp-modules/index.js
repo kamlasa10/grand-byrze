@@ -6,7 +6,31 @@ const openMenu = document.querySelector('.js-menu-open')
 const header = document.querySelector('.header')
 const closeMenu = document.querySelector('.js-menu-close')
 
+function isSmoothScroll() {
+  return window.locoScroll
+}
+
+function stopScroll() {
+  if(isSmoothScroll()) {
+    window.locoScroll.stop()
+    return
+  }
+
+  document.body.style.overflow = 'hidden'
+}
+
+function startScroll() {
+  if(isSmoothScroll()) {
+    window.locoScroll.start()
+    return
+  }
+
+  document.body.style.overflow = 'visible'
+}
+
 function animationCloseMenu() {
+  startScroll()
+
   menu.classList.remove('show')
 
   setTimeout(() => {
@@ -15,8 +39,10 @@ function animationCloseMenu() {
 }
 
 function animationShowMenu() {
+  stopScroll()
   menuTl.kill()
   header.classList.add('hide')
+
   setTimeout(() => {
     menu.classList.add('show')
   }, 200)
@@ -58,16 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   switch(pageId) {
     case 'index-page':
-      window.initCustomScroll(true)
+      window.initCustomScroll()
       break
     case 'features-page':
-      window.initCustomScroll(false)
+      window.initCustomScroll()
       break
     case 'location-page':
       window.initCustomScroll(false)
       break
     case 'investor-page':
-      window.initCustomScroll(false)
+      window.initCustomScroll()
       break
     default:
       window.initCustomScroll(false)
@@ -266,7 +292,15 @@ function sendAjaxForm(url, selectorForm) {
   });
 }
 
+const pageId = document.body.getAttribute('id')
+
 $(window).on('resize', () => {
+  // if(pageId === 'gallery-page') {
+  //   const offsetTop = $('.page-top').outerHeight()
+
+  //   $('.gallery').css('margin-top', offsetTop - 100 + 'px')
+  // }
+
   if($(window).width() <= 1100) {
     $('.js-footer__item').each((_, item) => {
       document.querySelector('.footer__item-tablet').append(item)

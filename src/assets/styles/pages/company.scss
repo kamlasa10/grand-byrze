@@ -14,13 +14,19 @@
               padding-bottom: 100px;
             }
 
-            &-desc {
-                @include page-desc;
+            @include to(1150px) {
+              justify-content: space-between;
+              column-gap: 80px;
             }
 
-            @include to(1150px) {
-                justify-content: space-between;
-                column-gap: 80px;
+            @include to(850px) {
+              grid-template-columns: 430px 71px;
+              column-gap: 46px;
+              margin-right: 87px;
+            }
+
+            &-desc {
+              @include page-desc;
             }
         }
 
@@ -31,6 +37,10 @@
 
             @include to(1440px) {
               padding: 100px 0;
+            }
+
+            @include to(850px) {
+              padding: 75px 0;
             }
 
             .container {
@@ -66,6 +76,10 @@
         &__block {
             padding: 100px 0;
             border-bottom: 1px solid #ECEAE1;
+
+            @include to(850px) {
+              padding: 70px 0;
+            }
         }
 
         &__info {
@@ -84,6 +98,11 @@
                 column-gap: 80px;
                 justify-content: space-between;
             }
+
+            @include to(850px) {
+              grid-template-columns: repeat(2, 1fr);
+              column-gap: 46px;
+            }
         }
 
         &__contacts {
@@ -97,9 +116,20 @@
               grid-template-columns: 370px 370px;
             }
 
+            @include to(900px) {
+              grid-template-columns: repeat(2, 1fr);
+              column-gap: 46px;
+            }
+
             &-text {
               br:last-child {
                 display: none;
+              }
+
+              @include to(850px) {
+                br:last-child {
+                  display: block;
+                }
               }
             }
 
@@ -146,6 +176,10 @@
 
             .btn-with-icon {
                 margin-top: 50px;
+
+                @include to(850px) {
+                  margin-top: 15px;
+                }
             }
         }
     }
@@ -185,6 +219,10 @@
                 @include to(1440px) {
                   padding: 100px 0;
                 }
+
+                @include to(850px) {
+                  padding: 70px 0;
+                }
             }
 
             &:not(:last-child) {
@@ -201,7 +239,12 @@
         align-items: flex-start;
 
         @include to(1200px) {
-            grid-template-columns: 330px 1fr;
+          grid-template-columns: 330px 1fr;
+        }
+
+        @include to(850px) {
+          grid-template-columns: 250px 1fr;
+          column-gap: 46px;
         }
 
         &__title {
