@@ -146,11 +146,14 @@ block content
                       .security__desc.security__bottom-desc Пультова охорона захищає від крадіжки майна, нападів, пожежі, затоплення та просочування газу. Ми подбаємо про вашу безпеку!
                 .security__title Ми подбаємо про вашу безпеку!
                 .security__bottom-wrap.security__info-wrap.security__info-wrap--correct
-                    .security__bottom-block 
-                        a(href="#").btn-with-icon
-                            span.btn
-                                +svg('btn-decor')
-                            span.btn-with-icon-text.link-border-animation Обрати квартиру
+                    .page-info
+                      .page-info__left
+                      div
+                        .security__bottom-block 
+                            a(href="#").btn-with-icon
+                                span.btn
+                                    +svg('btn-decor')
+                                span.btn-with-icon-text.link-border-animation Обрати квартиру
 block footer
   include ../includes/footer.pug
 

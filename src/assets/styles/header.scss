@@ -14,6 +14,11 @@
         padding-top: 20px;
         padding-bottom: 20px;
     }
+
+    @include to(480px) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
     
     .header__logo--big {
         width: 180px;
@@ -35,6 +40,7 @@
 
         img {
            height: 130px;
+           object-fit: contain;
 
             @include to(1440px) {
                 height: 87px;
@@ -111,11 +117,28 @@
         align-items: center;
         justify-content: space-between;
         transition: all .4s;
+
+        @include to(480px) {
+            justify-content: flex-start;
+        }
     }
 
     &__left {
         display: flex;
         align-items: center;
+
+        @include to(760px) {
+            margin-right: 20px;
+        }
+
+        @include to(480px) {
+            margin-left: auto;
+            margin-right: 15px;
+        }
+
+        @include to(320px) {
+            margin-right: 10px;
+        }
     }
 
     &__link {
@@ -140,6 +163,14 @@
             &-text {
                 display: none;
             }
+        }
+
+        @include to(480px) {
+            margin-right: 15px;
+        }
+
+        @include to(320px) {
+            margin-right: 10px;
         }
 
         span {
@@ -188,6 +219,25 @@
             }
         }
 
+        @include to(480px) {
+            svg {
+                display: inline-flex;
+                width: 17px;
+                height: 18px;
+                margin-right: 0;
+            }
+
+            font-size: 0;
+            width: 40px;
+            height: 40px;
+            min-height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
         &:hover {
             color: $blue;
 
@@ -207,6 +257,13 @@
         @include to(770px) {
             transform: translateX(-50%);
         }
+
+        @include to(760px) {
+            position: static;
+            order: -1;
+            margin-right: auto;
+            transform: none;
+        }
     }
 
     &__logo {
@@ -216,8 +273,24 @@
         justify-content: center;
         transition: all .4s;
 
+        &-mobile {
+            display: none;
+        }
+
         img {
             height: 38px;
+        }
+
+        @include to(480px) {
+            &--big {
+                display: none;
+            }
+
+            display: none;
+
+            &-mobile {
+                display: block;
+            }
         }
     }
 
@@ -226,6 +299,10 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+
+        @include to(760px) {
+            margin-left: 0;
+        }
     }
 
     .header__popup-btn {
@@ -233,6 +310,10 @@
 
         @include to(1100px) {
             margin-right: 20px;
+        }
+
+        @include to(760px) {
+            display: none;
         }
     }
 }

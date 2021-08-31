@@ -19,6 +19,12 @@
         color: $black;
       }
     }
+
+    @include to(480px) {
+      padding: 5px 0;
+      height: calc(var(--page-header-h) - 25);
+      background-color: rgba(236, 234, 225, 0.95);
+    }
   }
 
   .main-slider {
@@ -74,6 +80,10 @@
           height: 37px;
           transform: translateY(6px);
         }
+
+        @include to(320px) {
+          width: 270px;
+        }
       }
     }
 
@@ -117,6 +127,17 @@
 
       @include to(850px) {
         font-size: 48px;
+      }
+
+      @include to(575px) {
+        font-size: 40px;
+        margin-left: 25px;
+        margin-right: 25px;
+        white-space: break-spaces;
+      }
+
+      @include to(320px) {
+        font-size: 36px;
       }
 
       &--img {

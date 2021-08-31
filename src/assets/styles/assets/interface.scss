@@ -201,7 +201,7 @@
   }
 
   @include to(600px) {
-    padding: 0 15px !important;
+    padding: 0 25px !important;
   }
 }
 
@@ -226,6 +226,11 @@
   @include to(770px) {
     width: 50px;
     height: 50px;
+  }
+
+  @include to(480px) {
+    width: 40px;
+    height: 40px;
   }
 
   &:hover {
@@ -294,6 +299,11 @@
       @include to(770px) {
         width: 12px;
         height: 11px;
+      }
+
+      @include to(480px) {
+        width: 10px;
+        height: 10px;
       }
     }
   }
@@ -622,14 +632,14 @@
     align-items: center;
     column-gap: 80px;
 
+    img {
+      height: var(--max-img-height);
+      object-fit: cover;
+    }
+
     @media (min-width: 1500px) {
       grid-template-columns: 743px 405px;
       column-gap: 116px;
-
-      img {
-        height: var(--max-img-height);
-        object-fit: cover;
-      }
     }
 
     @include to(1025px) {
@@ -744,10 +754,20 @@
 
   .block-with-img__wrap {
     justify-content: space-between;
+
+    @include to(1440px) {
+      justify-content: flex-start;
+    }
   }
 }
 
 #credit-page {
+  @include to(1440px) {
+    .block-with-img__desc {
+      max-width: none;
+    }
+  }
+
   @include to(850px) {
     .block-with-img__desc {
       max-width: 272px;
