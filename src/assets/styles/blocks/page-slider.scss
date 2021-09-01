@@ -23,6 +23,15 @@
     @include to(850px) {
       font-size: 26px;
     }
+
+    @include to(575px) {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    @include to(320px) {
+      font-size: 20px;
+    }
   }
 
   &__desc {
@@ -76,7 +85,7 @@
       transform: rotate(-90deg);
       stroke-width: 1px;
       stroke-width: 0.5px;
-      transition: all .4s;
+      transition: all 0.4s;
     }
 
     &.back {

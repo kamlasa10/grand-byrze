@@ -16,6 +16,14 @@
     padding-bottom: 220px;
   }
 
+  @include to(520px) {
+    padding-bottom: 160px;
+  }
+
+  @include to(320px) {
+    padding-bottom: 135px;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -32,8 +40,24 @@
     left: 0;
     right: 0;
 
+    svg {
+      display: none;
+    }
+
     img {
       width: 100%;
+    }
+
+    @include to(520px) {
+      img {
+        display: none;
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
@@ -67,6 +91,10 @@
       row-gap: 50px;
       column-gap: 44px;
     }
+
+    @include to(480px) {
+      row-gap: 30px;
+    }
   }
 
   &__item {
@@ -75,6 +103,10 @@
 
       @include to(1100px) {
         display: grid;
+      }
+
+      @include to(520px) {
+        display: none !important;
       }
     }
 
@@ -98,6 +130,15 @@
       @include to(1440px) {
         font-size: 12px;
       }
+
+      @include to(575px) {
+        font-size: 11px;
+        line-height: 2.4em;
+      }
+
+      @include to(320px) {
+        font-size: 10px;
+      }
     }
   }
 
@@ -120,6 +161,11 @@
     @include to(1100px) {
       grid-column: 1/4;
     }
+
+    @include to(520px) {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 30px;
+    }
   }
 
   &__center {
@@ -136,6 +182,19 @@
     @include to(1100px) {
       grid-column: 1/3;
       width: 81%;
+    }
+
+    @include to(650px) {
+      width: 100%;
+    }
+
+    @include to(520px) {
+      grid-column: 1/4;
+      padding: 40px 35px;
+    }
+
+    @include to(320px) {
+      padding: 40px 20px;
     }
 
     &-title {
@@ -185,6 +244,41 @@
       margin-top: 0;
       row-gap: 20px;
     }
+
+    @include to(520px) {
+      display: block;
+      column-count: 2;
+      grid-column: 1/4;
+      column-gap: 31px;
+
+      .footer__item {
+        break-inside: avoid-column;
+
+        &-social {
+          margin-bottom: 30px;
+        }
+
+        &:first-child {
+          .footer__item-title {
+            margin-bottom: 23px;
+          }
+        }
+      }
+    }
+
+    @include to(320px) {
+      column-gap: 15px;
+
+      .footer__socials {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 21px;
+      }
+
+      .footer__item-title {
+        font-size: 16px;
+      }
+    }
   }
 
   &__left,
@@ -199,6 +293,14 @@
     margin-bottom: 15px;
     font-size: 12px;
     line-height: 1.4em;
+
+    @include to(575px) {
+      font-size: 11px;
+    }
+
+    @include to(320px) {
+      font-size: 10px;
+    }
 
     &--mb0 {
       margin-bottom: 0;
@@ -216,6 +318,14 @@
 
     @include to(1100px) {
       margin-bottom: 12px;
+    }
+
+    @include to(575px) {
+      font-size: 13px;
+    }
+
+    @include to(320px) {
+      font-size: 12px;
     }
   }
 
@@ -242,6 +352,10 @@
     left: 0;
     right: 0;
 
+    @include to(575px) {
+      bottom: 20px;
+    }
+
     .big-container {
       width: 100%;
     }
@@ -257,6 +371,15 @@
     font-size: 12px;
     line-height: 1.3em;
     color: $black;
+
+    @include to(575px) {
+      font-size: 9px;
+      max-width: 100px;
+    }
+
+    @include to(320px) {
+      font-size: 8px;
+    }
   }
 
   .footer__creator {
@@ -271,6 +394,10 @@
 
       &:hover::before {
         transform: scaleX(0);
+      }
+
+      @include to(575px) {
+        display: flex;
       }
     }
   }

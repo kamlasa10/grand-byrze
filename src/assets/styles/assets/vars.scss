@@ -1,13 +1,12 @@
-$default-font: "gilroy",
-sans-serif;
+$default-font: 'gilroy', sans-serif;
 $default-font2: 'Arsenal', sans-serif;
 
-$black: #2A3341;
-$red: #E23E28;
-$yellow: #EFBC48;
-$lightRed: #DF5E5E;
-$grey: #8E837B;
-$blue: #0951BE;
+$black: #2a3341;
+$red: #e23e28;
+$yellow: #efbc48;
+$lightRed: #df5e5e;
+$grey: #8e837b;
+$blue: #0951be;
 
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
@@ -18,7 +17,7 @@ $blue: #0951BE;
   --max-img-height: 862px;
 }
 
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1440px) {
   :root {
     --padding-page: 150px;
     --header-h: 110px;
@@ -29,7 +28,7 @@ $blue: #0951BE;
   }
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 992px) {
   :root {
     --padding-page: 130px;
     --header-h: 110px;
@@ -50,10 +49,17 @@ $blue: #0951BE;
   }
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 576px) {
   :root {
     --header-h: 70px;
     --sliceFigure: 100px;
     --sliceFigure-big: 100px;
+    --scroll-features-offset: 35px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  :root {
+    --scroll-features-offset: 30px;
   }
 }

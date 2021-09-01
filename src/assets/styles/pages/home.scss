@@ -160,6 +160,15 @@
       @include to(1440px) {
         font-size: 18px;
       }
+
+      @include to(575px) {
+        font-size: 17px;
+        margin-bottom: 32px;
+      }
+
+      @include to(320px) {
+        font-size: 16px;
+      }
     }
 
     &__link {
@@ -212,6 +221,16 @@
         width: 100px;
         bottom: 30px;
       }
+
+      @include to(575px) {
+        width: 85px;
+        bottom: 60px;
+        left: 25px;
+      }
+
+      @include to(320px) {
+        width: 75px;
+      }
     }
 
     &__more {
@@ -227,7 +246,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all .4s;
+      transition: all 0.4s;
 
       @include to(1440px) {
         width: 42px;
@@ -240,13 +259,17 @@
         bottom: 30px;
       }
 
+      @include to(600px) {
+        display: none;
+      }
+
       svg {
         fill: none;
         stroke: #fff;
         width: 20px;
         height: 20px;
         animation: arrowDown 1.2s infinite linear;
-        transition: all .4s;
+        transition: all 0.4s;
 
         @include to(1440px) {
           width: 14px;
@@ -313,6 +336,15 @@
       padding-bottom: 275px;
     }
 
+    @include to(575px) {
+      padding-top: 50px;
+      padding-bottom: 130px;
+    }
+
+    @include to(320px) {
+      padding-bottom: 100px;
+    }
+
     &__link {
       margin-left: 90px;
 
@@ -376,6 +408,19 @@
         height: 37vh;
       }
 
+      @include to(575px) {
+        right: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 54vw;
+        height: 45vh;
+      }
+
+      @include to(320px) {
+        width: 62vw;
+      }
+
       svg {
         width: 100%;
         height: 100%;
@@ -391,6 +436,20 @@
 
       svg {
         width: 100%;
+      }
+
+      &-mobile {
+        display: none;
+      }
+
+      @include to(575px) {
+        &-desk {
+          display: none;
+        }
+
+        &-mobile {
+          display: block;
+        }
       }
     }
 
@@ -413,6 +472,11 @@
 
       @include to(1150px) {
         margin-right: 70px;
+      }
+
+      @include to(575px) {
+        margin-right: 0;
+        width: 70%;
       }
     }
 
@@ -447,6 +511,10 @@
       @include to(770px) {
         margin-left: 34px;
       }
+
+      @include to(575px) {
+        margin-left: 0;
+      }
     }
   }
 
@@ -455,6 +523,11 @@
 
     @include to(770px) {
       padding: 0 30px;
+    }
+
+    @include to(600px) {
+      background-color: #fff;
+      padding: 50px 25px;
     }
 
     &__wrap {
@@ -479,6 +552,15 @@
         height: 270px;
       }
 
+      @include to(500px) {
+        grid-template-columns: 1fr;
+        height: 32vh;
+      }
+
+      @include to(320px) {
+        height: 204px;
+      }
+
       img {
         position: absolute;
         top: 0;
@@ -493,6 +575,14 @@
 
     &__item {
       position: relative;
+
+      @include to(500px) {
+        display: none;
+
+        &:first-child {
+          display: block;
+        }
+      }
     }
 
     &__info {
@@ -516,6 +606,15 @@
 
       @include to(830px) {
         width: calc(100vw - 128px);
+      }
+
+      @include to(760px) {
+        width: calc(100vw - 60px);
+      }
+
+      @include to(600px) {
+        position: static;
+        transform: none;
       }
 
       &-wrap {
@@ -542,13 +641,38 @@
         @include to(850px) {
           padding: 41px 50px;
         }
+
+        @include to(600px) {
+          padding: 0;
+          margin-top: 20px;
+        }
       }
 
       &-title {
         margin-right: 168px;
 
+        &--mobile {
+          display: none;
+        }
+
         @include to(1280px) {
           margin-right: 80px;
+        }
+
+        @include to(700px) {
+          margin-right: 30px;
+          font-size: 40px;
+        }
+
+        @include to(600px) {
+          &--desk {
+            display: none;
+          }
+
+          &--mobile {
+            display: block;
+            margin-bottom: 20px;
+          }
         }
       }
     }
@@ -574,11 +698,37 @@
       }
     }
 
+    @include to(600px) {
+      min-height: auto;
+      margin-top: 0;
+      padding-top: 57px;
+      padding-bottom: 180px;
+
+      .container {
+        padding-left: 25px !important;
+      }
+    }
+
+    @include to(320px) {
+      padding-bottom: 150px;
+    }
+
     &__decor {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
+
+      @include to(600px) {
+        img {
+          display: none;
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
 
     .container {
@@ -589,6 +739,10 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
+      @include to(600px) {
+        flex-wrap: wrap;
+      }
     }
 
     &__list {
@@ -601,6 +755,13 @@
         align-items: flex-start;
         row-gap: 50px;
         width: auto;
+      }
+
+      @include to(600px) {
+        margin-bottom: 50px;
+        width: 100%;
+        margin-right: 0;
+        row-gap: 20px;
       }
     }
 
@@ -617,13 +778,13 @@
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         width: 1px;
         right: 0;
         top: 9px;
         bottom: 9px;
-        background-color: #DFDCCE;
+        background-color: #dfdcce;
       }
 
       &:not(:last-child) {
@@ -643,7 +804,6 @@
         }
       }
 
-      
       @include to(1650px) {
         &::before {
           top: 7px;
@@ -672,6 +832,18 @@
           }
         }
       }
+
+      @include to(600px) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 130px 110px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      @include to(480px) {
+        grid-template-columns: 130px 83px;
+      }
     }
 
     &-title {
@@ -691,6 +863,12 @@
       @include to(770px) {
         font-size: 16px;
       }
+
+      @include to(600px) {
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 0;
+      }
     }
 
     &-value {
@@ -705,6 +883,18 @@
       @include to(850px) {
         font-size: 64px;
       }
+
+      @include to(600px) {
+        font-size: 52px;
+      }
+
+      @include to(480px) {
+        font-size: 40px;
+      }
+
+      @include to(320px) {
+        font-size: 36px;
+      }
     }
 
     &-tabs {
@@ -717,6 +907,15 @@
       @include to(1015px) {
         .building-info-title {
           margin-bottom: 27px;
+        }
+      }
+
+      @include to(600px) {
+        min-width: auto;
+        width: 100%;
+
+        .building-info-title {
+          text-align: center;
         }
       }
 
@@ -747,6 +946,12 @@
         @include to(1015px) {
           display: flex;
           align-items: center;
+        }
+
+        @include to(600px) {
+          order: -1;
+          justify-content: center;
+          padding: 10px;
         }
       }
 
@@ -786,6 +991,20 @@
         text-align: center;
       }
 
+      @include to(600px) {
+        width: 95px;
+        height: auto;
+        padding: 13px 0;
+        font-size: 11px;
+      }
+
+      @include to(320px) {
+        font-size: 10px;
+        width: 88px;
+        height: auto;
+        padding: 10px 0;
+      }
+
       &-block {
         padding-bottom: 10px;
 
@@ -798,13 +1017,13 @@
           padding-right: 5px;
         }
 
-        @include to(770px) {
+        @media (min-width: 600px) and (max-width: 770px) {
           &:nth-child(1) {
             order: 10;
           }
 
           &:nth-child(2) {
-            order:9;
+            order: 9;
           }
 
           &:nth-child(3) {
@@ -818,6 +1037,10 @@
           &:nth-child(5) {
             order: 6;
           }
+        }
+
+        @include to(600px) {
+          padding-right: 0;
         }
 
         &.show {
@@ -888,6 +1111,17 @@
         max-width: 385px;
       }
 
+      @include to(600px) {
+        font-size: 34px;
+        max-width: 300px;
+        margin-bottom: 21px;
+      }
+
+      @include to(320px) {
+        font-size: 30px;
+        max-width: 265px;
+      }
+
       span {
         display: inline-block;
       }
@@ -909,6 +1143,10 @@
 
       @include to(770px) {
         margin-left: 34px;
+      }
+
+      @include to(600px) {
+        margin-left: 0;
       }
     }
   }
@@ -932,6 +1170,12 @@
       }
     }
 
+    @include to(700px) {
+      min-height: auto;
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+
     &__decor {
       position: absolute;
       top: 0;
@@ -947,6 +1191,16 @@
       @include to(1440px) {
         width: 150px;
         height: 150px;
+      }
+
+      @include to(600px) {
+        width: 110px;
+        height: 110px;
+      }
+
+      @include to(320px) {
+        width: 100px;
+        height: 100px;
       }
     }
 
@@ -993,6 +1247,10 @@
       @include to(850px) {
         grid-template-columns: 1fr minmax(280px, 332px);
       }
+
+      @include to(700px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     &__left {
@@ -1005,6 +1263,16 @@
           min-height: 402px;
           height: 100%;
         }
+
+        @include to(700px) {
+          min-height: auto;
+          height: 50vh;
+          margin-bottom: 30px;
+        }
+
+        @include to(320px) {
+          height: 302px;
+        }
       }
     }
 
@@ -1013,6 +1281,11 @@
 
       @include to(770px) {
         margin-bottom: 31px;
+      }
+
+      @include to(700px) {
+        max-width: 350px;
+        margin-bottom: 21px;
       }
     }
 
@@ -1035,6 +1308,10 @@
       @include to(770px) {
         margin-left: 34px;
       }
+
+      @include to(700px) {
+        margin-left: 0;
+      }
     }
 
     &__desc {
@@ -1042,6 +1319,14 @@
 
       @include to(1440px) {
         margin-bottom: 20px;
+      }
+
+      @include to(575px) {
+        font-size: 13px;
+      }
+
+      @include to(320px) {
+        font-size: 12px;
       }
     }
   }
@@ -1054,6 +1339,10 @@
       height: 100vh;
     }
 
+    @include to(700px) {
+      height: auto;
+    }
+
     &__bg {
       position: absolute;
       top: 0;
@@ -1061,6 +1350,11 @@
       right: 0;
       bottom: 0;
       background: url('../images/home-complex-bg.jpg') no-repeat center/cover;
+
+      @include to(700px) {
+        top: auto;
+        height: 65vh;
+      }
     }
 
     &__content {
@@ -1085,6 +1379,19 @@
         padding-bottom: 160px;
       }
 
+      @include to(700px) {
+        padding-top: 50px;
+        padding-bottom: 400px;
+      }
+
+      @include to(375px) {
+        padding-bottom: 340px;
+      }
+
+      @include to(320px) {
+        padding-bottom: 280px;
+      }
+
       &::before {
         content: '';
         position: absolute;
@@ -1098,6 +1405,15 @@
           rgba(255, 255, 255, 0.8) 51.04%,
           rgba(255, 255, 255, 0) 100%
         );
+
+        @include to(700px) {
+          bottom: auto;
+          height: 78%;
+        }
+
+        @include to(320px) {
+          height: 83%;
+        }
       }
 
       .container {
@@ -1114,6 +1430,14 @@
         @include to(850px) {
           flex-wrap: nowrap;
         }
+
+        @include to(700px) {
+          flex-wrap: wrap;
+        }
+
+        @include to(575px) {
+          justify-content: flex-start;
+        }
       }
     }
 
@@ -1125,6 +1449,14 @@
       @include to(770px) {
         margin-bottom: 20px;
         font-size: 40px;
+      }
+
+      @include to(375px) {
+        max-width: 93%;
+      }
+
+      @include to(320px) {
+        font-size: 36px;
       }
     }
 
@@ -1143,6 +1475,16 @@
           margin-left: 34px;
         }
       }
+
+      @include to(700px) {
+        &--tablet {
+          display: none;
+        }
+
+        &--desk {
+          display: inline-flex;
+        }
+      }
     }
 
     &__left {
@@ -1158,6 +1500,10 @@
 
       @include to(770px) {
         max-width: 332px;
+      }
+
+      @include to(700px) {
+        margin-bottom: 4px;
       }
     }
 
@@ -1188,6 +1534,11 @@
         padding-left: 0;
         margin-left: 50px;
       }
+
+      @include to(575px) {
+        margin-left: 0;
+        width: auto;
+      }
     }
 
     &__desc {
@@ -1195,6 +1546,14 @@
 
       @include to(1440px) {
         margin-bottom: 20px;
+      }
+
+      @include to(575px) {
+        font-size: 13px;
+      }
+
+      @include to(320px) {
+        font-size: 12px;
       }
     }
   }
@@ -1225,6 +1584,15 @@
         padding-bottom: 15px;
         flex-wrap: nowrap;
       }
+
+      @include to(700px) {
+        flex-wrap: wrap;
+        padding-top: 50px;
+      }
+
+      @include to(575px) {
+        justify-content: flex-start;
+      }
     }
 
     &__img {
@@ -1233,6 +1601,14 @@
 
       @include to(850px) {
         height: 60vh;
+      }
+
+      @include to(700px) {
+        height: 46vh;
+      }
+
+      @include to(320px) {
+        height: 300px;
       }
 
       img {
@@ -1245,7 +1621,7 @@
       font-size: 64px;
       line-height: 0.9em;
       max-width: 670px;
-      color: #ECEAE1;
+      color: #eceae1;
       text-transform: uppercase;
 
       @include to(1440px) {
@@ -1262,6 +1638,14 @@
 
       @include to(770px) {
         font-size: 40px;
+      }
+
+      @include to(575px) {
+        font-size: 34px;
+      }
+
+      @include to(320px) {
+        font-size: 30px;
       }
 
       .infra__title-mark {
@@ -1291,6 +1675,11 @@
       @include to(850px) {
         margin-left: 80px;
       }
+
+      @include to(700px) {
+        max-width: 100%;
+        margin-left: 0;
+      }
     }
 
     &__desc {
@@ -1298,6 +1687,15 @@
 
       &:not(:last-child) {
         margin-bottom: 20px;
+
+        @include to(575px) {
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+
+        @include to(320px) {
+          font-size: 12px;
+        }
       }
     }
 
@@ -1310,15 +1708,32 @@
         right: 0;
         height: 40vh;
         background: linear-gradient(180deg, #2a3341 0%, rgba(42, 51, 65, 0) 100%);
+
+        @include to(700px) {
+          height: 100%;
+        }
       }
 
       img {
         object-fit: cover;
       }
+
+      @include to(700px) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   }
 
   .location {
+    @include to(700px) {
+      padding-top: 50px;
+
+      .features__container {
+        min-height: auto;
+      }
+    }
+
     .features__content {
       padding-right: 0;
       column-gap: 236px;

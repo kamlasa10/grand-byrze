@@ -1,144 +1,138 @@
-@@include('../libs/libs.js')
+@@include('../libs/libs.js');
 
-let menuTl = gsap.timeline()
-const menu = document.querySelector('.js-menu')
-const openMenu = document.querySelector('.js-menu-open')
-const header = document.querySelector('.header')
-const closeMenu = document.querySelector('.js-menu-close')
+let menuTl = gsap.timeline();
+const menu = document.querySelector('.js-menu');
+const openMenu = document.querySelector('.js-menu-open');
+const header = document.querySelector('.header');
+const closeMenu = document.querySelector('.js-menu-close');
 
 function isSmoothScroll() {
-  return window.locoScroll
+  return window.locoScroll;
 }
 
 function stopScroll() {
-  if(isSmoothScroll()) {
-    window.locoScroll.stop()
-    return
+  if (isSmoothScroll()) {
+    window.locoScroll.stop();
+    return;
   }
 
-  document.body.style.overflow = 'hidden'
+  document.body.style.overflow = 'hidden';
 }
 
 function startScroll() {
-  if(isSmoothScroll()) {
-    window.locoScroll.start()
-    return
+  if (isSmoothScroll()) {
+    window.locoScroll.start();
+    return;
   }
 
-  document.body.style.overflow = 'visible'
+  document.body.style.overflow = 'visible';
 }
 
 function animationCloseMenu() {
-  startScroll()
+  startScroll();
 
-  menu.classList.remove('show')
+  menu.classList.remove('show');
 
   setTimeout(() => {
-    header.classList.remove('hide')
-  }, 200)
+    header.classList.remove('hide');
+  }, 200);
 }
 
 function animationShowMenu() {
-  stopScroll()
-  menuTl.kill()
-  header.classList.add('hide')
+  stopScroll();
+  menuTl.kill();
+  header.classList.add('hide');
 
   setTimeout(() => {
-    menu.classList.add('show')
-  }, 200)
+    menu.classList.add('show');
+  }, 200);
 }
 
-openMenu.addEventListener('click', (e) => {
-  e.preventDefault()
-  animationShowMenu()
-})
+openMenu.addEventListener('click', e => {
+  e.preventDefault();
+  animationShowMenu();
+});
 
 closeMenu.addEventListener('click', e => {
-  e.preventDefault()
-  animationCloseMenu()
-})
+  e.preventDefault();
+  animationCloseMenu();
+});
 
 function hidePopup() {
-  $('[data-popup]')
-    .hide();
-  $('.overlay')
-    .removeClass('show');
+  $('[data-popup]').hide();
+  $('.overlay').removeClass('show');
 }
 
 function showPopupByType(type) {
-  $('[data-popup]')
-    .hide();
+  $('[data-popup]').hide();
 
   if (!type) return;
 
-  $(`[data-popup-name=${type}]`)
-    .show();
-  $('.overlay')
-    .addClass('show');
+  $(`[data-popup-name=${type}]`).show();
+  $('.overlay').addClass('show');
 }
 
-showPopupByType()
+showPopupByType();
 
 document.addEventListener('DOMContentLoaded', () => {
-  let pageId = document.body.getAttribute('id')
+  let pageId = document.body.getAttribute('id');
 
-  switch(pageId) {
+  switch (pageId) {
     case 'index-page':
-      window.initCustomScroll()
-      break
+      window.initCustomScroll();
+      break;
     case 'features-page':
-      window.initCustomScroll()
-      break
+      window.initCustomScroll();
+      break;
     case 'location-page':
-      window.initCustomScroll(false)
-      break
+      window.initCustomScroll(false);
+      break;
     case 'investor-page':
-      window.initCustomScroll()
-      break
+      window.initCustomScroll();
+      break;
     default:
-      window.initCustomScroll(false)
+      window.initCustomScroll(false);
   }
-})
-
-$('.js-popup-open')
-  .on('click', e => {
-    e.preventDefault();
-
-    const typeName = e.currentTarget.dataset.popupType;
-
-    showPopupByType(typeName);
 });
 
-$(document)
-  .on('click', e => {
-    if (e.target === $('.overlay')[0]) {
-      hidePopup();
-      menuTl.clear();
-    }
+$('.js-popup-open').on('click', e => {
+  e.preventDefault();
+
+  const typeName = e.currentTarget.dataset.popupType;
+
+  showPopupByType(typeName);
 });
 
-$('.js-close-popup')
-  .on('click', e => {
-    e.preventDefault();
+$(document).on('click', e => {
+  if (e.target === $('.overlay')[0]) {
     hidePopup();
+    menuTl.clear();
+  }
+});
 
-    if(e.currentTarget.dataset.close) {
-      $('.js-popup[data-popup-name=callback]').find('.popup__item').removeClass('warn')
-    }
+$('.js-close-popup').on('click', e => {
+  e.preventDefault();
+  hidePopup();
+
+  if (e.currentTarget.dataset.close) {
+    $('.js-popup[data-popup-name=callback]')
+      .find('.popup__item')
+      .removeClass('warn');
+  }
 });
 
 $('[name=phone]').each(function() {
-  if($(this).hasClass('js-footer-phone')) {
+  if ($(this).hasClass('js-footer-phone')) {
     $(this).attr('placeholder', '+ (38) ___ - ___ - ____');
     $(this).inputmask('+ (38) 999 - 999 - 9999', { clearMaskOnLostFocus: false });
-    return
+    return;
   }
 
   $(this).attr('placeholder', '+ (38) ___ - ___ - ____');
   $(this).inputmask('+ (38) 999 - 999 - 9999', { clearMaskOnLostFocus: false });
 });
 
-const currentLanguage = $('html').attr('lang')
+const currentLanguage = $('html').attr('lang');
 
 const msgWarnObj = {
   uk: {
@@ -180,14 +174,16 @@ function validateForm(inputs) {
   inputs.each(function() {
     if (this.dataset.required) {
       $(this).on('input', e => {
-          console.log($(e.currentTarget).val(), )
+        console.log($(e.currentTarget).val());
         if (
           $(e.target)
             .val()
             .replace(/\s+/g, '').length === 0 &&
           $(e.target).attr('name') === 'name'
         ) {
-          const parent = $(this).parent().parent()
+          const parent = $(this)
+            .parent()
+            .parent();
 
           parent.addClass('warn');
           isValid = false;
@@ -196,13 +192,17 @@ function validateForm(inputs) {
           $(e.target).attr('name') === 'phone' &&
           checkNumbers(e.currentTarget.value).length < 10
         ) {
-          const parent = $(this).parent().parent()
+          const parent = $(this)
+            .parent()
+            .parent();
 
           parent.addClass('warn');
           isValid = false;
           return;
         } else {
-          const parent = $(this).parent().parent()
+          const parent = $(this)
+            .parent()
+            .parent();
 
           parent.removeClass('warn');
           isValid = true;
@@ -211,7 +211,9 @@ function validateForm(inputs) {
       });
 
       if ($(this).attr('name') === 'phone' && this.value.length < 10) {
-        const parent = $(this).parent().parent()
+        const parent = $(this)
+          .parent()
+          .parent();
 
         parent.addClass('warn');
         isValid = false;
@@ -223,7 +225,9 @@ function validateForm(inputs) {
           .val()
           .replace(/\s+/g, '')
       ) {
-        const parent = $(this).parent().parent()
+        const parent = $(this)
+          .parent()
+          .parent();
 
         parent.addClass('warn');
         isValid = false;
@@ -249,9 +253,9 @@ $('form').on('submit', e => {
 function sendAjaxForm(url, selectorForm) {
   const data = new FormData(selectorForm[0]);
   let processData = true;
-  let contentType = "application/x-www-form-urlencoded";
+  let contentType = 'application/x-www-form-urlencoded';
 
-  selectorForm.find('button[type=submit]').css('pointer-events', 'none')
+  selectorForm.find('button[type=submit]').css('pointer-events', 'none');
 
   contentType = processData = false;
 
@@ -264,7 +268,7 @@ function sendAjaxForm(url, selectorForm) {
     data: data, // Сеарилизуем объект
     success: function(response) {
       //Данные отправлены успешно
-      selectorForm.find('button[type=submit]').css('pointer-events', 'initial')
+      selectorForm.find('button[type=submit]').css('pointer-events', 'initial');
 
       $('.form__status').remove();
       if (selectorForm[0].tagName.toLowerCase() === 'form') {
@@ -276,9 +280,7 @@ function sendAjaxForm(url, selectorForm) {
     error: function(response) {
       // Данные не отправлены
       $('.form__status').remove();
-      $(selectorForm).append(
-        `<div class="form__status">${status.error[currentLanguage]}</div>`,
-      );
+      $(selectorForm).append(`<div class="form__status">${status.error[currentLanguage]}</div>`);
       const msg = $(selectorForm).find('.form__status');
 
       removeNodeByDelay(msg, 5000);
@@ -292,22 +294,24 @@ function sendAjaxForm(url, selectorForm) {
   });
 }
 
-const pageId = document.body.getAttribute('id')
+const pageId = document.body.getAttribute('id');
 
-$(window).on('resize', () => {
-  // if(pageId === 'gallery-page') {
-  //   const offsetTop = $('.page-top').outerHeight()
+$(window)
+  .on('resize', () => {
+    // if(pageId === 'gallery-page') {
+    //   const offsetTop = $('.page-top').outerHeight()
 
-  //   $('.gallery').css('margin-top', offsetTop - 100 + 'px')
-  // }
+    //   $('.gallery').css('margin-top', offsetTop - 100 + 'px')
+    // }
 
-  if($(window).width() <= 1100) {
-    $('.js-footer__item').each((_, item) => {
-      document.querySelector('.footer__item-tablet').append(item)
-    })
-  } else {
-    $('.js-footer__item').each((_, item) => {
-      document.querySelector('.footer__left').append(item)
-    })
-  }
-}).resize()
+    if ($(window).width() <= 1100 && $(window).width() >= 525) {
+      $('.js-footer__item').each((_, item) => {
+        document.querySelector('.footer__item-tablet').append(item);
+      });
+    } else {
+      $('.js-footer__item').each((_, item) => {
+        document.querySelector('.footer__left').append(item);
+      });
+    }
+  })
+  .resize();

@@ -195,6 +195,10 @@
     justify-content: space-between;
     align-items: flex-start;
 
+    @include to(412px) {
+      flex-direction: column;
+    }
+
     &-left {
       display: flex;
       align-items: center;
@@ -208,6 +212,10 @@
 
       @include to(850px) {
         font-size: 10px;
+      }
+
+      @include to(412px) {
+        margin-bottom: 20px;
       }
 
       svg {
@@ -230,10 +238,10 @@
     background-color: transparent;
     padding: 0;
     -webkit-appearance: none;
-    -webkit-border-radius: 0;                                               
-    writing-mode: inherit;                                                              
+    -webkit-border-radius: 0;
+    writing-mode: inherit;
 
-    @include to(770px) {                                                        
+    @include to(770px) {
       font-size: 16px;
     }
 

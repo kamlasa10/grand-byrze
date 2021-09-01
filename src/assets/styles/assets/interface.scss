@@ -378,6 +378,14 @@
   @include to(770px) {
     font-size: 52px;
   }
+
+  @include to(575px) {
+    font-size: 40px;
+  }
+
+  @include to(320px) {
+    font-size: 36px;
+  }
 }
 
 .field-error-msg {
@@ -429,6 +437,16 @@
       height: 75px;
     }
 
+    @include to(575px) {
+      width: 55px;
+      height: 55px;
+    }
+
+    @include to(320px) {
+      width: 50px;
+      height: 50px;
+    }
+
     svg {
       width: 31px;
       height: 34px;
@@ -436,6 +454,16 @@
       @include to(850px) {
         width: 25px;
         height: 25px;
+      }
+
+      @include to(575px) {
+        width: 20px;
+        height: 20px;
+      }
+
+      @include to(320px) {
+        width: 17px;
+        height: 17px;
       }
     }
   }
@@ -470,6 +498,10 @@
     @include to(770px) {
       margin-left: 34px;
     }
+
+    @include to(575px) {
+      margin-left: 0;
+    }
   }
 }
 
@@ -487,12 +519,22 @@
       width: 45px;
       height: 6px;
     }
+
+    @include to(575px) {
+      margin-right: 15px;
+    }
   }
 }
 
 .sec {
   min-height: 100vh;
   position: relative;
+
+  @include to(600px) {
+    min-height: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
 }
 
 .page-title {
@@ -500,7 +542,7 @@
   font-family: $default-font2;
   line-height: 0.9em;
   text-transform: uppercase;
-  color: #ECEAE1;
+  color: #eceae1;
 
   @include to(1440px) {
     font-size: 64px;
@@ -516,6 +558,14 @@
 
   @include to(770px) {
     font-size: 24px;
+  }
+
+  @include to(575px) {
+    font-size: 20px;
+  }
+
+  @include to(320px) {
+    font-size: 18px;
   }
 }
 
@@ -550,12 +600,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #2A3341;
+  border: 1px solid #2a3341;
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
   z-index: 100;
-  transition: all .4s;
+  transition: all 0.4s;
 
   @include to(1440px) {
     width: 42px;
@@ -568,14 +618,26 @@
     height: 50px;
   }
 
+  @include to(480px) {
+    width: 33px;
+    height: 33px;
+    bottom: 60px;
+    right: 25px;
+  }
+
+  @include to(320px) {
+    width: 30px;
+    height: 30px;
+  }
+
   svg {
     transform: rotate(180deg);
     fill: none;
-    stroke: #2A3341;
+    stroke: #2a3341;
     width: 20px;
     height: 20px;
     animation: goTop 1.2s infinite linear;
-    transition: all .4s;
+    transition: all 0.4s;
 
     @include to(1440px) {
       width: 14px;
@@ -585,6 +647,16 @@
     @include to(770px) {
       width: 17px;
       height: 17px;
+    }
+
+    @include to(575px) {
+      width: 12px;
+      height: 12px;
+    }
+
+    @include to(320px) {
+      width: 10px;
+      height: 10px;
     }
   }
 
@@ -644,7 +716,7 @@
 
     @include to(1025px) {
       grid-template-columns: 1fr 1fr;
-      
+
       img {
         object-fit: cover;
         max-height: var(--max-img-height);
@@ -692,7 +764,7 @@
     a {
       color: $black;
       text-decoration: none;
-      transition: all .4s;
+      transition: all 0.4s;
 
       &:hover {
         opacity: 0.8;
@@ -702,18 +774,18 @@
 }
 
 .overlay-block {
- top: 0;
- position: absolute;
- transform: translateY(-100%);
- width: 100%;
- height: 100vh;
- overflow: hidden;
- z-index: 3;
+  top: 0;
+  position: absolute;
+  transform: translateY(-100%);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 3;
 
- &__bg {
-   background: linear-gradient(144deg, #FFFDF3 0%, #F0EEE3 99.99%);
-   height: 100%;
- }
+  &__bg {
+    background: linear-gradient(144deg, #fffdf3 0%, #f0eee3 99.99%);
+    height: 100%;
+  }
 }
 
 .large-container-desk {
@@ -732,12 +804,20 @@
   @include to(1440px) {
     font-size: 24px;
   }
+
+  @include to(575px) {
+    font-size: 21px;
+  }
+
+  @include to(320px) {
+    font-size: 18px;
+  }
 }
 
 .center-sec {
   padding: var(--padding-page) 0;
 
-  @media(min-width: 2000px) {
+  @media (min-width: 2000px) {
     min-height: 100vh;
     display: flex;
     align-items: center;

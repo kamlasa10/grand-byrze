@@ -5,6 +5,10 @@
     font-size: 16px;
   }
 
+  @include to(700px) {
+    padding: 50px 0;
+  }
+
   .container {
     width: 100%;
   }
@@ -14,6 +18,18 @@
 
     @media (min-width: 1500px) {
       font-size: 74px;
+    }
+
+    @include to(700px) {
+      margin-bottom: 30px;
+    }
+
+    @include to(575px) {
+      font-size: 34px;
+    }
+
+    @include to(320px) {
+      font-size: 30px;
     }
   }
 
@@ -36,6 +52,14 @@
 
     @include to(992px) {
       margin-bottom: 88px;
+    }
+
+    @include to(700px) {
+      padding-top: 0;
+    }
+
+    @include to(575px) {
+      margin-bottom: 50px;
     }
 
     &-wrap {
@@ -66,6 +90,16 @@
       flex-wrap: nowrap;
       grid-template-columns: 1fr 1fr;
     }
+
+    @include to(700px) {
+      .contacts__item:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include to(480px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -81,6 +115,27 @@
       }
     }
 
+    @include to(575px) {
+      &:first-child {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+      }
+
+      grid-template-columns: 1fr;
+
+      &:nth-child(2) {
+        .contacts__item-block:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @include to(480px) {
+      .contacts__item-block--1 .link-border-animation {
+        max-width: 100% !important;
+      }
+    }
+
     &-title {
       margin-bottom: 20px;
       font-size: 26px;
@@ -91,6 +146,15 @@
       @include to(1440px) {
         font-size: 24px;
         margin-bottom: 10px;
+      }
+
+      @include to(575px) {
+        font-size: 21px;
+        margin-bottom: 15px;
+      }
+
+      @include to(320px) {
+        font-size: 18px;
       }
     }
 
@@ -105,10 +169,22 @@
         margin-bottom: 10px;
       }
 
+      @include to(575px) {
+        margin-bottom: 15px;
+      }
+
+      @include to(480px) {
+        font-size: 14px;
+      }
+
+      @include to(320px) {
+        font-size: 12px;
+      }
+
       svg {
         fill: none;
-        stroke: #2A3341;
-        transition: all .4s;
+        stroke: #2a3341;
+        transition: all 0.4s;
       }
 
       .link-border-animation::before {
@@ -166,7 +242,11 @@
       margin-right: 20px;
       border: 1px solid rgba(3, 24, 38, 0.2);
       background-color: transparent;
-      transition: all .4s;
+      transition: all 0.4s;
+
+      @include to(480px) {
+        margin-right: 15px;
+      }
     }
   }
 
@@ -174,6 +254,12 @@
     .socials {
       flex-direction: column;
       align-items: flex-start;
+    }
+  }
+
+  @include to(480px) {
+    .socials {
+      flex-direction: row;
     }
   }
 
@@ -186,11 +272,27 @@
       margin-right: 85px;
       padding: 50px 92px;
     }
+
+    @include to(700px) {
+      margin: 0;
+    }
+
+    @include to(480px) {
+      padding: 30px 30px;
+    }
+
+    @include to(320px) {
+      padding: 30px 20px;
+    }
   }
 
   &-form {
     &__title {
       margin-bottom: 20px;
+
+      @include to(480px) {
+        margin-bottom: 10px;
+      }
     }
 
     .field-error-msg {
@@ -200,6 +302,10 @@
     .popup__input {
       padding: 15px 30px;
       background-color: #eceae1;
+
+      @include to(480px) {
+        padding: 15px 20px;
+      }
 
       &--big {
         min-height: 100px;

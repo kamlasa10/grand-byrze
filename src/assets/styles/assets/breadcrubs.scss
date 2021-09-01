@@ -22,6 +22,15 @@
     margin-bottom: 70px;
   }
 
+  @include to(660px) {
+    padding-top: 125px;
+  }
+
+  @include to(480px) {
+    padding-top: 95px;
+    margin-bottom: 40px;
+  }
+
   &__decor {
     position: absolute;
     top: 0;
@@ -43,6 +52,14 @@
 
       @include to(1025px) {
         height: 110%;
+      }
+
+      @include to(480px) {
+        height: 132%;
+      }
+
+      @include to(320px) {
+        height: 143%;
       }
     }
   }
@@ -67,6 +84,10 @@
       margin-bottom: 20px;
     }
 
+    @include to(480px) {
+      margin-bottom: 15px;
+    }
+
     &__item {
       display: flex;
       position: relative;
@@ -74,11 +95,11 @@
 
       &:not(:last-child) {
         &::after {
-          content: "";
+          content: '';
           display: block;
           width: 2px;
           height: 2px;
-          background-color: #ECEAE1;
+          background-color: #eceae1;
           border-radius: 50%;
           margin-right: 10px;
         }
@@ -88,9 +109,9 @@
     &__link {
       font-size: 12px;
       line-height: 1em;
-      color: #ECEAE1;
+      color: #eceae1;
       text-decoration: none;
-      transition: all .4s;
+      transition: all 0.4s;
       @include animateLink;
 
       @include to(1370px) {
@@ -104,19 +125,19 @@
       &::before {
         transform: scaleX(1);
         bottom: -3px;
-        background-color: #ECEAE1;
+        background-color: #eceae1;
       }
 
       &:hover {
         &::before {
-          background-color: #E23E28;
+          background-color: #e23e28;
         }
-        color: #E23E28;
+        color: #e23e28;
       }
     }
 
     span.current {
-      color: #EFBC48;
+      color: #efbc48;
 
       &::before {
         display: none;

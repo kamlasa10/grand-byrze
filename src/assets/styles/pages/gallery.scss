@@ -17,14 +17,14 @@
     @include to(1025px) {
       margin-top: -7%;
     }
+
+    @include to(480px) {
+      margin-top: -8%;
+    }
   }
 
   .page-top {
     margin-bottom: 0;
-  }
-
-  .btn-top {
-    display: none;
   }
 }
 
@@ -69,7 +69,7 @@
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    transition: all .4s;
+    transition: all 0.4s;
 
     @include to(1440px) {
       width: 60px;
@@ -81,12 +81,22 @@
       height: 50px;
     }
 
+    @include to(480px) {
+      width: 43px;
+      height: 43px;
+    }
+
+    @include to(320px) {
+      width: 40px;
+      height: 40px;
+    }
+
     svg {
       fill: none;
       width: 11px;
       height: 18px;
       stroke: $black;
-      transition: all .4s;
+      transition: all 0.4s;
 
       @include to(1440px) {
         width: 13px;
@@ -97,6 +107,16 @@
         width: 13px;
         height: 13px;
       }
+
+      @include to(480px) {
+        width: 12px;
+        height: 12px;
+      }
+
+      @include to(320px) {
+        width: 10px;
+        height: 10px;
+      }
     }
 
     &::after {
@@ -105,7 +125,7 @@
 
     &-next {
       svg {
-        transform: rotate(180deg)
+        transform: rotate(180deg);
       }
     }
 
@@ -126,11 +146,15 @@
     right: 0;
     justify-content: center;
 
+    @include to(480px) {
+      bottom: 30px;
+    }
+
     &-block {
       position: static;
       width: auto;
       padding: 14px 24px;
-      background: #FFFFFF;
+      background: #ffffff;
       box-shadow: 0px 20px 30px rgba(226, 62, 40, 0.1);
       border-radius: 25px;
       font-size: 12px;
@@ -143,6 +167,10 @@
 
       @include to(850px) {
         font-size: 9px;
+      }
+
+      @include to(320px) {
+        font-size: 8px;
       }
 
       .swiper-pagination-current {
@@ -161,7 +189,7 @@
           font-weight: 700;
           line-height: 1em;
           background-color: $black;
-          transform: rotate(25deg)
+          transform: rotate(25deg);
         }
       }
 
