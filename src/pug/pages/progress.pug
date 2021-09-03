@@ -72,43 +72,60 @@ block content
                   .progress__filters-year-item.active 2021
                   .progress__filters-year-item 2020
                   .progress__filters-year-item 2019
-              .progress__filters-months
-                .progress__filters-month 
-                  +svg('big-logo-decor')
+              .progress__filters-block
+                .progress__filters-month-current 
                   | Січень
-                .progress__filters-month 
-                  +svg('big-logo-decor')
-                  | Лютий
-                .progress__filters-month 
-                  +svg('big-logo-decor')
-                  | Березень
-                .progress__filters-month 
-                  +svg('big-logo-decor')
-                  | Квітень
-                .progress__filters-month 
-                  +svg('big-logo-decor')
-                  | Травень
-                .progress__filters-month.active 
-                  +svg('big-logo-decor')
-                  | Червень
-                .progress__filters-month.disabled 
-                  +svg('big-logo-decor')
-                  | Липень
-                .progress__filters-month.disabled  
-                  +svg('big-logo-decor')
-                  | Серпень
-                .progress__filters-month.disabled 
-                  +svg('big-logo-decor')
-                  | Вересень
-                .progress__filters-month.disabled 
-                  +svg('big-logo-decor')
-                  | Жовтень
-                .progress__filters-month.disabled 
-                  +svg('big-logo-decor')
-                  | Листопад
-                .progress__filters-month.disabled 
-                  +svg('big-logo-decor')
-                  | Грудень
+                  +svg('arrow')
+                .progress__filters-months
+                  .progress__filters-months-wrap
+                    .progress__filters-month 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Січень
+                    .progress__filters-month 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Лютий
+                    .progress__filters-month 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Березень
+                    .progress__filters-month 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Квітень
+                    .progress__filters-month 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Травень
+                    .progress__filters-month.active
+                      +svg('arrow').progress__filters-month-decor 
+                      +svg('big-logo-decor')
+                      | Червень
+                    .progress__filters-month.disabled 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Липень
+                    .progress__filters-month.disabled  
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Серпень
+                    .progress__filters-month.disabled 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Вересень
+                    .progress__filters-month.disabled 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Жовтень
+                    .progress__filters-month.disabled 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Листопад
+                    .progress__filters-month.disabled 
+                      +svg('arrow').progress__filters-month-decor
+                      +svg('big-logo-decor')
+                      | Грудень
           .progress__gallery 
             .progress__gallery-item.big.js-progress-item
               +img('progress/1.jpg')

@@ -28,6 +28,11 @@
             @include to(1100px) {
                 column-gap: 70px;
             }
+
+            @include to(650px) {
+                justify-content: space-between;
+                grid-template-columns: 1fr;
+            }
         }
 
         .progress__filters {
@@ -47,15 +52,30 @@
                 top: 135px;
             }
 
+            @include to(650px) {
+                top: 0;
+                position: relative;
+            }
+
             &-wrap {
                 display: flex;
                 align-items: flex-start;
+
+                @include to(650px) {
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                    align-items: center;
+                }
             }
 
             &-year {
                 cursor: pointer;
                 position: relative;
                 margin-right: 30px;
+
+                @include to(650px) {
+                    margin-right: 0;
+                }
 
                 &-current {
                     display: flex;
@@ -108,14 +128,111 @@
                 }
             }
 
+            &-block {
+                position: relative;
+
+                @include to(650px) {
+                    order: -1;
+                }
+
+                &:hover {
+                    .progress__filters-month-current {
+                        color: $blue;
+
+                        svg {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .progress__filters-months {
+                        opacity: 1;
+                        pointer-events: initial;
+                    }
+                }
+            }
+
+            &-months {
+                @include to(650px) {
+                    position: absolute;
+                    top: 0;
+                    left: -10px;
+                    background-color: #FFFDF3;
+                    padding: 10px 0;
+                    padding-right: 10px;
+                    padding-top: 32px;
+                    height: 300px;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all .5s;
+
+                    &::-webkit-scrollbar {
+                        width: 2px;
+                    }
+                       
+                    &::-webkit-scrollbar-track {
+                        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                    }
+                    
+                    &::-webkit-scrollbar-thumb {
+                        background-color: darkgrey;
+                        outline: 1px solid slategrey;
+                    }
+
+                    &-wrap {
+                        overflow-y: scroll;
+                        height: 100%;
+                        padding-left: 10px;
+                        padding-right: 18px;
+    
+                        &::-webkit-scrollbar {
+                            width: 2px;
+                            border-radius: 2px;
+                        }
+                        
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 2px;
+                            background-color: #ECEAE1;
+                        }
+                    }
+                }
+            }
+
             &-month {
                 position: relative;
                 padding-left: 28px;
                 cursor: pointer;
                 transition: all .4s;
 
+                @include to(650px) {
+                    padding-left: 0;
+                }
+
+                &-current {
+                    display: none;
+
+                    @include to(650px) {
+                        position: relative;
+                        z-index: 5;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        transition: all .4s;
+
+                        svg {
+                            width: 14px;
+                            height: 5px;
+                            margin-left: 5px;
+                            transition: all .4s;
+                        }
+                    }
+                }
+
                 &:not(:last-child) {
                     margin-bottom: 15px;
+
+                    @include to(650px) {
+                        padding-left: 0;
+                    }
                 }
 
                 svg {
@@ -126,6 +243,30 @@
                     height: 20px;
                     transition: all .4s;
                     opacity: 0;
+
+                    @include to(650px) {
+                        display: none;
+                    }
+                }
+
+                .progress__filters-month-decor {
+                    display: none;
+
+                    @include to(650px) {
+                        display: block;
+                        position: static;
+                        width: 14px;
+                        height: 5px;
+                        left: auto;
+                        right: 0;
+                        order: 1;
+                        margin-left: 5px;
+                    }
+                }
+
+                @include to(650px) {
+                    display: flex;
+                    align-items: center;
                 }
 
                 &.active {
@@ -167,6 +308,11 @@
                 row-gap: 10px;
             }
 
+            @include to(480px) {
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+            }
+
             &-item {
                 width: 30%;
                 margin-bottom: 20px;
@@ -193,6 +339,22 @@
                     height: 200px;
                 }
 
+                @include to(650px) {
+                    height: 250px;
+                }
+
+                @include to(480px) {
+                    height: 42vh;
+                }
+
+                @include to(375px) {
+                    height: 44vh;
+                }
+
+                @include to(320px) {
+                    height: 270px;
+                }
+
                 &:nth-child(2n) {
                     margin: 0;
                 }
@@ -211,6 +373,13 @@
                         width: 100%;
                         margin-right: 0;
                         grid-column: 1/3;
+                    }
+                }
+
+                @include to(480px) {
+                    &:first-child,
+                    &:nth-child(3n + 4) {
+                        grid-column: 1;
                     }
                 }
 

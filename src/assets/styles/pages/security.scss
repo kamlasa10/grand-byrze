@@ -16,6 +16,16 @@
             min-width: 50px;
             height: 50px;
           }
+
+          @include to(575px) {
+            min-width: 43px;
+            height: 43px;
+          }
+
+          @include to(320px) {
+            min-width: 40px;
+            height: 40px;
+          }
         }
 
         &__top {
@@ -46,6 +56,26 @@
               }
             }
 
+            @include to(650px) {
+              column-gap: 40px;
+            }
+
+            @include to(480px) {
+              grid-template-columns: 1fr;
+
+              img {
+                width: 90px;
+                margin: 0 auto;
+                margin-bottom: 20px;
+              }
+            }
+
+            @include to(320px) {
+              img {
+                width: 85px;
+              }
+            }
+
             .security__desc {
               max-width: none;
             }
@@ -63,6 +93,11 @@
               width: 373px;
             }
 
+            @include to(480px) {
+              width: auto;
+              margin-top: 0;
+            }
+
             &--correct {
                 margin-left: 128px;
 
@@ -72,6 +107,10 @@
 
                 @include to(850px) {
                   margin-left: 50px;
+                }
+
+                @include to(575px) {
+                  margin-left: 0;
                 }
             }
         }
@@ -88,6 +127,10 @@
 
             @include to(850px) {
               margin-bottom: 40px;
+            }
+
+            @include to(650px) {
+              margin-bottom: 10px;
             }
         }
 
@@ -131,6 +174,10 @@
               padding: 70px 0;
             }
 
+            @include to(575px) {
+              padding: 30px 0;
+            }
+
             .security__title {
                 position: sticky;
                 top: 0;
@@ -143,6 +190,10 @@
                 @include to(850px) {
                   margin-top: 40px;
                 }
+
+                @include to(650px) {
+                  margin-top: 5px;
+                }
             }
 
             @include to(850px) {
@@ -150,6 +201,12 @@
                 .page-info {
                   column-gap: 0;
                 }
+              }
+            }
+
+            @include to(650px) {
+              .page-info__item {
+                margin-left: 0;
               }
             }
         }
@@ -168,6 +225,10 @@
                 @include to(850px) {
                   margin-left: 50px;
                 }
+
+                @include to(575px) {
+                  margin-left: 0;
+                }
             }
 
             &-desc {
@@ -182,6 +243,11 @@
                 @include to(850px) {
                   margin-left: 50px;
                 }
+
+                @include to(575px) {
+                  margin-left: 0;
+                  margin-bottom: 20px;
+                }
             }
 
             &-wrap {
@@ -193,6 +259,12 @@
 
               @include to(1440px) {
                 max-width: none;
+              }
+            }
+
+            @include to(575px) {
+              .page-info {
+                row-gap: 17px;
               }
             }
         }
@@ -216,6 +288,10 @@
               column-gap: 0;
               grid-template-columns: 210px 1fr;
             }
+
+            @include to(650px) {
+              grid-template-columns: 1fr;
+            }
         }
 
         .page-info__title {
@@ -226,6 +302,15 @@
             @include to(1440px) {
               max-width: 260px;
             }
+
+            @include to(650px) {
+              max-width: 100%;
+              font-size: 16px;
+            }
+
+            @include to(320px) {
+              font-size: 15px;
+            }
         }
 
         .page-info {
@@ -234,6 +319,10 @@
 
         .page-info__left {
             top: 300px;
+
+            @include to(650px) {
+              top: 0;
+            }
         }
 
         .page-info__item {
@@ -245,6 +334,16 @@
                 @include to(850px) {
                   width: 19px;
                   height: 22px;
+                }
+
+                @include to(575px) {
+                  width: 16px;
+                  height: 19px;
+                }
+
+                @include to(320px) {
+                  width: 14px;
+                  height: 17px;
                 }
             }
         }

@@ -65,6 +65,15 @@
   @include to(850px) {
     font-size: 26px;
   }
+
+  @include to(575px) {
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+
+  @include to(320px) {
+    font-size: 20px;
+  }
 }
 
 @mixin page-desc {

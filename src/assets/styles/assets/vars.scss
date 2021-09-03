@@ -49,12 +49,18 @@ $blue: #0951be;
   }
 }
 
+@media screen and (max-width: 650px) {
+  :root {
+    --mobile-img-height: 55vh;
+  }
+}
+
 @media screen and (max-width: 576px) {
   :root {
     --header-h: 70px;
     --sliceFigure: 100px;
     --sliceFigure-big: 100px;
-    --scroll-features-offset: 35px;
+    --scroll-features-offset: 32px;
   }
 }
 

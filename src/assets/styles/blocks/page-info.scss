@@ -13,6 +13,12 @@
     grid-template-columns: 250px 1fr;
     column-gap: 30px;
   }
+
+  @include to(700px) {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
   &__left {
     top: 0;
     position: sticky;
@@ -54,6 +60,10 @@
       margin-bottom: 0;
     }
 
+    @include to(700px) {
+      display: none;
+    }
+
     svg {
       width: 100%;
       height: 100%;
@@ -64,6 +74,12 @@
     position: sticky;
     top: 0;
     @include page-big-text;
+
+    @include to(700px) {
+      br {
+        display: none;
+      }
+    }
   }
   &__right {
     display: grid;
@@ -72,10 +88,19 @@
     @include to(1440px) {
       row-gap: 30px;
     }
+
+    @include to(575px) {
+      row-gap: 15px;
+    }
   }
     
   &__item {
     display: flex;
+
+    @include to(520px) {
+      margin-left: 25px;
+    }
+
     &-left {
       margin-right: 60px;
       display: inline-flex;
@@ -97,6 +122,22 @@
         height: 50px;
         min-width: 50px;
       }
+
+      @include to(575px) {
+        margin-right: 28px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 13px;
+      }
+
+      @include to(320px) {
+        height: 40px;
+        min-width: 40px;
+      }
+
+      @include to(320px) {
+        font-size: 12px;
+      }
     }
 
     &-right {
@@ -107,6 +148,10 @@
 
       @include to(850px) {
         padding: 20px 30px;
+      }
+
+      @include to(575px) {
+        padding: 20px;
       }
 
       svg {
@@ -121,6 +166,16 @@
           width: 30px;
           height: 30px;
         }
+      }
+    }
+
+    &-desc {
+      @include to(575px) {
+        font-size: 13px;
+      }
+
+      @include to(320px) {
+        font-size: 12px;
       }
     }
   }

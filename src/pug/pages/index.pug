@@ -34,12 +34,30 @@ block content
         .swiper-slide
           .swiper-slide-img
             +img('home-slider/1.jpg')
+          .main-slider__content
+            .main-slider__title(data-slider="1") Житловий комплекс
+            .main-slider__desc Бульвар Леоніда Бирюкова, 2
+            a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video 
+              | Дивитися відео
+              +svg('triangle')
         .swiper-slide
           .swiper-slide-img
             +img('home-slider/2.jpg')
+          .main-slider__content
+            .main-slider__title(data-slider="2") Бізнес класу
+            .main-slider__desc Бульвар Леоніда Бирюкова, 2
+            a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video
+              | Дивитися відео
+              +svg('triangle')
         .swiper-slide
           .swiper-slide-img
             +img('home-slider/3.jpg')
+          .main-slider__content
+            +img('grand-byrze-text.svg').main-slider__title.main-slider__title--img(data-slider="3")
+            .main-slider__desc Бульвар Леоніда Бирюкова, 2
+            a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video 
+              | Дивитися відео
+              +svg('triangle')
     .main-slider__logo 
       +img('developer-white.svg')
     a(href="#intro").main-slider__more.js-anchor-link

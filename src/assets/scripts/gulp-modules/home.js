@@ -13,8 +13,6 @@
       const sliderTitles = document.querySelectorAll('[data-slide-title]')
       const withTranslateTitle = +prevActiveSlide.dataset.swiperSlideIndex % 2 !== 0 
 
-      console.log(withTranslateTitle)
-
       sliderTitles.forEach(title => {
         if(title !== prevSlideTitle) {
           gsap.set(title, {opacity: 0, x: 0})
@@ -90,27 +88,37 @@
         prevActiveSlide = activeSlide
     }
 
-    const swiper = new Swiper('.js-main-slider', {
-      autoplay: {
-        delay: 4000,
-        speed: 0,
-      },
-      loop: true,
-      effect: 'fade',
-      allowTouchMove: false,
-      on: {
-        slideChange(swiper) {
-          const activeSlide = swiper.slides[swiper.activeIndex];
-
-          if (isFirstShowSlide) {
-            isFirstShowSlide = false;
-            return;
-          }
-
-          animateChangeSlide({ slides: swiper.slides, activeSlide, activeIndex: swiper.activeIndex });
+    if($(window).width() >= 700) {
+      const swiper = new Swiper('.js-main-slider', {
+        autoplay: {
+          delay: 7000,
+          speed: 0,
         },
-      },
-    });
+        effect: 'fade',
+        allowTouchMove: false,
+        on: {
+          slideChange(swiper) {
+            const activeSlide = swiper.slides[swiper.activeIndex];
+  
+            if (isFirstShowSlide) {
+              isFirstShowSlide = false;
+              return;
+            }
+  
+            animateChangeSlide({ slides: swiper.slides, activeSlide, activeIndex: swiper.activeIndex });
+          },
+        },
+      });
+    } else {
+      const swiper = new Swiper('.js-main-slider', {
+        autoplay: {
+          delay: 7000,
+          speed: 0,
+        },
+        allowTouchMove: false,
+        speed: 700
+      });
+    }
 
     prevActiveSlide = document.querySelector('.js-main-slider .swiper-slide-active')
 

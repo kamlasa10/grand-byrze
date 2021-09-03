@@ -26,6 +26,11 @@
         margin-bottom: 50px;
       }
 
+      @include to(575px) {
+        width: auto;
+        margin-bottom: 40px;
+      }
+
       &-icon {
         margin: 0 auto;
         margin-bottom: 20px;
@@ -88,17 +93,34 @@
         column-gap: 46px;
       }
 
+      @include to(650px) {
+        grid-template-columns: 1fr;
+      }
+
       &:not(:last-child) {
         margin-bottom: var(--scroll-features-offset);
 
         @include to(850px) {
           margin-bottom: 50px;
         }
+
+        @include to(650px) {
+          margin-bottom: 40px;
+        }
       }
 
       .features__content {
         @include to(850px) {
           padding-right: 34px;
+        }
+
+        @include to(650px) {
+          align-items: center;
+          padding-right: 0;
+        }
+
+        @include to(575px) {
+          align-items: flex-start;
         }
       }
 
@@ -112,6 +134,15 @@
 
           @include to(850px) {
             padding-right: 0;
+          }
+
+          @include to(650px) {
+            max-width: 100%;
+            align-items: center;
+          }
+
+          @include to(575px) {
+            align-items: flex-start;
           }
         }
 
@@ -129,8 +160,16 @@
           grid-template-columns: repeat(2, 1fr);
         }
 
+        @include to(650px) {
+          grid-template-columns: 1fr;
+        }
+
         .features__img {
           order: 1;
+
+          @include to(650px) {
+            order: -1;
+          }
         }
       }
 
@@ -140,6 +179,10 @@
 
           @include to(850px) {
             max-width: 250px;
+          }
+
+          @include to(650px) {
+            max-width: 100%;
           }
         }
       }
@@ -182,6 +225,18 @@
         font-size: 26px;
         max-width: 240px;
       }
+
+      @include to(650px) {
+        max-width: 100%;
+      }
+
+      @include to(575px) {
+        font-size: 22px;
+      }
+
+      @include to(320px) {
+        font-size: 20px;
+      }
     }
 
     &__content {
@@ -199,6 +254,14 @@
           margin-bottom: 30px;
         }
       }
+
+      @include to(575px) {
+        font-size: 13px;
+      }
+
+      @include to(320px) {
+        font-size: 12px;
+      }
     }
 
     &__img {
@@ -208,6 +271,12 @@
         @include to(950px) {
           min-height: 414px;
           height: 100%;
+        }
+
+        @include to(650px) {
+          margin-bottom: 20px;
+          min-height: 330px;
+          height: 55vh;
         }
       }
     }

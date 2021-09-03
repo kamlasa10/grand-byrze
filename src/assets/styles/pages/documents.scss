@@ -15,6 +15,15 @@
       }
     }
 
+    &__title {
+      display: none;
+
+      @include to(575px) {
+        display: block;
+        margin-bottom: 20px;
+      } 
+    }
+
     &__item {
       display: flex;
       justify-content: space-between;
@@ -35,6 +44,16 @@
           margin-bottom: 30px;
         }
       }
+
+      @include to(575px) {
+        padding-bottom: 20px;
+        display: grid;
+        grid-template-columns: 45px 1fr 40px;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
     }
 
     &__date {
@@ -46,6 +65,10 @@
         width: 14px;
         height: 14px;
         transform: translateY(12px);
+
+        @include to(575px) {
+          display: none;
+        }
       }
 
       &-title {
@@ -58,6 +81,14 @@
         @include to(1440px) {
           font-size: 36px;
         }
+
+        @include to(575px) {
+          font-size: 26px;
+        }
+
+        @include to(320px) {
+          font-size: 24px;
+        }
       }
 
       &-month {
@@ -68,6 +99,14 @@
 
         @include to(1440px) {
           font-size: 14px;
+        }
+
+        @include to(575px) {
+          font-size: 12px;
+        }
+
+        @include to(320px) {
+          font-size: 10px;
         }
       }
 
@@ -81,6 +120,10 @@
 
         @include to(1440px) {
           font-size: 12px;
+        }
+
+        @include to(575px) {
+          display: none;
         }
 
         &::before {
@@ -116,6 +159,21 @@
       @include to(850px) {
         font-size: 16px;
       }
+
+      @include to(720px) {
+        max-width: 350px;
+      }
+
+      @include to(575px) {
+        max-width: 100%;
+        margin-left: 20px;
+        margin-right: 15px;
+        font-size: 11px;
+      }
+
+      @include to(320px) {
+        font-size: 10px;
+      }
     }
 
     &__pdf {
@@ -131,6 +189,18 @@
       line-height: 1em;
       text-transform: uppercase;
       font-family: $default-font2;
+
+      @include to(575px) {
+        width: 39px;
+        height: 39px;
+        font-size: 12px;
+      }
+
+      @include to(320px) {
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
+      }
     }
   }
 }

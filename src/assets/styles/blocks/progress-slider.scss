@@ -87,6 +87,23 @@
         height: 50px;
       }
 
+      @include to(650px) {
+        position: absolute;
+        z-index: 5;
+      }
+
+      @include to(575px) {
+        min-width: 40px;
+        height: 40px;
+      }
+
+      @include to(320px) {
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+      }
+
         &-prev {
           margin-right: 58px;
 
@@ -109,6 +126,10 @@
           @include to(1025px) {
             margin-left: 38px;
           }
+
+          @include to(650px) {
+            right: 25px;
+          }
         }
     }
 
@@ -120,6 +141,14 @@
 
         @include to(1440px) {
           font-size: 14px;
+        }
+
+        @include to(575px) {
+          font-size: 11px;
+        }
+
+        @include to(320px) {
+          font-size: 10px;
         }
     }
 
@@ -148,6 +177,18 @@
 
         @include to(850px) {
           height: 300px;
+        }
+
+        @include to(650px) {
+          height: 200px;
+        }
+
+        @include to(380px) {
+          height: 160px;
+        }
+
+        @include to(320px) {
+          height: 130px;
         }
 
         img {

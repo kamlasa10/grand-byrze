@@ -42,6 +42,10 @@
       text-align: center;
       z-index: 50;
 
+      @include to(700px) {
+        display: none !important;
+      }
+
       .main-slider__title {
         position: absolute;
         display: flex;
@@ -108,6 +112,29 @@
       @include to(850px) {
         margin-top: 55px;
       }
+
+      @include to(700px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 50;
+
+        .main-slider__title {
+          margin-bottom: 10px;
+          white-space: break-spaces;
+        }
+
+        img {
+          width: 282px;
+          height: 37px;
+          transform: translateY(6px);
+        }
+      }
+      
+      @include to(320px) {
+        width: 270px;
+      }
     }
 
     &__title {
@@ -130,10 +157,9 @@
       }
 
       @include to(575px) {
-        font-size: 40px;
+        font-size: 38px;
         margin-left: 25px;
         margin-right: 25px;
-        white-space: break-spaces;
       }
 
       @include to(320px) {

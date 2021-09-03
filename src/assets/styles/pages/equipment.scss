@@ -14,6 +14,13 @@
       .equipment__item-title {
         max-width: 612px;
       }
+
+      @include to(650px) {
+        img {
+          margin-top: 0;
+          margin-bottom: 20px;
+        }
+      }
     }
 
     img {
@@ -22,6 +29,13 @@
 
       @include to(850px) {
         height: var(--max-img-height);
+      }
+
+      @include to(650px) {
+        max-height: auto;
+        height: var(--mobile-img-height);
+        min-height: 330px;
+        margin-top: 20px;
       }
     }
 
@@ -35,12 +49,20 @@
       column-gap: 46px;
     }
 
+    @include to(650px) {
+      grid-template-columns: 1fr;
+    }
+
     &-title {
       @include page-big-text;
       margin-bottom: 30px;
 
       @include to(1440px) {
         margin-bottom: 20px;
+      }
+
+      @include to(575px) {
+        margin-bottom: 10px;
       }
     }
 
@@ -55,6 +77,18 @@
 
       @include to(850px) {
         max-width: 280px;
+      }
+
+      @include to(650px) {
+        max-width: 100%;
+      }
+
+      @include to(575px) {
+        font-size: 16px;
+      }
+
+      @include to(320px) {
+        font-size: 15px;
       }
     }
 
@@ -75,6 +109,14 @@
           max-width: 280px;
           margin-bottom: 40px;
         }
+
+        @include to(650px) {
+          max-width: 100%;
+        }
+
+        @include to(575px) {
+          margin-bottom: 30px;
+        }
       }
     }
   }
@@ -92,6 +134,17 @@
     @include to(850px) {
       margin-top: 100px;
       margin-bottom: 100px;
+    }
+
+    @include to(650px) {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  @include to(520px) {
+    .page-info__item {
+      margin-left: 0;
     }
   }
 }

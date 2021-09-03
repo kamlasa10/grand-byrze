@@ -5,6 +5,10 @@
     @include to(1440px) {
       margin-bottom: 47px;
     }
+
+    @include to(575px) {
+      margin-bottom: 20px;
+    }
   }
 
   .location {
@@ -15,6 +19,10 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: var(--scroll-features-offset);
+
+        @include to(575px) {
+          margin-bottom: 50px;
+        }
 
         &-content {
           margin-right: 130px;
@@ -39,6 +47,10 @@
             height: 162px;
             min-width: 166px;
           }
+
+          @include to(575px) {
+            display: none;
+          }
         }
 
         &-text {
@@ -47,12 +59,20 @@
           @include to(850px) {
             max-width: 332px;
           }
+
+          @include to(575px) {
+            max-width: 100%;
+          }
         }
       }
 
       &-content {
         @include to(850px) {
           max-width: 250px;
+        }
+
+        @include to(575px) {
+          max-width: 100%;
         }
       }
 
@@ -75,6 +95,25 @@
 
         @include to(850px) {
           margin-bottom: 83px;
+        }
+
+        @include to(575px) {
+          grid-template-columns: 1fr;
+          margin-bottom: 40px;
+
+          .location__intro-text {
+            margin-bottom: 0;
+            font-size: 13px;
+          }
+
+          .location__intro-block {
+            order: -1;
+            margin-bottom: 20px;
+          }
+        }
+
+        @include to(320px) {
+          font-size: 12px;
         }
 
         &--reverse {
@@ -101,18 +140,41 @@
             }
           }
 
+          @include to(575px) {
+            grid-template-columns: 1fr;
+
+            .location__intro-content {
+              max-width: 100%;
+            }
+
+            img {
+              margin-bottom: 20px;
+            }
+          }
+
           img {
             order: -1;
           }
 
           .location__intro-text {
             max-width: 350px;
+
+            @include to(575px) {
+              max-width: 100% !important;
+              margin-bottom: 30px !important;
+            }
           }
         }
 
         img {
           max-height: var(--max-img-height);
           object-fit: cover;
+
+          @include to(575px) {
+            max-height: auto;
+            height: var(--mobile-img-height);
+            min-height: 330px;
+          }
         }
       }
 
@@ -131,6 +193,11 @@
 
         @include to(1440px) {
           width: 280px;
+        }
+
+        @include to(575px) {
+          width: 100%;
+          margin-bottom: 30px;
         }
       }
     }
@@ -157,11 +224,24 @@
         font-size: 26px;
       }
 
+      @include to(575px) {
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+
+      @include to(320px) {
+        font-size: 20px;
+      }
+
       &--correct {
         margin-bottom: var(--scroll-features-offset);
 
         @include to(850px) {
           max-width: 450px;
+        }
+
+        @include to(575px) {
+          margin-bottom: 40px;
         }
       }
     }
