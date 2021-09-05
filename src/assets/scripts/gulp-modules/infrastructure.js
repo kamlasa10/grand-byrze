@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $(window)
     .on('resize', () => {
-      if ($(window).width() <= 850) {
+      if ($(window).width() <= 850 && $(window).width() >= 650) {
         sliders.each((_, item) => {
           const slider = new Swiper(item, {
             speed: 700,
