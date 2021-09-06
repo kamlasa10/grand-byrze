@@ -12,11 +12,12 @@ header(class=`header ${id_page === 'index-page' ? 'dark' : 'white'}`)
                     +svg('phone')
                     | +38 (096) 995-63-64
             .header__center 
-                a(href="#").header__logo-mobile
+                a(href="/").header__logo-mobile
                     if id_page === 'index-page'
-                        +img('mobile-logo.svg')
+                        +img('mobile-logo.svg').header__logo-mobile
                     else 
-                        +img('mobile-logo-white.svg')
+                        +img('mobile-logo-white.svg').header__logo-mobile-white
+                        +img('mobile-logo.svg').header__logo-mobile-dark
                 a(href="/").header__logo.btn.header__logo-small
                     +img('logo.svg').move-logo
                 a(href="/").header__logo--big.btn 

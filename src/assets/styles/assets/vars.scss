@@ -46,12 +46,14 @@ $blue: #0951be;
     --scroll-features-offset: 70px;
     --padding-page: 100px;
     --max-img-height: 414px;
+    --page-decor-height: 250px;
   }
 }
 
 @media screen and (max-width: 650px) {
   :root {
     --mobile-img-height: 55vh;
+    --page-decor-height: 161px;
   }
 }
 
@@ -67,5 +69,6 @@ $blue: #0951be;
 @media screen and (max-width: 320px) {
   :root {
     --scroll-features-offset: 30px;
+    --mobile-img-height: 340px;
   }
 }

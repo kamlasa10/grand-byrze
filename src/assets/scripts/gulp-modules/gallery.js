@@ -19,20 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return isWithZero.slice(-2);
       },
       renderFraction(currentClass, totalClass) {
-        return (
-          `<span class="${currentClass}"></span>` + `<span class="${totalClass}"></span>`
-        );
+        return `<span class="${currentClass}"></span>` + `<span class="${totalClass}"></span>`;
       },
-    }
-  })
+    },
+  });
 
-  const slides = $('.js-gallery-slider .swiper-slide')
-  const gallery = $('.gallery')
+  const slides = $('.js-gallery-slider .swiper-slide');
+  const gallery = $('.gallery');
 
-  $(window).on('resize', () => {
-    if($(window).width() <= 1025) {
-      const avaliablesHeight = document.documentElement.clientHeight - $('.page-top').outerHeight() + (gallery.width() / 100) * 7
-      slides.height(avaliablesHeight + 'px')
-    }
-  }).resize()
-})
+  $(window)
+    .on('resize', () => {
+      if ($(window).width() <= 1025) {
+        const avaliablesHeight =
+          document.documentElement.clientHeight -
+          $('.page-top').outerHeight() +
+          (gallery.width() / 100) * 9;
+        slides.height(avaliablesHeight + 'px');
+      }
+    })
+    .resize();
+});

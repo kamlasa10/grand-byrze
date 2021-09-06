@@ -18,6 +18,15 @@
   @include to(480px) {
     padding-top: 10px;
     padding-bottom: 10px;
+
+    &.white {
+      .header__logo-mobile-dark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
   }
 
   .header__logo--big {
@@ -117,6 +126,18 @@
 
     .menu-btn {
       color: $black;
+    }
+
+    @include to(480px) {
+      &.white {
+        .header__logo-mobile-white {
+          opacity: 0;
+        }
+
+        .header__logo-mobile-dark {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -299,6 +320,10 @@
 
     &-mobile {
       display: none;
+
+      img {
+        transition: all 0.5s;
+      }
     }
 
     img {
@@ -313,6 +338,7 @@
       display: none;
 
       &-mobile {
+        position: relative;
         display: block;
       }
     }

@@ -5,7 +5,7 @@ const menu = document.querySelector('.js-menu');
 const openMenu = document.querySelector('.js-menu-open');
 const header = document.querySelector('.header');
 const closeMenu = document.querySelector('.js-menu-close');
-let mobilePopupTl = gsap.timeline()
+let mobilePopupTl = gsap.timeline();
 
 function isSmoothScroll() {
   return window.locoScroll;
@@ -97,43 +97,46 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showMobilePopup() {
-  mobilePopupTl.clear()
+  mobilePopupTl.clear();
 
-  mobilePopupTl.to('.popup-actions', {
-    opacity: 0,
-    display: 'none',
-    duration: 0.5
-  })
-  .to('.popup-callback', {
-    opacity: 1,
-    display: 'block',
-    duration: 0.5,
-  })
+  mobilePopupTl
+    .to('.popup-actions', {
+      opacity: 0,
+      display: 'none',
+      duration: 0.5,
+    })
+    .to('.popup-callback', {
+      opacity: 1,
+      display: 'block',
+      duration: 0.5,
+    });
 }
 
 function hideMobilePopup() {
   setTimeout(() => {
-    $('.overlay').removeClass('open-popup')
-    $('.popup').hide()
-    $('.popup-actions').show().css('opacity', 1)
-  }, 500)
+    $('.overlay').removeClass('open-popup');
+    $('.popup').hide();
+    $('.popup-actions')
+      .show()
+      .css('opacity', 1);
+  }, 500);
 }
 
 $('.js-open-call').on('click', () => {
   hidePopup();
-  startScroll()
-  hideMobilePopup()
-})
+  startScroll();
+  hideMobilePopup();
+});
 
 $('.js-popup-open').on('click', e => {
   e.preventDefault();
-  mobilePopupTl.clear()
+  mobilePopupTl.clear();
   const typeName = e.currentTarget.dataset.popupType;
 
-  if($(window).width() <= 480) {
-    showMobilePopup()
+  if ($(window).width() <= 480) {
+    showMobilePopup();
 
-    return
+    return;
   }
 
   showPopupByType(typeName);
@@ -143,19 +146,19 @@ $(document).on('click', e => {
   if (e.target === $('.overlay')[0]) {
     hidePopup();
     menuTl.clear();
-    startScroll()
+    startScroll();
   }
 
-  if($(window).width() <= 480) {
-    hideMobilePopup()
+  if ($(window).width() <= 480) {
+    hideMobilePopup();
   }
 });
 
 $('.js-close-popup').on('click', e => {
   e.preventDefault();
   hidePopup();
-  startScroll()
-  console.log('close')
+  startScroll();
+  console.log('close');
 
   if (e.currentTarget.dataset.close) {
     $('.js-popup[data-popup-name=callback]')
@@ -163,8 +166,8 @@ $('.js-close-popup').on('click', e => {
       .removeClass('warn');
   }
 
-  if($(window).width() <= 480) {
-    hideMobilePopup()
+  if ($(window).width() <= 480) {
+    hideMobilePopup();
   }
 });
 
@@ -341,6 +344,13 @@ function sendAjaxForm(url, selectorForm) {
   });
 }
 
+gsap.to('.preloader__wave .prealoder__wave1', {
+  duration: 5,
+  motionPath: {
+    path: document.querySelector('.prealoder__wave7'),
+  },
+});
+
 const pageId = document.body.getAttribute('id');
 
 $(window)
@@ -361,13 +371,13 @@ $(window)
       });
     }
 
-    if($(window).width() <= 480) {
+    if ($(window).width() <= 480) {
       $('.js-header-phone').on('click', e => {
-        e.preventDefault()
-        stopScroll()
-        
-        $('.overlay').addClass('show')
-      })
+        e.preventDefault();
+        stopScroll();
+
+        $('.overlay').addClass('show');
+      });
     }
   })
   .resize();

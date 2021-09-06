@@ -7,6 +7,7 @@ block variable
     var class_page = 'index-page'
     var breadcrumbsLink = true
 block scripts 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/MotionPathPlugin.min.js"></script>
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
@@ -58,8 +59,9 @@ block content
             a(href="#" data-video="https://www.youtube.com/embed/cnzzbeCOOI4").main-slider__link.js-open-video 
               | Дивитися відео
               +svg('triangle')
-    .main-slider__logo 
-      +img('developer-white.svg')
+    .main-slider__logo
+      a(href="#") 
+        +img('developer-white.svg')
     a(href="#intro").main-slider__more.js-anchor-link
       +svg('arrow-down')
   section.intro(id="intro") 

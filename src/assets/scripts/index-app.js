@@ -1,10 +1,12 @@
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import LocomotiveScroll from 'locomotive-scroll'
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import LocomotiveScroll from 'locomotive-scroll';
 import gsap from 'gsap';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
-global.ScrollTrigger = ScrollTrigger
+global.ScrollTrigger = ScrollTrigger;
 
 window.initCustomScroll = function(needSmothScroll = true) {
   $(window)
@@ -55,19 +57,17 @@ window.initCustomScroll = function(needSmothScroll = true) {
     })
     .resize();
 
-    if (document.documentElement.clientWidth > 1025 && window.locoScroll) {
-      $('.js-btn-top')
-        .on('click', () => {
-          window.locoScroll.scrollTo(0);
-        });
-    } else {
-      $('.js-btn-top')
-        .on('click', () => {
-          $('html, body')
-            .stop()
-            .animate({ scrollTop: 0 }, 1000);
-      });
-    }
+  if (document.documentElement.clientWidth > 1025 && window.locoScroll) {
+    $('.js-btn-top').on('click', () => {
+      window.locoScroll.scrollTo(0);
+    });
+  } else {
+    $('.js-btn-top').on('click', () => {
+      $('html, body')
+        .stop()
+        .animate({ scrollTop: 0 }, 1000);
+    });
+  }
 
   const $header = $('.header');
 
@@ -82,7 +82,7 @@ window.initCustomScroll = function(needSmothScroll = true) {
   if (window.locoScroll) {
     window.locoScroll.on('scroll', e => {
       animateScroll(e.scroll.y);
-      window.scrollOffset = e.scroll.y
+      window.scrollOffset = e.scroll.y;
     });
 
     return;
@@ -91,4 +91,4 @@ window.initCustomScroll = function(needSmothScroll = true) {
   window.addEventListener('scroll', e => {
     animateScroll(window.pageYOffset);
   });
-}
+};

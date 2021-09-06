@@ -2,36 +2,40 @@
   document.addEventListener('DOMContentLoaded', () => {
     let isFirstShowSlide = true;
     let slideChangeTl = gsap.timeline();
-    let prevActiveSlide = null
+    let prevActiveSlide = null;
 
     function animateChangeSlide({ slides, activeSlide, activeIndex }) {
       slideChangeTl.kill();
       slideChangeTl = gsap.timeline();
       const containerText = activeSlide.querySelector('.js-slider-desc');
-      const currentTitle = document.querySelector(`[data-slide-title='${activeSlide.dataset.swiperSlideIndex}']`)
-      const prevSlideTitle = document.querySelector(`[data-slide-title='${prevActiveSlide.dataset.swiperSlideIndex}']`)
-      const sliderTitles = document.querySelectorAll('[data-slide-title]')
-      const withTranslateTitle = +prevActiveSlide.dataset.swiperSlideIndex % 2 !== 0 
+      const currentTitle = document.querySelector(
+        `[data-slide-title='${activeSlide.dataset.swiperSlideIndex}']`,
+      );
+      const prevSlideTitle = document.querySelector(
+        `[data-slide-title='${prevActiveSlide.dataset.swiperSlideIndex}']`,
+      );
+      const sliderTitles = document.querySelectorAll('[data-slide-title]');
+      const withTranslateTitle = +prevActiveSlide.dataset.swiperSlideIndex % 2 !== 0;
 
       sliderTitles.forEach(title => {
-        if(title !== prevSlideTitle) {
-          gsap.set(title, {opacity: 0, x: 0})
+        if (title !== prevSlideTitle) {
+          gsap.set(title, { opacity: 0, x: 0 });
         }
 
-        if(withTranslateTitle && title !== prevSlideTitle) {
+        if (withTranslateTitle && title !== prevSlideTitle) {
           gsap.set(title, {
-            opacity:0,
-            x: '-30px'
-          })
+            opacity: 0,
+            x: '-30px',
+          });
         }
-      })
+      });
 
       slides.forEach(slide => {
         gsap.set(slide.querySelector('.swiper-slide-img'), {
           clipPath: 'circle(80% at 50% 50%)',
         });
 
-        gsap.set(slide.querySelector('.js-slider-desc'), {opacity: 0, y: 40})
+        gsap.set(slide.querySelector('.js-slider-desc'), { opacity: 0, y: 40 });
       });
 
       slideChangeTl
@@ -39,7 +43,7 @@
           activeSlide.querySelector('.swiper-slide-img'),
           {
             yPercent: -35,
-            scale: 0.5
+            scale: 0.5,
           },
           {
             yPercent: 0,
@@ -51,7 +55,7 @@
           activeSlide.querySelector('.swiper-slide-img'),
           {
             clipPath: 'circle(55% at 50% 5%)',
-            '-webkit-clip-path': 'circle(55% at 50% 5%)'
+            '-webkit-clip-path': 'circle(55% at 50% 5%)',
           },
           {
             '-webkit-clip-path': 'circle(80% at 50% 70%)',
@@ -60,35 +64,47 @@
           },
           0.4,
         )
-        .to(prevSlideTitle, {
-          opacity: 0,
-          x: withTranslateTitle ? '30px' : 0,
-          duration: 0.8
-        }, 0.2)
-        .to(currentTitle, {
-          opacity: 1,
-          x: 0,
-          duration: 0.8
-        }, withTranslateTitle ? 0.1 : 0.5)
-        .to(containerText, {
-          opacity: 1,
-          y: 0,
-          duration: 0.8
-        }, 0)
-        // .to(
-        //   title,
-        //   {
-        //     x: 0,
-        //     opacity: 1,
-        //     duration: 0.8,
-        //   },
-        //   0.6,
-        // );
+        .to(
+          prevSlideTitle,
+          {
+            opacity: 0,
+            x: withTranslateTitle ? '30px' : 0,
+            duration: 0.8,
+          },
+          0.2,
+        )
+        .to(
+          currentTitle,
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+          },
+          withTranslateTitle ? 0.1 : 0.5,
+        )
+        .to(
+          containerText,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+          },
+          0,
+        );
+      // .to(
+      //   title,
+      //   {
+      //     x: 0,
+      //     opacity: 1,
+      //     duration: 0.8,
+      //   },
+      //   0.6,
+      // );
 
-        prevActiveSlide = activeSlide
+      prevActiveSlide = activeSlide;
     }
 
-    if($(window).width() >= 700) {
+    if ($(window).width() >= 700) {
       const swiper = new Swiper('.js-main-slider', {
         autoplay: {
           delay: 7000,
@@ -99,13 +115,17 @@
         on: {
           slideChange(swiper) {
             const activeSlide = swiper.slides[swiper.activeIndex];
-  
+
             if (isFirstShowSlide) {
               isFirstShowSlide = false;
               return;
             }
-  
-            animateChangeSlide({ slides: swiper.slides, activeSlide, activeIndex: swiper.activeIndex });
+
+            animateChangeSlide({
+              slides: swiper.slides,
+              activeSlide,
+              activeIndex: swiper.activeIndex,
+            });
           },
         },
       });
@@ -116,11 +136,11 @@
           speed: 0,
         },
         allowTouchMove: false,
-        speed: 700
+        speed: 700,
       });
     }
 
-    prevActiveSlide = document.querySelector('.js-main-slider .swiper-slide-active')
+    prevActiveSlide = document.querySelector('.js-main-slider .swiper-slide-active');
 
     class Tabs {
       constructor(content, tabs, activeClass, showedTabInit = 1) {
@@ -172,34 +192,38 @@
     new Tabs($('.js-building-info-tabs__content'), $('.js-building-info__tab'), 'show');
 
     $('.js-anchor-link').on('click', e => {
-      e.preventDefault()
+      e.preventDefault();
 
-      if(window.locoScroll) {
+      if (window.locoScroll) {
         window.locoScroll.scrollTo($('.intro')[0], {
-          duration: 800
-        })
-        return
+          duration: 800,
+        });
+        return;
       }
-      const href = $(e.currentTarget).attr('href')
+      const href = $(e.currentTarget).attr('href');
 
-      $('html,body').stop().animate({scrollTop: $(href).offset().top}, 800);
-    })
+      $('html,body')
+        .stop()
+        .animate({ scrollTop: $(href).offset().top }, 800);
+    });
 
     $('.js-open-video').on('click', e => {
-      e.preventDefault()
-      const videoSrc = $(e.target).attr('data-video')
+      e.preventDefault();
+      const videoSrc = $(e.target).attr('data-video');
+      stopScroll();
 
-      $('.js-video-container').attr('src', videoSrc)
-      $('.js-video').addClass('show')
-    })
+      $('.js-video-container').attr('src', videoSrc);
+      $('.js-video').addClass('show');
+    });
 
     $('.js-video-close').on('click', e => {
-      e.preventDefault()
-      $('.js-video').removeClass('show')
+      e.preventDefault();
+      startScroll();
+      $('.js-video').removeClass('show');
 
       setTimeout(() => {
-        $('.js-video-container').attr('src', '')
-      }, 300)
-    })
-  })
+        $('.js-video-container').attr('src', '');
+      }, 300);
+    });
+  });
 })();

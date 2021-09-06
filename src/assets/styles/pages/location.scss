@@ -34,7 +34,7 @@
         }
 
         svg {
-          fill: #ECEAE1;
+          fill: #eceae1;
           height: 186px;
           min-width: 170px;
 
@@ -184,6 +184,10 @@
 
         @include to(850px) {
           margin-bottom: 25px;
+        }
+
+        @include to(575px) {
+          margin-bottom: 10px;
         }
       }
 
