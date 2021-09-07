@@ -343,13 +343,61 @@ function sendAjaxForm(url, selectorForm) {
     },
   });
 }
+const preloader = document.querySelector('.js-preloader')
+const preloaderPercent = preloader.querySelector('.js-preloader-percent')
+const preloaderLogo = preloader.querySelector('.js-preloader-logo')
 
-gsap.to('.preloader__wave .prealoder__wave1', {
-  duration: 5,
-  motionPath: {
-    path: document.querySelector('.prealoder__wave7'),
-  },
-});
+function preloaderFinish() {
+  const preloaderTl = gsap.timeline()
+
+  preloaderTl.to('.js-preloader-bg', {
+    duration: 0.9,
+    opacity: 0,
+    pointerEvents: 'none',
+    delay: 0.7,
+    onStart() {
+      gsap.set('.preloader__content', {
+        'display': 'none'
+      })
+      gsap.set('.js-preloader', {
+        pointerEvents: 'none'
+      })
+    },
+  })
+    .from('.header__left', {
+      y: -50,
+      duration: 0.9
+    }, 0.6)
+    .from('.header__right', {
+      duration: 0.9,
+      y: -50
+    }, 0.6)
+    .from('.swiper-slide-img img', {
+      scale: 1.45,
+      duration: 1.3,
+    }, 0.3)
+}
+
+let w = 0,
+        t = setInterval(function() {
+            w = w + 1;
+            preloaderPercent.textContent = w;
+            if (w === 100){
+                clearInterval(t);
+                preloaderLogo.classList.add('finish')
+
+                setTimeout(() => {
+                  preloader.classList.add('finish')
+                  preloaderFinish()
+                  
+                  setTimeout(() => {
+                    window.initMainSlider()
+                  }, 700)
+                }, 150)
+
+                w = 0;
+            }
+        }, 43);
 
 const pageId = document.body.getAttribute('id');
 

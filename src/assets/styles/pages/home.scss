@@ -315,10 +315,12 @@
 
     .swiper-slide {
       position: relative;
+      overflow: hidden;
       height: 100vh;
       transition-duration: 1ms !important;
 
       .swiper-slide-img {
+        overflow: hidden;
         display: block;
         position: relative;
         width: 100%;

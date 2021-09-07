@@ -1,12 +1,12 @@
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import LocomotiveScroll from 'locomotive-scroll';
 import gsap from 'gsap';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import MotionPathPlugin from 'gsap/MotionPathPlugin';
 
-gsap.registerPlugin(MotionPathPlugin);
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 global.ScrollTrigger = ScrollTrigger;
+global.MotionPathPlugin = MotionPathPlugin
 
 window.initCustomScroll = function(needSmothScroll = true) {
   $(window)
